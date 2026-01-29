@@ -36,7 +36,7 @@
           home-manager.users.${userSettings.username1} = {
             imports = [ 
               ./home.nix 
-              nixCats.homeManagerModules.default
+              nixCats.homeModule
             ];
             home.username = userSettings.username1;
             home.homeDirectory = "/home/${userSettings.username1}";
@@ -45,7 +45,7 @@
           home-manager.users.${userSettings.username2} = {
             imports = [ 
               ./home.nix 
-              nixCats.homeManagerModules.default
+              nixCats.homeModule
             ];
             home.username = userSettings.username2;
             home.homeDirectory = "/home/${userSettings.username2}";
