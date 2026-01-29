@@ -2,6 +2,3 @@
 result
 .direnv/
 .venv/
-
-# Private Settings
-user-settings.nix
