@@ -1,5 +1,12 @@
 -- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
 -- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
+
+-- nixCats bridge: Disable Mason on NixOS to avoid binary conflicts
+if nixCats then
+  vim.g.mason_enabled = false
+  -- You can add more nix-specific logic here if needed
+end
+
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
