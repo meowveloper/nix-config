@@ -11,11 +11,25 @@
     defaultEditor = true;
     # These dependencies will be available to Neovim
     extraPackages = with pkgs; [
-      lua-language-server
-      stylua
+      # General
       ripgrep
       fd
       gcc
+      nodejs # Required for many LSPs
+
+      # Lua
+      lua-language-server
+      stylua
+
+      # Web Development
+      vtsls # TypeScript
+      vue-language-server # Vue (Volar)
+      tailwindcss-language-server
+
+      # Systems & Others
+      clang-tools # C/C++ (clangd)
+      zls # Zig
+      dockerfile-language-server-nodejs
     ];
   };
 
