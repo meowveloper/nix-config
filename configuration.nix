@@ -1,6 +1,9 @@
 
 { config, pkgs, ... }:
 
+let
+  userSettings = import ./user-settings.nix;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -36,11 +39,16 @@
     variant = "";
   };
 
-  users.users.test = {
+  users.users.${userSettings.username1} = {
     isNormalUser = true;
-    description = "test";
+    description = "Primary User";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+  };
+
+  users.users.${userSettings.username2} = {
+    isNormalUser = true;
+    description = "Secondary User";
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 
   nixpkgs.config.allowUnfree = true;
