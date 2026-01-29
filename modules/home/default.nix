@@ -1,8 +1,5 @@
 { ... }: {
   imports = [
-    ./neovim/default.nix
-    # Later we can add:
-    # ./zsh.nix
-    # ./hyprland.nix
+    # Neovim and other home modules will be added here later
   ];
 }
