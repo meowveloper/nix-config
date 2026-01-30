@@ -17,8 +17,6 @@
   home.packages = with pkgs; [
     swww        # Wallpaper
     matugen     # Material colors generation
-    waybar      # Status bar
-    rofi-wayland # App launcher
     hyprshot    # Screenshots (seen in your bindings)
     libnotify   # Notifications
     wl-clipboard # Clipboard support
