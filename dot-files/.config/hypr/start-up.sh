@@ -12,7 +12,6 @@ touch ~/.config/shell/user
 
 # start services
 systemctl --user enable --now mpd.service
-dms run &
 bash /usr/lib/polkit-kde-authentication-agent-1
 
 fcitx5 --replace -d
