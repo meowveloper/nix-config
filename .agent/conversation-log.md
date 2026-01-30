@@ -42,3 +42,11 @@
     - Created `modules/system/shell.nix` to set Zsh as the default login shell for all users.
     - Explicitly added `pkgs.zsh` to `environment.systemPackages` to ensure availability during `su -` sessions.
 - **Cleanup**: Removed temporary `.null-ls` files and updated all relative paths in home modules to match the new directory structure.
+
+## Session 7: Cleanup and Flatpak Integration
+- **Dotfile Cleanup**: Removed redundant top-level dotfiles (`.zshrc`, `.p10k.zsh`, `.tmux.conf`, `.bashrc`) and unused configuration folders (`.tmux`, `fish`, `shell`) from the `dot-files/` directory.
+- **Flatpak Implementation**:
+    - Created `modules/system/flatpak.nix` to enable the Flatpak service and manage font availability.
+    - Added an activation script to automatically configure the Flathub repository.
+    - Resolved app launcher integration issues by explicitly adding Flatpak export paths to `XDG_DATA_DIRS`.
+- **Zsh Global Availability**: Confirmed `pkgs.zsh` is in `environment.systemPackages` to ensure the shell is available globally, specifically for `su -` user switching.
