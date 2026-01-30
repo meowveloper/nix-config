@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{inputs, ...}: {
   imports = [
     inputs.nvf.homeManagerModules.default
   ];
@@ -23,9 +23,18 @@
 
         # Keymaps (AstroCore alignment)
         maps.normal = {
-          "<leader>bl" = { action = "<cmd>Telescope buffers<CR>"; desc = "List Buffers"; };
-          "<S-h>" = { action = "<cmd>bprevious<CR>"; desc = "Previous Buffer"; };
-          "<S-l>" = { action = "<cmd>bnext<CR>"; desc = "Next Buffer"; };
+          "<leader>bl" = {
+            action = "<cmd>Telescope buffers<CR>";
+            desc = "List Buffers";
+          };
+          "<S-h>" = {
+            action = "<cmd>bprevious<CR>";
+            desc = "Previous Buffer";
+          };
+          "<S-l>" = {
+            action = "<cmd>bnext<CR>";
+            desc = "Next Buffer";
+          };
         };
 
         lsp = {
@@ -52,19 +61,10 @@
           rust.enable = true;
           clang.enable = true;
           tailwind.enable = true;
-          vue.enable = true;
-        };
-
-        visuals = {
-          enable = true;
-          nvimWebDevicons.enable = true;
-          lspkind.enable = true;
-          indentBlankline.enable = true;
-          cursorline.enable = true;
         };
 
         statusline.lualine.enable = true;
-        
+
         telescope = {
           enable = true;
           setupOpts = {
@@ -109,7 +109,6 @@
           ccc.enable = true;
           diffview-nvim.enable = true;
           motion.hop.enable = true;
-          yazi.enable = true;
         };
 
         notes.todo-comments.enable = true;
@@ -121,3 +120,4 @@
     };
   };
 }
+
