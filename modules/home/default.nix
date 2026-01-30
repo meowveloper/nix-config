@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   imports = [
-    # ./nvf.nix
     ./nvim-wrapped.nix
     ./hyprland.nix
     ./yazi.nix
