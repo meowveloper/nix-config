@@ -1,0 +1,19 @@
+# Modern replacements (2025 edition
+alias ls='eza -l --color=auto --group-directories-first --icons=auto'
+alias la='eza -la --color=auto --group-directories-first --icons=auto'
+alias l='eza -laa --color=auto --group-directories-first --icons=auto'
+alias tree='eza --tree'
+
+alias cat='bat --style=plain'
+alias grep='rg'
+alias find='fd'
+
+alias cd='z'
+alias zi='z -i'        # interactive cd with fzf
+
+# Quality of life
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias df='duf'
+alias top='btop'

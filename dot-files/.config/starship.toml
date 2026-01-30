@@ -1,0 +1,39 @@
+# ~/.config/starship.toml
+format = """
+$username$hostname$directory$git_branch$git_status$fill$time
+$character"""
+
+[fill]
+symbol = " "
+
+[username]
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style) "
+show_always = false
+
+[hostname]
+ssh_only = true
+format = "@[$hostname "
+style = "bold yellow"
+
+[directory]
+style = "bold cyan"
+truncation_length = 4
+truncate_to_repo = true
+
+[git_branch]
+symbol = ""
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[λ](bold red)"
+
+[time]
+disabled = false
+format = "[$time](bold white)"
+time_format = "%H:%M"

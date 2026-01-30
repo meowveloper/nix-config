@@ -1,0 +1,5 @@
+[[mgr.prepend_keymap]]
+on   = [ "g", "e" ]
+run  = "cd /mnt/extra-volume"
+desc = "Cd to /mnt/extra-volume"
+
