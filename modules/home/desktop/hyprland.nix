@@ -41,5 +41,9 @@
   home.packages = with pkgs; [
     ghostty
     kdePackages.polkit-kde-agent-1
+    hyprshot
+    grim
+    slurp
+    libnotify
   ];
 }
