@@ -10,11 +10,13 @@
     ripgrep
     fd
     fzf
+    zoxide
     git
     
     # Development Basics
     gcc
     gnumake
     nodejs
+    eza
   ];
 }
