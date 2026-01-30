@@ -3,6 +3,4 @@
     layout = "us";
     variant = "";
   };
-
-  programs.hyprland.enable = true;
 }

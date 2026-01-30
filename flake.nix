@@ -29,6 +29,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs userSettings nvf; };
+          home-manager.backupFileExtension = "backup";
           
           home-manager.users.${userSettings.username1} = {
             imports = [ ./home.nix ];

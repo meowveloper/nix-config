@@ -9,6 +9,7 @@
       ./modules/system/network.nix
       ./modules/system/locale.nix
       ./modules/system/display.nix
+      ./modules/system/hyprland.nix
       ./modules/system/nix-settings.nix
     ];
 
