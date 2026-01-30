@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
-    ./nvf.nix
+    # ./nvf.nix
+    ./nvim-wrapped.nix
   ];
 }
