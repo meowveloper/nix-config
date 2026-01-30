@@ -17,6 +17,5 @@
     gcc
     gnumake
     nodejs
-    python3
   ];
 }
