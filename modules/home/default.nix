@@ -2,11 +2,12 @@
   imports = [
     # ./nvf.nix
     ./nvim-wrapped.nix
+    ./hyprland.nix
+    ./yazi.nix
   ];
 
   home.packages = with pkgs; [
     # Terminal Tools (Available everywhere)
-    yazi
     lazygit
     ripgrep
     fd
