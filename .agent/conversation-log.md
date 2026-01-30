@@ -26,3 +26,19 @@
 - **Hyprland & Yazi Modularization**: Created dedicated Home Manager modules for Hyprland and Yazi, mapping local dotfiles to standard XDG locations.
 - **System-Level Hyprland**: Moved system-level Hyprland enabling to a dedicated module and added XDG portal support for better Wayland integration.
 - **Activation Safety**: Added `home.backupFileExtension` to handle existing file conflicts automatically during Home Manager activation.
+
+## Session 6: Shell & Terminal Migration and Reorganization
+- **Modular Reorganization**: Refactored `modules/home/` into `programs/` and `desktop/` subdirectories for better organization and scalability.
+- **Starship Migration**: Integrated the Starship prompt into Nix, linking your existing `starship.toml` and enabling shell integrations.
+- **Zsh Migration**:
+    - Replaced the `zinit` plugin setup with Home Manager's native `programs.zsh`.
+    - Enabled syntax highlighting, autosuggestions, and completions.
+    - Sourced legacy aliases and profile files from `dot-files`.
+    - Integrated `fzf` and `zoxide`.
+- **Tmux Migration**:
+    - Replaced `tpm` with Nix-managed plugins, including the Dracula theme.
+    - Migrated custom keybindings and status bar settings to `modules/home/programs/tmux.nix`.
+- **System-Wide Shell**:
+    - Created `modules/system/shell.nix` to set Zsh as the default login shell for all users.
+    - Explicitly added `pkgs.zsh` to `environment.systemPackages` to ensure availability during `su -` sessions.
+- **Cleanup**: Removed temporary `.null-ls` files and updated all relative paths in home modules to match the new directory structure.
