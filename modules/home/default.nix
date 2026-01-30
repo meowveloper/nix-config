@@ -1,9 +1,7 @@
 { pkgs, ... }: {
   imports = [
-    ./nvim-wrapped.nix
-    ./hyprland.nix
-    ./yazi.nix
-    ./dms.nix
+    ./programs
+    ./desktop
   ];
 
   home.packages = with pkgs; [
