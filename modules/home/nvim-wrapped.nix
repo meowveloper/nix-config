@@ -21,8 +21,8 @@
       # LSPs & Formatters
       lua-language-server
       stylua
-      nodePackages.typescript-language-server
-    # nodePackages.vls 
+      typescript-language-server
+      vue-language-server
       nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
       tailwindcss-language-server
       zls # Zig
