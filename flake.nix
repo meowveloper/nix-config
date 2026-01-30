@@ -21,7 +21,7 @@
     system = "x86_64-linux";
   in
   {
-    nixosConfigurations.nix-btw = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs userSettings; };
       modules = [

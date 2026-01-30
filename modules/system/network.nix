@@ -1,4 +1,4 @@
 { ... }: {
-  networking.hostName = "nix-btw";
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 }
