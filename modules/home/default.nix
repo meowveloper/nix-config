@@ -12,6 +12,7 @@
     fzf
     zoxide
     git
+    bat
     
     # Development Basics
     gcc
