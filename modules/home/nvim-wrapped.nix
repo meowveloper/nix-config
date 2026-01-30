@@ -1,6 +1,6 @@
 { pkgs, config, userSettings, ... }: {
   # Symlink your existing AstroNvim config
-  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.nvimconfigpath}";
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/.config/nvim";
 
   programs.neovim = {
     enable = true;
