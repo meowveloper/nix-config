@@ -4,7 +4,7 @@
     enable = true;
     # We point to your specific config file
     # Note: Using the Chezmoi name from your dot-files folder
-    extraConfig = builtins.readFile ../../dot-files/.config/hypr/executable_hyprland.conf;
+    extraConfig = builtins.readFile ../../dot-files/.config/hypr/hyprland.conf;
   };
 
   # Manually mapping the rest of the hypr folder to keep subdirectories (src, dms)
