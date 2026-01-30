@@ -5,5 +5,6 @@
     ./zsh.nix
     ./tmux.nix
     ./tuis.nix
+    ./mpd.nix
   ];
 }
