@@ -16,6 +16,7 @@
       ./modules/system/packages.nix
       ./modules/system/shell.nix
       ./modules/system/flatpak.nix
+      ./modules/system/audio.nix
     ];
 
   system.stateVersion = "25.11";
