@@ -1,17 +1,38 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+let
+  grep = pkgs.gnugrep;
+  desiredFlatpaks = [
+    "app.zen_browser.zen"
+  ];
+in{
   services.flatpak.enable = true;
 
-  # This is important for Flatpaks to find system fonts
   fonts.fontDir.enable = true;
 
-  # Ensure XDG portals are well configured (required for Flatpak)
-  # We already have this in hyprland.nix, but it doesn't hurt to be sure.
   xdg.portal.enable = true;
 
-  # Automatically add Flathub repository
-  system.activationScripts.flatpak-flathub = {
+  system.userActivationScripts.flatpakManagement = {
     text = ''
-      ${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      ${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub \
+        https://flathub.org/repo/flathub.flatpakrepo
+
+      installedFlatpaks=$(${pkgs.flatpak}/bin/flatpak list --app --columns=application)
+
+      for installed in $installedFlatpaks; do
+        if ! echo ${toString desiredFlatpaks} | ${grep}/bin/grep -q $installed; then
+          echo "Removing $installed because it's not in the desiredFlatpaks list."
+          ${pkgs.flatpak}/bin/flatpak uninstall -y --noninteractive $installed
+        fi
+      done
+
+      for app in ${toString desiredFlatpaks}; do
+        echo "Ensuring $app is installed."
+        ${pkgs.flatpak}/bin/flatpak install -y flathub $app
+      done
+
+      ${pkgs.flatpak}/bin/flatpak uninstall --unused -y
+
+      ${pkgs.flatpak}/bin/flatpak update -y
     '';
   };
 }
