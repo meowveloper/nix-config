@@ -15,7 +15,6 @@
           logFile = "/tmp/nvf.log";
         };
 
-        spellCheck.enable = true;
 
         lsp = {
           formatOnSave = true;
@@ -41,14 +40,6 @@
           rust.enable = true;
           clang.enable = true;
           tailwind.enable = true;
-        };
-
-        visuals = {
-          enable = true;
-          nvimWebDevicons.enable = true;
-          lspkind.enable = true;
-          indentBlankline.enable = true;
-          cursorline.enable = true;
         };
 
         statusline.lualine.enable = true;
