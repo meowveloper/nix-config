@@ -2,7 +2,6 @@
   services.mpd = {
     enable = true;
     musicDirectory = "~/Music";
-    playlistDirectory = "~/Music/playlists";
     extraConfig = ''
       # Audio output – this works perfectly on PipeWire/WirePlumber out of the box
       audio_output {
