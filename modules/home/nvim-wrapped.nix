@@ -1,7 +1,6 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, userSettings, ... }: {
   # Symlink your existing AstroNvim config
-  # NOTE: This path must be accessible within your VM/System.
-  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "/mnt/extra-volume/projects/nix/arch-config/chezmoi/dank/dot_config/nvim";
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.nvimconfigpath}";
 
   programs.neovim = {
     enable = true;
@@ -23,7 +22,7 @@
       lua-language-server
       stylua
       nodePackages.typescript-language-server
-      nodePackages.vls # Vue
+    # nodePackages.vls 
       nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
       tailwindcss-language-server
       zls # Zig
