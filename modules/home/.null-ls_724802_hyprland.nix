@@ -11,12 +11,14 @@
   # We use the target name "hypr" so it ends up in ~/.config/hypr
   xdg.configFile."hypr/src".source = ../../dot-files/.config/hypr/src;
   xdg.configFile."hypr/dms".source = ../../dot-files/.config/hypr/dms;
-  xdg.configFile."hypr/start-up.sh".source = ../../dot-files/.config/hypr/start-up.sh;
+  xdg.configFile."hypr/start-up.sh".source = ../../dot-files/.config/hypr/executable_start-up.sh;
 
   # Supporting packages for your Hyprland setup
   home.packages = with pkgs; [
     swww        # Wallpaper
     matugen     # Material colors generation
+    waybar      # Status bar
+    rofi-wayland # App launcher
     hyprshot    # Screenshots (seen in your bindings)
     libnotify   # Notifications
     wl-clipboard # Clipboard support
