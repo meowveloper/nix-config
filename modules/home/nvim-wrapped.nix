@@ -19,8 +19,8 @@
       tailwindcss-language-server
       zls # Zig
       clang-tools # C++, Clangd
-      dockerfile-language-server-nodejs
-      
+      dockerfile-language-server      
+
       # Runtime / Compilers needed for plugins (Treesitter, etc.)
       tree-sitter
       unzip
