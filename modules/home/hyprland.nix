@@ -14,11 +14,6 @@
 
   # Supporting packages for your Hyprland setup
   home.packages = with pkgs; [
-    swww        # Wallpaper
-    matugen     # Material colors generation
-    hyprshot    # Screenshots (seen in your bindings)
-    libnotify   # Notifications
-    wl-clipboard # Clipboard support
     ghostty
   ];
 }
