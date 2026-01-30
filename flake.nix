@@ -8,9 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, nvf, ... }@inputs: 
   let
     userSettings = import ./user-settings.nix;
     system = "x86_64-linux";
@@ -26,7 +28,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs userSettings; };
+          home-manager.extraSpecialArgs = { inherit inputs userSettings nvf; };
           
           home-manager.users.${userSettings.username1} = {
             imports = [ ./home.nix ];
