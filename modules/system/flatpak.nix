@@ -11,6 +11,14 @@ in{
 
   xdg.portal.enable = true;
 
+  # Ensure Flatpak apps appear in launchers
+  environment.sessionVariables = {
+    XDG_DATA_DIRS = [
+      "/var/lib/flatpak/exports/share"
+      "$HOME/.local/share/flatpak/exports/share"
+    ];
+  };
+
   system.userActivationScripts.flatpakManagement = {
     text = ''
       ${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub \
