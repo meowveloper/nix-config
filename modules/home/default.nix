@@ -17,5 +17,6 @@
     gcc
     gnumake
     nodejs
+    eza
   ];
 }
