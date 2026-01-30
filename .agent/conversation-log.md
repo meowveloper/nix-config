@@ -18,3 +18,11 @@
 - Adopted the `assume-unchanged` Git strategy for `user-settings.nix` to balance privacy with Flake reproducibility.
 - Removed the experimental `nixCats` and Neovim modules to maintain a clean, working baseline for testing.
 - Discussed NixOS garbage collection and the critical role of `flake.lock`.
+
+## Session 5: Neovim Wrapping and Modular Dotfiles
+- **Wrapped Neovim Implementation**: Switched to a "Wrapped Neovim" approach, using `mkOutOfStoreSymlink` to link existing AstroNvim configurations while managing binary dependencies (LSPs, tools) through Nix.
+- **Modernized LSPs**: Updated LSP package names to modern top-level equivalents (e.g., `vue-language-server`).
+- **Global Terminal Tools**: Refactored `home.packages` to provide common tools (`yazi`, `lazygit`, `ripgrep`, etc.) globally rather than just within Neovim's PATH.
+- **Hyprland & Yazi Modularization**: Created dedicated Home Manager modules for Hyprland and Yazi, mapping local dotfiles to standard XDG locations.
+- **System-Level Hyprland**: Moved system-level Hyprland enabling to a dedicated module and added XDG portal support for better Wayland integration.
+- **Activation Safety**: Added `home.backupFileExtension` to handle existing file conflicts automatically during Home Manager activation.
