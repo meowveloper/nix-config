@@ -8,7 +8,6 @@ mkdir -p ~/Pictures/Screenshots
 mkdir -p ~/.rmpc-cache
 mkdir -p ~/.config/matugen-outs
 mkdir -p ~/.cache
-touch ~/.config/hypr/src/user-specific.conf
 touch ~/.config/shell/user
 
 # start services
