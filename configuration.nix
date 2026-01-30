@@ -15,6 +15,7 @@
       ./modules/system/nix-settings.nix
       ./modules/system/packages.nix
       ./modules/system/shell.nix
+      ./modules/system/flatpak.nix
     ];
 
   system.stateVersion = "25.11";
