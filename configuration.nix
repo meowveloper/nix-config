@@ -14,6 +14,7 @@
       ./modules/system/dms.nix
       ./modules/system/nix-settings.nix
       ./modules/system/packages.nix
+      ./modules/system/shell.nix
     ];
 
   system.stateVersion = "25.11";
