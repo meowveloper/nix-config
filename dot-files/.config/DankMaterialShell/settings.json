@@ -58,6 +58,7 @@
   "controlCenterShowMicPercent": false,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
+  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -487,6 +488,12 @@
           "height": 100,
           "x": 10.4609375,
           "y": 8.61328125
+        },
+        "Virtual-1": {
+          "width": 193,
+          "height": 100,
+          "x": 18,
+          "y": 17.9921875
         }
       }
     }

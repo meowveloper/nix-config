@@ -9,10 +9,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf.url = "github:notashelf/nvf";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nvf, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, ... }@inputs: 
   let
     userSettings = import ./user-settings.nix;
     system = "x86_64-linux";
@@ -28,7 +31,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs userSettings nvf; };
+          home-manager.extraSpecialArgs = { inherit inputs userSettings; };
           home-manager.backupFileExtension = "backup";
           
           home-manager.users.${userSettings.username1} = {

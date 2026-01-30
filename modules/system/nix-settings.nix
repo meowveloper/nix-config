@@ -5,11 +5,4 @@
 
   zramSwap.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    kitty
-    git
-    firefox
-  ];
 }
