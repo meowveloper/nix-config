@@ -9,15 +9,27 @@
       vim = {
         viAlias = true;
         vimAlias = true;
-        debugMode = {
-          enable = false;
-          level = 20;
-          logFile = "/tmp/nvf.log";
+
+        # Basic Options (AstroCore alignment)
+        options = {
+          shiftwidth = 4;
+          tabstop = 4;
+          expandtab = true;
+          relativenumber = true;
+          number = true;
+          wrap = false;
+          spell = false;
         };
 
+        # Keymaps (AstroCore alignment)
+        maps.normal = {
+          "<leader>bl" = { action = "<cmd>Telescope buffers<CR>"; desc = "List Buffers"; };
+          "<S-h>" = { action = "<cmd>bprevious<CR>"; desc = "Previous Buffer"; };
+          "<S-l>" = { action = "<cmd>bnext<CR>"; desc = "Next Buffer"; };
+        };
 
         lsp = {
-          formatOnSave = true;
+          formatOnSave = false; # Disabled per AstroLSP config
           lightbulb.enable = true;
           lspsaga.enable = false;
           nvim-docs-view.enable = true;
@@ -40,10 +52,44 @@
           rust.enable = true;
           clang.enable = true;
           tailwind.enable = true;
+          vue.enable = true;
+        };
+
+        visuals = {
+          enable = true;
+          nvimWebDevicons.enable = true;
+          lspkind.enable = true;
+          indentBlankline.enable = true;
+          cursorline.enable = true;
         };
 
         statusline.lualine.enable = true;
-        telescope.enable = true;
+        
+        telescope = {
+          enable = true;
+          setupOpts = {
+            defaults = {
+              vimgrep_arguments = [
+                "rg"
+                "--color=never"
+                "--no-heading"
+                "--with-filename"
+                "--line-number"
+                "--column"
+                "--smart-case"
+                "--hidden"
+                "--glob=!.git/"
+              ];
+            };
+            pickers = {
+              find_files = {
+                hidden = true;
+                no_ignore = true;
+              };
+            };
+          };
+        };
+
         autocomplete.nvim-cmp.enable = true;
         autopairs.nvim-autopairs.enable = true;
 
@@ -63,6 +109,7 @@
           ccc.enable = true;
           diffview-nvim.enable = true;
           motion.hop.enable = true;
+          yazi.enable = true;
         };
 
         notes.todo-comments.enable = true;
