@@ -18,6 +18,7 @@
       # Load your existing aliases and profile
       [[ -f ~/.config/zsh-config/aliases ]] && source ~/.config/zsh-config/aliases
       [[ -f ~/.config/zsh-config/profile ]] && source ~/.config/zsh-config/profile
+      [[ -f ~/.config/zsh-config/user ]] && source ~/.config/zsh-config/user
 
       # FZF and Zoxide integration (if you want them managed here or keep relying on your profile)
       eval "$(fzf --zsh)"

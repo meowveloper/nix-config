@@ -27,6 +27,9 @@
     # 1. DBus environment
     dbus-update-activation-environment --systemd --all
 
+    # create user specific zsh file
+    touch ~/.config/zsh-config/user
+
     # 2. Polkit Agent (Nix path)
     ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &
 
