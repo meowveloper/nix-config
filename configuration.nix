@@ -18,6 +18,7 @@
       ./modules/system/flatpak.nix
       ./modules/system/audio.nix
       ./modules/system/burmese.nix
+      ./modules/system/bluetooth.nix
     ];
 
   system.stateVersion = "25.11";
