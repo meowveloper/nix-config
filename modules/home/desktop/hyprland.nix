@@ -1,10 +1,6 @@
 { pkgs, config, ... }: {
   # Hyprland Home Manager Module
-  wayland.windowManager.hyprland = {
-    enable = true;
-    # We point to your specific config file
-    extraConfig = builtins.readFile ../../../dot-files/.config/hypr/hyprland.conf;
-  };
+  wayland.windowManager.hyprland.systemd.enable = false;
 
   # XDG User Directories
   xdg.userDirs = {
@@ -18,6 +14,7 @@
   # Manually mapping the rest of the hypr folder to keep subdirectories (src, dms)
   xdg.configFile."hypr/src".source = ../../../dot-files/.config/hypr/src;
   xdg.configFile."hypr/dms".source = ../../../dot-files/.config/hypr/dms;
+  xdg.configFile."hypr/hyprland.conf".source = ../../../dot-files/.config/hypr/hyprland.conf; 
   
   # Replacement for the old start-up.sh
   xdg.configFile."hypr/start-up.sh".text = ''
@@ -27,13 +24,16 @@
     # 1. DBus environment
     dbus-update-activation-environment --systemd --all
 
-    # create user specific zsh file
+    # 2. start dms
+    dms run &
+
+    # 3. create user specific zsh file
     touch ~/.config/zsh-config/user
 
-    # 2. Polkit Agent (Nix path)
+    # 4. Polkit Agent (Nix path)
     ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &
 
-    # 3. Input Method
+    # 5. Input Method
     fcitx5 -d --replace
   '';
   xdg.configFile."hypr/start-up.sh".executable = true;

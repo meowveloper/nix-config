@@ -2,6 +2,8 @@
 let
   grep = pkgs.gnugrep;
   desiredFlatpaks = [
+    "com.logseq.Logseq"
+    "com.github.unrud.VideoDownloader"
     "app.zen_browser.zen"
     "com.protonvpn.www"
   ];
