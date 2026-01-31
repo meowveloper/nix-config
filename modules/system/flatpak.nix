@@ -3,6 +3,7 @@ let
   grep = pkgs.gnugrep;
   desiredFlatpaks = [
     "app.zen_browser.zen"
+    "com.protonvpn.www"
   ];
 in{
   services.flatpak.enable = true;
