@@ -1,6 +1,9 @@
 { pkgs, ... }: {
     fonts.packages = with pkgs; [
         material-symbols
+        noto-fonts-color-emoji
+        nerd-fonts.symbols-only 
+        font-awesome
     ];
     programs.dank-material-shell = {
         enable = true;
