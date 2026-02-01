@@ -5,16 +5,16 @@ let
     name = "meowmux";
     src = inputs.meowmux;
 
-    nativeBuildInputs = [ pkgs.zig ];
+    nativeBuildInputs = [ inputs.zig-overlay.packages.${pkgs.system}."0.15.2" ];
 
-    # Zig needs a cache directory
-    preBuild = ''
-      export ZIG_GLOBAL_CACHE_DIR=$TMPDIR/zig-cache
-      export ZIG_LOCAL_CACHE_DIR=$TMPDIR/zig-local-cache
-    '';
+    dontConfigure = true;
 
     buildPhase = ''
-      zig build -Doptimize=ReleaseSafe --prefix $out
+      export ZIG_GLOBAL_CACHE_DIR=$TMPDIR/zig-cache
+      export ZIG_LOCAL_CACHE_DIR=$TMPDIR/zig-local-cache
+      mkdir -p $ZIG_GLOBAL_CACHE_DIR $ZIG_LOCAL_CACHE_DIR
+
+      zig build -Doptimize=ReleaseSafe --prefix $out --global-cache-dir $ZIG_GLOBAL_CACHE_DIR
     '';
 
     # 'zig build --prefix $out' handles installation to $out/bin automatically
