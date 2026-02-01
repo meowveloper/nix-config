@@ -13,7 +13,11 @@
 
   # Manually mapping the rest of the hypr folder to keep subdirectories (src, dms)
   xdg.configFile."hypr/src".source = ../../../dot-files/.config/hypr/src;
-  xdg.configFile."hypr/dms".source = ../../../dot-files/.config/hypr/dms;
+  xdg.configFile."hypr/dms/binds.conf".source = ../../../dot-files/.config/hypr/dms/binds.conf;
+  xdg.configFile."hypr/dms/cursor.conf".source = ../../../dot-files/.config/hypr/dms/cursor.conf;
+  xdg.configFile."hypr/dms/dank.conf".source = ../../../dot-files/.config/hypr/dms/dank.conf;
+  xdg.configFile."hypr/dms/layout.conf".source = ../../../dot-files/.config/hypr/dms/layout.conf;
+  xdg.configFile."hypr/dms/outputs.conf".source = ../../../dot-files/.config/hypr/dms/outputs.conf;
   xdg.configFile."hypr/hyprland.conf".source = ../../../dot-files/.config/hypr/hyprland.conf; 
   
   # Replacement for the old start-up.sh
@@ -23,6 +27,9 @@
 
     # 1. DBus environment
     dbus-update-activation-environment --systemd --all
+
+    # 3. make sure dms colors are available
+    touch ~/.config/hypr/dms/colors.conf
 
     # 2. start dms
     dms run &

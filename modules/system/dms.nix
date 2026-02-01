@@ -4,6 +4,8 @@
         noto-fonts-color-emoji
         nerd-fonts.symbols-only 
         font-awesome
+        fira-code
+        inter-nerdfont
     ];
     programs.dank-material-shell = {
         enable = true;
