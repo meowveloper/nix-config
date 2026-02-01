@@ -25,23 +25,26 @@
     #!/usr/bin/env bash
     # Nix-managed startup script
 
-    # 1. DBus environment
-    dbus-update-activation-environment --systemd --all
-
-    # 3. make sure dms colors are available
+    # make sure dms colors are available
     touch ~/.config/hypr/dms/colors.conf
 
-    # 2. start dms
+    # DBus environment
+    dbus-update-activation-environment --systemd --all
+
+    # start dms
     dms run &
 
-    # 3. create user specific zsh file
+    # create user specific zsh file
     touch ~/.config/zsh-config/user
 
-    # 4. Polkit Agent (Nix path)
+    # Polkit Agent (Nix path)
     ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &
 
-    # 5. Input Method
+    # Input Method
     fcitx5 -d --replace
+
+    # reload
+    hyprctl reload
   '';
   xdg.configFile."hypr/start-up.sh".executable = true;
 
