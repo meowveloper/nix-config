@@ -50,3 +50,9 @@
     - Added an activation script to automatically configure the Flathub repository.
     - Resolved app launcher integration issues by explicitly adding Flatpak export paths to `XDG_DATA_DIRS`.
 - **Zsh Global Availability**: Confirmed `pkgs.zsh` is in `environment.systemPackages` to ensure the shell is available globally, specifically for `su -` user switching.
+
+## Session 8: Custom Binary Compilation and Pinning
+- **Custom Zig Binary**: Integrated `meowmux` (a custom Zig project) into the Nix configuration by building it from source.
+- **Zig Pinning**: Added `zig-overlay` as a flake input to pin the compiler version to strictly `0.15.2`, ensuring build reproducibility independent of `nixpkgs` updates.
+- **Sandbox Build Configuration**: Implemented a custom build derivation that handles Zig's global and local cache directories within the Nix sandbox to resolve `AccessDenied` errors during compilation.
+- **Ephemeral Tooling**: Demonstrated Nix's ability to use a specific compiler version during build-time without installing it globally on the system.
