@@ -6,6 +6,7 @@ let
     "com.github.unrud.VideoDownloader"
     "app.zen_browser.zen"
     "com.protonvpn.www"
+    "com.stremio.Stremio"
   ];
 in{
   services.flatpak.enable = true;
