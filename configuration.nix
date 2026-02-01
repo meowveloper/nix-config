@@ -26,6 +26,6 @@
   fileSystems."/mnt/extra-volume" = {    
     device = "/dev/disk/by-uuid/1ed14588-7c5b-4f65-98cc-0f3a746ea157";
     fsType = "ext4";            
-    options = [ "defaults" "user" "nofail" ]; 
+    options = [ "defaults" "user" "exec" "nofail" ]; 
   };
 }
