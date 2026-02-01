@@ -42,6 +42,22 @@
         "type": "github"
       }
     },
+    "meowmux": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1769952413,
+        "narHash": "sha256-za1gKQHgk3pVSJKPK7vpuT8LyrcyQo8gBer0Xw5JdPE=",
+        "owner": "meowveloper",
+        "repo": "meowmux",
+        "rev": "f73896ca0e0792b9237ebc19246c0e82b944dff5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "meowveloper",
+        "repo": "meowmux",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1769461804,
@@ -84,6 +100,7 @@
       "inputs": {
         "dms": "dms",
         "home-manager": "home-manager",
+        "meowmux": "meowmux",
         "nixpkgs": "nixpkgs"
       }
     }
