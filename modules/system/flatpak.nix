@@ -7,6 +7,7 @@ let
     "app.zen_browser.zen"
     "com.protonvpn.www"
     "com.stremio.Stremio"
+    "com.logseq.Logseq"
   ];
 in{
   services.flatpak.enable = true;
