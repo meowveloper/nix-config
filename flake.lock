@@ -79,11 +79,11 @@
     "meowmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1769952413,
-        "narHash": "sha256-za1gKQHgk3pVSJKPK7vpuT8LyrcyQo8gBer0Xw5JdPE=",
+        "lastModified": 1770141771,
+        "narHash": "sha256-AARuVZEFI+wO/kt1yGxRxBsM6iZxmta+nQgco/aYhZg=",
         "owner": "meowveloper",
         "repo": "meowmux",
-        "rev": "f73896ca0e0792b9237ebc19246c0e82b944dff5",
+        "rev": "23964d79dd71a2c19fcc2b4a7837058808f3b509",
         "type": "github"
       },
       "original": {
