@@ -19,5 +19,8 @@
     gnumake
     nodejs
     eza
+
+    #others
+    nautilus
   ];
 }
