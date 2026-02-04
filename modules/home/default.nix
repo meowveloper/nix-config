@@ -23,5 +23,6 @@
     #others
     nautilus
     htop
+    git-lfs
   ];
 }
