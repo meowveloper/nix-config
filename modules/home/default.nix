@@ -22,5 +22,6 @@
 
     #others
     nautilus
+    htop
   ];
 }
