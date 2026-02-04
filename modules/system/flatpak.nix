@@ -7,6 +7,7 @@ let
     "app.zen_browser.zen"
     "com.protonvpn.www"
     "com.stremio.Stremio"
+    "com.obsproject.Studio"
   ];
 in{
   services.flatpak.enable = true;
