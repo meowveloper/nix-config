@@ -22,7 +22,7 @@
 
     #others
     nautilus
-    htop
+    btop
     git-lfs
   ];
 }
