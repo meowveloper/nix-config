@@ -24,5 +24,6 @@
     nautilus
     btop
     git-lfs
+    chromium
   ];
 }
