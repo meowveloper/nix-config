@@ -5,7 +5,6 @@ let
     "com.logseq.Logseq"
     "com.github.unrud.VideoDownloader"
     "app.zen_browser.zen"
-    "com.protonvpn.www"
     "com.stremio.Stremio"
     "com.obsproject.Studio"
   ];
