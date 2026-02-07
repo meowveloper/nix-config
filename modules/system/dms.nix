@@ -7,6 +7,11 @@
         fira-code
         inter-nerdfont
     ];
+
+    services.upower.enable = true;
+    services.power-profiles-daemon.enable = true;
+    services.libinput.enable = true;
+
     programs.dank-material-shell = {
         enable = true;
         enableSystemMonitoring = true;     # System monitoring widgets (dgop)
