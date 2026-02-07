@@ -20,6 +20,7 @@
       ./modules/system/burmese.nix
       ./modules/system/bluetooth.nix
       ./modules/system/direnv.nix
+      ./modules/system/warp.nix
     ];
 
   system.stateVersion = "25.11";
