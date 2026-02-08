@@ -7,6 +7,7 @@ let
     "app.zen_browser.zen"
     "com.stremio.Stremio"
     "com.obsproject.Studio"
+    "org.videolan.VLC"
   ];
 in{
   services.flatpak.enable = true;
