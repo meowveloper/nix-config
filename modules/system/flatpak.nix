@@ -8,6 +8,7 @@ let
     "com.stremio.Stremio"
     "com.obsproject.Studio"
     "io.github.diegopvlk.Cine"
+    "com.viber.Viber"
   ];
 in{
   services.flatpak.enable = true;
