@@ -1,15 +1,22 @@
-# Meow's OS
+# ❄️ Deterministic NixOS Configuration
 
-## My NixOS config
+A fully declarative, Flake-based NixOS configuration designed for high-performance development and a streamlined TUI-driven workflow.
 
-- hyprland
-- Dank Material Shell
-- Fully Declarative Flatpak management
-- rmpc, yazi, lazygit and other TUIs
-- > note that there is not a greeter, cause I do not want to use, so you gotta login from TTY and run Hyprland
+## 🚀 Key Features
+* **Modern Nix:** Leverages **Nix Flakes** for hermetic, reproducible system builds.
+* **Performance-First:** Minimalist environment using **Hyprland** (Wayland) to maximize system resources for heavy development tasks.
+* **Declarative Tooling:** Comprehensive management of TUIs (**lazygit**, **yazi**, **rmpc**) and **Flatpaks** via specialized Nix modules.
+* **Developer Experience:** Optimized for low-latency workflows, bypassing heavy desktop managers for a direct TTY-to-Session login.
 
-## Usage
-- change user-settings.nix as you like
-- change hardware settings
-- run nixos rebuild command
+## 🛠 Technical Architecture
+* **System:** NixOS (Unstable/Stable mix via Flakes)
+* **WM:** Hyprland
+* **Dotfiles:** Managed via **Home Manager**
+* **Modularity:** Separated `user-settings.nix` and hardware configurations for easy portability across machines.
 
+## 💻 Usage & Reproduction
+1. **Clone:** `git clone https://github.com/meowveloper/nix-config.git`
+2. **Configure:** Modify `user-settings.nix` for your specific user/git credentials and update the hardware symlink.
+3. **Apply:** ```bash
+   sudo nixos-rebuild switch --flake .#your-hostname
+    ```
