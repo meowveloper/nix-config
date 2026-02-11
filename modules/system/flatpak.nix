@@ -9,6 +9,7 @@ let
     "com.obsproject.Studio"
     "io.github.diegopvlk.Cine"
     "com.viber.Viber"
+    "com.usebruno.Bruno"
   ];
 in{
   services.flatpak.enable = true;
