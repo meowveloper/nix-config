@@ -20,5 +20,7 @@
     btop
     git-lfs
     chromium
+    mpv
+    ffmpeg
   ];
 }

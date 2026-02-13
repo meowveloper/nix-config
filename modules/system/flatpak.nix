@@ -7,7 +7,6 @@ let
     "app.zen_browser.zen"
     "com.stremio.Stremio"
     "com.obsproject.Studio"
-    "io.github.diegopvlk.Cine"
     "com.viber.Viber"
     "com.usebruno.Bruno"
   ];
