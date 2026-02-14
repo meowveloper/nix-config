@@ -20,6 +20,9 @@
       zls # Zig
       clang-tools # C++, Clangd
       dockerfile-language-server      
+      nixd
+      deadnix
+      statix
 
       # Runtime / Compilers needed for plugins (Treesitter, etc.)
       tree-sitter
