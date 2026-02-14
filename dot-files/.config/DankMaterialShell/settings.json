@@ -363,10 +363,6 @@
           "enabled": true
         },
         {
-          "id": "music",
-          "enabled": true
-        },
-        {
           "id": "clock",
           "enabled": true
         },
