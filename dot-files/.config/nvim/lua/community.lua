@@ -14,5 +14,6 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.zig" },
+  { import = "astrocommunity.pack.nix" },
   -- import/override with your plugins folder
 }
