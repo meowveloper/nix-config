@@ -56,3 +56,13 @@
 - **Zig Pinning**: Added `zig-overlay` as a flake input to pin the compiler version to strictly `0.15.2`, ensuring build reproducibility independent of `nixpkgs` updates.
 - **Sandbox Build Configuration**: Implemented a custom build derivation that handles Zig's global and local cache directories within the Nix sandbox to resolve `AccessDenied` errors during compilation.
 - **Ephemeral Tooling**: Demonstrated Nix's ability to use a specific compiler version during build-time without installing it globally on the system.
+
+## Session 9: Desktop Environment Refinement and Tooling
+- **Resource Optimization**: Switched from `dms` (Dank Material Shell) to a custom "Meow" desktop configuration (Hyprland + Waybar + Rofi), significantly reducing RAM and CPU usage.
+- **Network Integration**: 
+    - Enabled `network-manager-applet` service and installed `networkmanagerapplet` for GUI-based Wi-Fi management.
+    - Configured Waybar's network module to launch `nm-connection-editor` on click.
+- **Custom Wallpaper Gallery**:
+    - Created a Rofi-based wallpaper selector with image previews and a grid layout (`wallpaper.rasi`).
+    - Implemented `wallpaper-launcher.sh` with automatic symlink resolution (`readlink -f`) to ensure consistent thumbnail rendering.
+    - Added a global Hyprland keybinding (`SUPER + U`) for instant theme and wallpaper switching.
