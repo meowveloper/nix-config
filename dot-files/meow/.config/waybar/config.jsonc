@@ -20,6 +20,7 @@
             "network",
             "battery",
             "clock",
+            "custom/noti",
             "tray",
             "power-profiles-daemon",
             "memory"

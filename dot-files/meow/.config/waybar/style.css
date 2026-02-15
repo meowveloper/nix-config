@@ -61,7 +61,8 @@ button {
 #scratchpad,
 #power-profiles-daemon,
 #mpd,
-#memory {
+#memory,
+#custom-noti {
     padding: 0 13px;
     margin-left: 7px;
     color: @primary;
