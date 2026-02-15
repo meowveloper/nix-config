@@ -1,0 +1,22 @@
+{
+    "style": "~/.config/waybar/style.css",
+    "position": "top",
+    "width": 1280,
+    "margin-top": 10,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/media"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "backlight",
+        "battery",
+        "clock",
+        "tray",
+        "power-profiles-daemon"
+    ],
+    "include": "~/.config/waybar/modules.jsonc"
+}

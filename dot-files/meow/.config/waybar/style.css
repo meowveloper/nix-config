@@ -1,0 +1,92 @@
+@import "./colors.css";
+* {
+    font-family: 'JetBrainsMono Nerd Font Propo', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+tooltip {
+    background-color: @background;
+}
+tooltip label{
+    color: @on_surface;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+
+#workspaces button {
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+    padding: 0 5px;
+    background-color: @secondary_container;
+    color: @surface;
+    margin-right: 7px;
+}
+
+
+
+
+#workspaces button.active {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+
+#clock,
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    background-color: @primary;
+    padding: 0 13px;
+    margin-left: 7px;
+    color: @on_primary;
+}
+
+
+
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+
+
+
+
+
+
