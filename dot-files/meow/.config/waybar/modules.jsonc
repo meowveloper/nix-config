@@ -2,8 +2,7 @@
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
-            "*": 1, // 5 workspaces by default on every monitor
-            "HDMI-A-1": 3 // but only three on HDMI-A-1
+            "*": 1 // 5 workspaces by default on every monitor
         }
     },
     "clock": {
@@ -64,9 +63,9 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "nm-connection-editor"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
