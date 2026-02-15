@@ -7,16 +7,23 @@
     "modules-left": [
     ],
     "modules-center": [
-        "hyprland/workspaces",
-        "pulseaudio",
-        "network",
-        "backlight",
-        "battery",
-        "clock",
-        "tray",
-        "power-profiles-daemon"
+        "group/middle-island"
     ],
     "modules-right": [
     ],
-    "include": "~/.config/waybar/modules.jsonc"
+    "include": "~/.config/waybar/modules.jsonc",
+
+    "group/middle-island": {
+        "orientation": "horizontal",
+        "modules": [
+            "hyprland/workspaces",
+            "pulseaudio",
+            "network",
+            "backlight",
+            "battery",
+            "clock",
+            "tray",
+            "power-profiles-daemon"
+        ]
+    }
 }
