@@ -1,15 +1,4 @@
-{ pkgs, config, ... }: {
-  # Hyprland Home Manager Module
-  wayland.windowManager.hyprland.systemd.enable = false;
-
-  # XDG User Directories
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    extraConfig = {
-      XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
-    };
-  };
+{ pkgs, ... }: {
 
   # Manually mapping the rest of the hypr folder to keep subdirectories (src, dms)
   xdg.configFile."hypr/src".source = ../../../dot-files/.config/hypr/src;
