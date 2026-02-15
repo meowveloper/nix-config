@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# Set directory
-# wall_dir="$HOME/.config/wallpapers"
-wall_dir="/mnt/extra-volume/meowveloper/wallpapers"
+# Set directory and resolve to absolute path (handles symlinks)
+wall_dir=$(readlink -f "$HOME/.config/wallpapers")
 
 # Check if directory exists
 if [ ! -d "$wall_dir" ]; then
@@ -24,12 +23,10 @@ selected=$(list_wallpapers | rofi -dmenu -i -show-icons -p "Select Wallpaper" -t
 
 # If selected
 if [ -n "$selected" ]; then
-    # Since we displayed filenames, we reconstruct the path
-    # But wait, rofi returns the display name (filename)
     full_path="$wall_dir/$selected"
     
     if [ -f "$full_path" ]; then
-        # Call the existing wallpaper script which handles swww and matugen
+        # Call the existing wallpaper script
         ~/.config/matugen/wallpaper.sh "$full_path"
         
         # Notify user
