@@ -21,6 +21,7 @@
       ./modules/system/bluetooth.nix
       ./modules/system/direnv.nix
       ./modules/system/warp.nix
+      ./modules/system/fonts.nix
     ];
 
   system.stateVersion = "25.11";
