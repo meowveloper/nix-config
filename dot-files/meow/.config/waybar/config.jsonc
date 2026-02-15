@@ -2,14 +2,11 @@
     "style": "~/.config/waybar/style.css",
     "position": "bottom",
     "width": 1280,
-    "margin-top": 10,
+    "margin-bottom": 10,
     "modules-left": [
-        "hyprland/workspaces"
     ],
     "modules-center": [
-        "custom/media"
-    ],
-    "modules-right": [
+        "hyprland/workspaces",
         "pulseaudio",
         "network",
         "backlight",
@@ -17,6 +14,8 @@
         "clock",
         "tray",
         "power-profiles-daemon"
+    ],
+    "modules-right": [
     ],
     "include": "~/.config/waybar/modules.jsonc"
 }
