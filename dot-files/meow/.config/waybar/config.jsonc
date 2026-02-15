@@ -21,7 +21,8 @@
             "battery",
             "clock",
             "tray",
-            "power-profiles-daemon"
+            "power-profiles-daemon",
+            "memory"
         ]
     }
 }

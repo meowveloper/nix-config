@@ -57,5 +57,11 @@
         "show-passive-items": true,
         "reverse-direction": false,
         "smooth-scrolling-threshold": 1.0
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": "{used:.1f}G/{total:.1f}G ",
+        "tooltip": true
     }
 }

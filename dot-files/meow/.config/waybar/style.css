@@ -60,7 +60,8 @@ button {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#mpd {
+#mpd,
+#memory {
     padding: 0 13px;
     margin-left: 7px;
     color: @primary;
