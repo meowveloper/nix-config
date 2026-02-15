@@ -1,14 +1,10 @@
 [config]
 
-# [templates.hyprland]
-# input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-# output_path = '~/.config/matugen-outs/hyprland-colors.conf'
-# post_hook = 'hyprctl reload'
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
 
-# [templates.kitty]
-# input_path = '~/.config/matugen/templates/kitty-colors.conf'
-# output_path = '~/.config/matugen-outs/kitty-colors.conf'
-# post_hook = 'kill -SIGUSR1 $(pgrep kitty)'
 
 # [templates.rofi]
 # input_path = '~/.config/matugen/templates/rofi-colors.rasi'
