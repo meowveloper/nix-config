@@ -1,6 +1,8 @@
 { pkgs, ... }: {
+    services.network-manager-applet.enable = true;
     home.packages = with pkgs; [
         waybar
+        networkmanagerapplet
     ];
     xdg.configFile."waybar/config.jsonc".source = ../../../../dot-files/meow/.config/waybar/config.jsonc;
     xdg.configFile."waybar/modules.jsonc".source = ../../../../dot-files/meow/.config/waybar/modules.jsonc;
