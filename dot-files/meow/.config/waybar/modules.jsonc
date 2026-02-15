@@ -61,7 +61,7 @@
 
     "memory": {
         "interval": 10,
-        "format": "{used:.1f}G/{total:.1f}G ",
+        "format": "{used:.2f}G/{total:.2f}G ({percentage}%) ",
         "tooltip": true
     }
 }
