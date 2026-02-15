@@ -1,7 +1,4 @@
 { pkgs, ... }: {
-  # Hyprland Home Manager Module
-  wayland.windowManager.hyprland.systemd.enable = false;
-
 
   # Manually mapping the rest of the hypr folder to keep subdirectories (src, dms)
   xdg.configFile."hypr/src".source = ../../../dot-files/.config/hypr/src;
