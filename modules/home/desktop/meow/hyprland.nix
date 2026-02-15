@@ -13,10 +13,12 @@ in {
     libnotify
     brightnessctl
     meow-hypr-startup-script
+    hyprlock
   ];
 
   xdg.configFile."hypr/src".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/hypr/src";
   xdg.configFile."hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/hypr/hyprland.conf"; 
+  xdg.configFile."hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/hypr/hyprlock.conf"; 
 
   xdg.configFile."ghostty/config".source = ../../../../dot-files/meow/.config/ghostty/config;
 
