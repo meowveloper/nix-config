@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 dbus-update-activation-environment --systemd --all
 mkdir -p ~/.cache
+mkdir -p ~/.config/ghostty/themes
 touch ~/.config/zsh-config/user
 
 # Just use the name; Nix will find the path for you
