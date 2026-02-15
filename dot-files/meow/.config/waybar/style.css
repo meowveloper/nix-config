@@ -22,9 +22,10 @@ window#waybar.hidden {
 }
 
 #middle-island {                           
-    background: rgba(0, 0, 0, 0.3);
+    background: @blur_background;
     border-radius: 14px;
-    padding:4px 20px;                      
+    padding:4px 20px;
+    border: 1px solid @blur_background8;
 }
 
 button {
