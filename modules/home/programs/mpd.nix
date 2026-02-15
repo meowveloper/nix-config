@@ -19,8 +19,8 @@
   home.packages = [ pkgs.rmpc ];
 
   # RMPC Configuration
-  xdg.configFile."rmpc/config.ron".source = ../../../dot-files/.config/rmpc/executable_config.ron;
-  xdg.configFile."rmpc/theme.ron".source = ../../../dot-files/.config/rmpc/executable_theme.ron;
+  xdg.configFile."rmpc/config.ron".source = ../../../dot-files/programs/.config/rmpc/executable_config.ron;
+  xdg.configFile."rmpc/theme.ron".source = ../../../dot-files/programs/.config/rmpc/executable_theme.ron;
 
   home.activation = {
     createRmpcCache = config.lib.dag.entryAfter ["writeBoundary"] ''
