@@ -1,6 +1,6 @@
 {
     imports = [
         ./waybar.nix
-        ./matugen.nix
+        ./wallpaper.nix
     ];
 }
