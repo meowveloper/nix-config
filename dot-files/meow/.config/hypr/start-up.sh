@@ -8,6 +8,7 @@ touch ~/.config/zsh-config/user
 polkit-kde-authentication-agent-1 & 
 fcitx5 -d --replace
 swww-daemon &
+swaync &
 
 if [[ -f ~/.cache/last-wallpaper ]]; then
   matugen image ~/.cache/last-wallpaper

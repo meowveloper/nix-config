@@ -5,5 +5,6 @@
         ./hyprland.nix
         ./rofi.nix
         ./gtk.nix
+        ./swaync.nix
     ];
 }
