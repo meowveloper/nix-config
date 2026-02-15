@@ -11,9 +11,9 @@ output_path = '~/.config/ghostty/themes/matugen'
 post_hook = 'pkill -SIGUSR2 ghostty'
 
 
-# [templates.rofi]
-# input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-# output_path = '~/.config/matugen-outs/rofi-colors.rasi'
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/matugen-colors.rasi'
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
