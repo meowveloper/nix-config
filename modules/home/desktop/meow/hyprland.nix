@@ -1,6 +1,6 @@
 { pkgs, ... }: let
-  hypr-startup-script = pkgs.writeShellApplication {
-    name = "hypr-startup-script-sh";
+  meow-hypr-startup-script = pkgs.writeShellApplication {
+    name = "meow-hypr-startup-script-sh";
     text = builtins.readFile ../../../../dot-files/meow/.config/hypr/start-up.sh;
   };
 in {
@@ -11,8 +11,8 @@ in {
     grim
     slurp
     libnotify
-    hypr-startup-script
     brightnessctl
+    meow-hypr-startup-script
   ];
 
   xdg.configFile."hypr/src".source = ../../../../dot-files/meow/.config/hypr/src;
@@ -20,7 +20,7 @@ in {
 
   xdg.configFile."ghostty/config".source = ../../../../dot-files/meow/.config/ghostty/config;
 
-  xdg.configFile."hypr/start-up.sh".source = "${hypr-startup-script}/bin/hypr-startup-script-sh";
+  xdg.configFile."hypr/start-up.sh".source = "${meow-hypr-startup-script}/bin/meow-hypr-startup-script-sh";
 
   xdg.configFile."hypr/start-up.sh".executable = true;
 
