@@ -3,6 +3,10 @@
     name = "meow-hypr-startup-script-sh";
     text = builtins.readFile ../../../../dot-files/meow/.config/hypr/start-up.sh;
   };
+  meow-toggle-nightlight = pkgs.writeShellApplication {
+    name = "meow-toggle-nightlight-sh";
+    text = builtins.readFile ../../../../dot-files/meow/.config/hypr/toggle-nightlight.sh;
+  };
 in {
   home.packages = with pkgs; [
     ghostty
@@ -12,8 +16,10 @@ in {
     slurp
     libnotify
     brightnessctl
-    meow-hypr-startup-script
     hyprlock
+    hyprsunset
+    meow-hypr-startup-script
+    meow-toggle-nightlight
   ];
 
   xdg.configFile."hypr/src".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/hypr/src";
@@ -23,8 +29,8 @@ in {
   xdg.configFile."ghostty/config".source = ../../../../dot-files/meow/.config/ghostty/config;
 
   xdg.configFile."hypr/start-up.sh".source = "${meow-hypr-startup-script}/bin/meow-hypr-startup-script-sh";
-
   xdg.configFile."hypr/start-up.sh".executable = true;
 
-
+  xdg.configFile."hypr/toggle-nightlight.sh".source = "${meow-toggle-nightlight}/bin/meow-toggle-nightlight-sh";
+  xdg.configFile."hypr/toggle-nightlight.sh".executable = true;
 }

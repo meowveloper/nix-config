@@ -7,6 +7,8 @@ touch ~/.config/zsh-config/user
 # Just use the name; Nix will find the path for you
 polkit-kde-authentication-agent-1 & 
 fcitx5 -d --replace
+
+hyprsunset &
 swww-daemon &
 swaync &
 
