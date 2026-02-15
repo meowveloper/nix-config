@@ -17,9 +17,7 @@
         "orientation": "horizontal",
         "modules": [
             "hyprland/workspaces",
-            "pulseaudio",
             "network",
-            "backlight",
             "battery",
             "clock",
             "tray",
