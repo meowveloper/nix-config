@@ -1,4 +1,7 @@
-[config]
+[config.wallpaper]
+set = true
+command = "swww"
+arguments = ["img", "--transition-type", "center"]
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'

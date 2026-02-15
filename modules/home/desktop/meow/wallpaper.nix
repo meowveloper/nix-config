@@ -1,18 +1,17 @@
 { pkgs, ... }: let
-    wallpaper-script = pkgs.writeShellApplication {
-        name = "wallpaper-sh"; # The name of the resulting executable
-        text = builtins.readFile ../../../../dot-files/meow/.config/waypaper/wallpaper.sh;
+    matugen-wallpaper-script = pkgs.writeShellApplication {
+        name = "matugen-wallpaper-sh"; # The name of the resulting executable
+        text = builtins.readFile ../../../../dot-files/meow/.config/matugen/wallpaper.sh;
     };
 in {
     home.packages = with pkgs; [
         matugen
-        waypaper
         swww
-        wallpaper-script
+        matugen-wallpaper-script
     ];
 
-    xdg.configFile."matugen".source = ../../../../dot-files/meow/.config/matugen;
-    xdg.configFile."waypaper/config.ini".source = ../../../../dot-files/meow/.config/waypaper/config.ini;
-    xdg.configFile."waypaper/wallpaper.sh".source = "${wallpaper-script}/bin/wallpaper-sh";
-    xdg.configFile."waypaper/wallpaper.sh".executable = true;
+    xdg.configFile."matugen/templates".source = ../../../../dot-files/meow/.config/matugen/templates;
+    xdg.configFile."matugen/config.toml".source = ../../../../dot-files/meow/.config/matugen/config.toml;
+    xdg.configFile."matugen/wallpaper.sh".source = "${matugen-wallpaper-script}/bin/matugen-wallpaper-sh";
+    xdg.configFile."matugen/wallpaper.sh".executable = true;
 }
