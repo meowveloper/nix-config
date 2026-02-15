@@ -66,3 +66,9 @@
     - Created a Rofi-based wallpaper selector with image previews and a grid layout (`wallpaper.rasi`).
     - Implemented `wallpaper-launcher.sh` with automatic symlink resolution (`readlink -f`) to ensure consistent thumbnail rendering.
     - Added a global Hyprland keybinding (`SUPER + U`) for instant theme and wallpaper switching.
+- **GTK Integration**:
+    - Created `gtk.nix` to manage GTK themes (`adw-gtk3-dark`) and icons (`Papirus-Dark`).
+    - Configured `gtk.css` to import Matugen-generated colors (`colors.css`), ensuring `nm-applet` and other GTK apps match the wallpaper-based theme.
+- **Window Management**:
+    - Established `rules.conf` in Hyprland configuration.
+    - Added window rules to ensure `nm-connection-editor` always opens as a centered, floating window (800x600).
