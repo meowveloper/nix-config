@@ -1,4 +1,18 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  hypr-startup-script = pkgs.writeShellApplication {
+    name = "hypr-startup-script-sh";
+    text = builtins.readFile ../../../../dot-files/meow/.config/hypr/start-up.sh;
+  };
+in {
+  home.packages = with pkgs; [
+    ghostty
+    kdePackages.polkit-kde-agent-1
+    hyprshot
+    grim
+    slurp
+    libnotify
+    hypr-startup-script
+  ];
 
   # Manually mapping the rest of the hypr folder to keep subdirectories (src, dms)
   xdg.configFile."hypr/src".source = ../../../dot-files/.config/hypr/src;
@@ -8,44 +22,12 @@
   xdg.configFile."hypr/dms/layout.conf".source = ../../../dot-files/.config/hypr/dms/layout.conf;
   xdg.configFile."hypr/dms/outputs.conf".source = ../../../dot-files/.config/hypr/dms/outputs.conf;
   xdg.configFile."hypr/hyprland.conf".source = ../../../dot-files/.config/hypr/hyprland.conf; 
-  
-  xdg.configFile."hypr/start-up.sh".text = ''
-    #!/usr/bin/env bash
-
-    dbus-update-activation-environment --systemd --all
-
-    # create cache folder
-    mkdir -p ~/.cache
-
-    # create user specific zsh file
-    touch ~/.config/zsh-config/user
-
-    # Polkit Agent (Nix path)
-    ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1 &
-
-    # Input Method
-    fcitx5 -d --replace
-
-    swww-daemon &
-    # matugen
-    if [[ -f ~/.cache/last-wallpaper ]]; then
-      matugen image ~/.cache/last-wallpaper
-    else
-      matugen image ~/.config/wallpapers/wallhaven-xld2k3.jpg
-    fi
-  '';
-
-  xdg.configFile."hypr/start-up.sh".executable = true;
 
   xdg.configFile."ghostty/config".source = ../../../dot-files/.config/ghostty/config;
 
-  # Supporting packages for your Hyprland setup
-  home.packages = with pkgs; [
-    ghostty
-    kdePackages.polkit-kde-agent-1
-    hyprshot
-    grim
-    slurp
-    libnotify
-  ];
+  xdg.configFile."hypr/start-up.sh".source = "${hypr-startup-script}/bin/hypr-startup-script-sh";
+
+  xdg.configFile."hypr/start-up.sh".executable = true;
+
+
 }
