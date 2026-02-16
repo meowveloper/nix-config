@@ -126,7 +126,6 @@ element {
     spacing:                     10px;
     margin:                      0px;
     padding:                     15px;
-    border:                      0px solid;
     border-radius:               8px;
     border-color:                @border-colour;
     background-color:            transparent;
@@ -135,12 +134,10 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            var(normal-background);
-    text-color:                  var(normal-foreground);
+    border:                      0px solid;
 }
 element selected.normal {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
+    border:                      1px solid;
 }
 element-icon {
     background-color:            transparent;
