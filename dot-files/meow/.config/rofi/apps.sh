@@ -2,7 +2,7 @@
 
 
 dir="$HOME/.config/rofi"
-theme='style-9'
+theme='apps'
 
 ## Run
 rofi \
