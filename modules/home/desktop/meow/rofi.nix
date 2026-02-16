@@ -1,4 +1,4 @@
-{ pkgs, ... }: let
+{ pkgs, config, userSettings, ... }: let
     rofi-lancher = pkgs.writeShellApplication {
         name = "rofi-lancher-sh";
         text = builtins.readFile ../../../../dot-files/meow/.config/rofi/launcher.sh;
@@ -20,9 +20,9 @@ in {
     xdg.configFile."rofi/wallpaper-launcher.sh".source = "${rofi-wallpaper}/bin/rofi-wallpaper-sh";
     xdg.configFile."rofi/wallpaper-launcher.sh".executable = true;
 
-    xdg.configFile."rofi/wallpaper.rasi".source = ../../../../dot-files/meow/.config/rofi/wallpaper.rasi;
+    xdg.configFile."rofi/wallpaper.rasi".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/rofi/wallpaper.rasi";
 
-    xdg.configFile."rofi/shared".source = ../../../../dot-files/meow/.config/rofi/shared;
-    xdg.configFile."rofi/style-15.rasi".source = ../../../../dot-files/meow/.config/rofi/style-15.rasi;
-    xdg.configFile."rofi/style-9.rasi".source = ../../../../dot-files/meow/.config/rofi/style-9.rasi;
+    xdg.configFile."rofi/shared".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/rofi/shared" ;
+    xdg.configFile."rofi/style-15.rasi".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/rofi/style-15.rasi";
+    xdg.configFile."rofi/style-9.rasi".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/rofi/style-9.rasi";
 }
