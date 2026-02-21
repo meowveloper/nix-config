@@ -3,7 +3,6 @@
 {
   imports =
     [ 
-      inputs.dms.nixosModules.dank-material-shell
       ./hardware-configuration.nix
       ./modules/system/users.nix
       ./modules/system/boot.nix
@@ -11,7 +10,6 @@
       ./modules/system/locale.nix
       ./modules/system/display.nix
       ./modules/system/hyprland.nix
-      ./modules/system/dms.nix
       ./modules/system/nix-settings.nix
       ./modules/system/packages.nix
       ./modules/system/shell.nix
@@ -21,6 +19,8 @@
       ./modules/system/bluetooth.nix
       ./modules/system/direnv.nix
       ./modules/system/warp.nix
+      ./modules/system/fonts.nix
+      ./modules/system/battry-input.nix
     ];
 
   system.stateVersion = "25.11";

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -36,6 +36,6 @@
   };
 
   # Link your config files so the 'source' commands above work
-  xdg.configFile."zsh-config/aliases".source = ../../../dot-files/.config/zsh-config/aliases;
-  xdg.configFile."zsh-config/profile".source = ../../../dot-files/.config/zsh-config/profile;
+  xdg.configFile."zsh-config/aliases".source = ../../../dot-files/programs/.config/zsh-config/aliases;
+  xdg.configFile."zsh-config/profile".source = ../../../dot-files/programs/.config/zsh-config/profile;
 }
