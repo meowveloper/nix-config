@@ -22,5 +22,8 @@ let
   };
 in
 {
-  home.packages = [ meowmux ];
+  home.packages = [
+    meowmux
+    inputs.meowkey.packages.${pkgs.system}.default
+  ];
 }

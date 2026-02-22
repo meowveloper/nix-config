@@ -19,6 +19,11 @@
       flake = false;
     };
 
+    meowkey = {
+      url = "github:meowveloper/meowkey";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zig-overlay = {
       url = "github:mitchellh/zig-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
