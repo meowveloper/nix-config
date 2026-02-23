@@ -11,6 +11,8 @@ let
     "com.usebruno.Bruno"
     "io.github.diegopvlk.Cine"
     "com.github.tchx84.Flatseal"
+    "io.github.troyeguo.koodo-reader"
+    "org.kde.kdenlive"
   ];
 in{
   services.flatpak.enable = true;
