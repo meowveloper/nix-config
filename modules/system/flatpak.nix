@@ -10,7 +10,6 @@ let
     "com.viber.Viber"
     "com.usebruno.Bruno"
     "io.github.diegopvlk.Cine"
-    "org.kde.kdenlive"
     "com.github.tchx84.Flatseal"
   ];
 in{
