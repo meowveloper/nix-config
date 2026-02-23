@@ -28,6 +28,12 @@
       tree-sitter
       unzip
       wget
+      lua
+      luajitPackages.luarocks-nix
+      git
+      gcc
+      gnumake
+      curl
     ];
   };
 }
