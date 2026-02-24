@@ -6,7 +6,7 @@ alias tree='eza --tree'
 alias nn='nvim .'
 alias n='nvim'
 
-alias cat='bat --style=plain'
+alias cat='bat'
 alias grep='rg'
 alias find='fd'
 
@@ -14,4 +14,3 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias df='duf'
-alias top='btop'
