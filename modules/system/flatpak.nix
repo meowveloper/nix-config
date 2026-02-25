@@ -12,6 +12,7 @@ let
     "io.github.diegopvlk.Cine"
     "com.github.tchx84.Flatseal"
     "org.kde.kdenlive"
+    "org.gnome.TextEditor"
   ];
 in{
   services.flatpak.enable = true;
