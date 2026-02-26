@@ -118,11 +118,11 @@
         "zig-overlay": "zig-overlay"
       },
       "locked": {
-        "lastModified": 1772035110,
-        "narHash": "sha256-91Rc8Dj/fJDqxAfrUj5dX6epswQ5rPxd8Ku+l5VA44E=",
+        "lastModified": 1772139154,
+        "narHash": "sha256-pZD0JOR+hwCpV68zavnte/AtRx/Gncguv17EQ6YvV9M=",
         "owner": "meowveloper",
         "repo": "meowkey",
-        "rev": "db7aa3fba2238c535d536f5b4d88c8792981a84a",
+        "rev": "9f8153e0388eeac4ef85ffbcfc24080d2d85647b",
         "type": "github"
       },
       "original": {
