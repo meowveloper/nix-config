@@ -21,6 +21,5 @@
         git-lfs
         chromium
         ffmpeg
-        flow-control
     ];
 }
