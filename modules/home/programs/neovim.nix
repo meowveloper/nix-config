@@ -8,23 +8,10 @@
         viAlias = true;
         vimAlias = true;
 
-        # These packages will be available in Neovim's PATH
+        # These packages will be available in Neovim's PATH. 
+        # Mason-installed binaries will use nix-ld to run.
         extraPackages = with pkgs; [
-            # LSPs & Formatters
-            lua-language-server
-            stylua
-            typescript-language-server
-            vue-language-server
-            nodePackages.vscode-langservers-extracted # HTML, CSS, JSON, ESLint
-            tailwindcss-language-server
-            zls # Zig
-            clang-tools # C++, Clangd
-            dockerfile-language-server      
-            nixd
-            deadnix
-            statix
-
-            # Runtime / Compilers needed for plugins (Treesitter, etc.)
+            # Runtime / Compilers needed for plugins & Mason (Treesitter, downloading, etc.)
             tree-sitter
             unzip
             wget
