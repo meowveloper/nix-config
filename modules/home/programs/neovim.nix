@@ -21,6 +21,7 @@
             gcc
             gnumake
             curl
+            cargo
         ];
     };
 }
