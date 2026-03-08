@@ -22,6 +22,7 @@
             gnumake
             curl
             cargo
+            go
         ];
     };
 }
