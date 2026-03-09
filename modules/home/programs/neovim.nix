@@ -1,5 +1,6 @@
 { pkgs, config, userSettings, ... }: {
-    xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/nvim";
+    xdg.configFile."nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/nvim/init.lua";
+    xdg.configFile."nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/nvim/lua";
 
     programs.neovim = {
         enable = true;
