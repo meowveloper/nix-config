@@ -20,7 +20,7 @@
     };
 
     meowkey = {
-      url = "github:meowveloper/meowkey";
+      url = "github:meowveloper/meowkey?ref=v0.2.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

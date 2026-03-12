@@ -6,7 +6,7 @@
         ./tmux.nix
         ./tuis.nix
         ./mpd.nix
-        ./meowmux.nix
+        ./meowveloper.nix
         ./esound.nix
     ];
 }

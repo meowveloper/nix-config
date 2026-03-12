@@ -152,15 +152,16 @@
         "zig-overlay": "zig-overlay"
       },
       "locked": {
-        "lastModified": 1772220703,
-        "narHash": "sha256-pJPoS07JEJV/faA8A0YIUHKVnSGez/tk8O/fB6ONc0U=",
+        "lastModified": 1773343753,
+        "narHash": "sha256-DHEuLTwBwsVyNkke1pJnCnIHtCag+F+BzHXBzNuDc70=",
         "owner": "meowveloper",
         "repo": "meowkey",
-        "rev": "c28228561572b52278bf2f50db1649a5f101e8da",
+        "rev": "cb979ae3a9c7e9e47fde3769cd19b28efd834ec1",
         "type": "github"
       },
       "original": {
         "owner": "meowveloper",
+        "ref": "v0.2.0",
         "repo": "meowkey",
         "type": "github"
       }
