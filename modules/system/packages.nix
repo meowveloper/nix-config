@@ -21,5 +21,8 @@
         git-lfs
         chromium
         ffmpeg
+
+        # video player
+        haruna
     ];
 }

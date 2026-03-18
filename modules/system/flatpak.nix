@@ -9,7 +9,6 @@ let
     "com.obsproject.Studio"
     "com.viber.Viber"
     "com.usebruno.Bruno"
-    "io.github.diegopvlk.Cine"
     "com.github.tchx84.Flatseal"
     "org.kde.kdenlive"
     "org.gnome.TextEditor"
