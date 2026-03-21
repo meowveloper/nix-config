@@ -10,7 +10,7 @@ M.adjust_lua_lsp = function ()
                 workspace = {
                     library = {
                         vim.fn.expand("$VIMRUNTIME/lua"),
-                        -- vim.vn.expand("$XDG_CONFIG_HOME") .. "/nvim-2/lua"
+                        vim.fn.expand("$XDG_CONFIG_HOME") .. "/nvim/lua"
                     }
                 }
             }
