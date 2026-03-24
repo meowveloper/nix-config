@@ -2,7 +2,6 @@
 let
   grep = pkgs.gnugrep;
   desiredFlatpaks = [
-    "com.logseq.Logseq"
     "com.github.unrud.VideoDownloader"
     "app.zen_browser.zen"
     "com.stremio.Stremio"
@@ -12,6 +11,7 @@ let
     "com.github.tchx84.Flatseal"
     "org.kde.kdenlive"
     "org.gnome.TextEditor"
+    "com.zettlr.Zettlr"
   ];
 in{
   services.flatpak.enable = true;
