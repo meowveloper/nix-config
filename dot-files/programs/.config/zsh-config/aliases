@@ -1,10 +1,12 @@
-# Modern replacements (2025 edition
 alias ls='eza -l --color=auto --group-directories-first --icons=auto'
 alias la='eza -la --color=auto --group-directories-first --icons=auto'
 alias l='eza -laa --color=auto --group-directories-first --icons=auto'
 alias tree='eza --tree'
+
 alias nn='nvim .'
 alias n='nvim'
+
+alias gg='lazygit'
 
 alias cat='bat'
 alias grep='rg'
