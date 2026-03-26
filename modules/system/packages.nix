@@ -21,6 +21,8 @@
         git-lfs
         chromium
         ffmpeg
+        gnupg
+        git-remote-gcrypt
 
         # video player
         haruna
