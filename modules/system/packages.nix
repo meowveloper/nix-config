@@ -1,4 +1,9 @@
 { pkgs, ... }: {
+    programs.gnupg.agent = {
+        enable = true;
+        pinentryPackage = pkgs.pinentry-tty; # Or pkgs.pinentry-curses
+    };
+
     environment.systemPackages = with pkgs; [
         wget
         lazygit
@@ -23,6 +28,7 @@
         ffmpeg
         gnupg
         git-remote-gcrypt
+        pinentry-tty
 
         # video player
         haruna
