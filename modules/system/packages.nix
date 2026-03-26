@@ -1,6 +1,7 @@
 { pkgs, ... }: {
     programs.gnupg.agent = {
         enable = true;
+        enableExtraSocket = true;
         pinentryPackage = pkgs.pinentry-tty; # Or pkgs.pinentry-curses
     };
 
@@ -12,6 +13,7 @@
         fzf
         zoxide
         git
+        git-remote-gcrypt
         bat
         
         # Development Basics
@@ -26,9 +28,6 @@
         git-lfs
         chromium
         ffmpeg
-        gnupg
-        git-remote-gcrypt
-        pinentry-tty
 
         # video player
         haruna
