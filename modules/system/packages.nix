@@ -31,5 +31,8 @@
 
         # video player
         haruna
+
+        #
+        cryptomator
     ];
 }
