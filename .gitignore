@@ -2,3 +2,4 @@
 result
 .direnv/
 .venv/
+user-settings.nix

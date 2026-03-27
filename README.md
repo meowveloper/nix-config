@@ -14,6 +14,15 @@ A fully declarative, Flake-based NixOS configuration designed for high-performan
 * **Dotfiles:** Managed via **Home Manager**
 * **Modularity:** Separated `user-settings.nix` and hardware configurations for easy portability across machines.
 
+## user settings format
+```nix
+{
+    username1 = "user-1"; # Change this to your real primary user
+    username2 = "user-2";       # Change this to your secondary user
+    dotfiles_path = "/path/to/dotfiles/in/nix-config/directory";
+}
+```
+
 ## 💻 Usage & Reproduction
 1. **Clone:** `git clone https://github.com/meowveloper/nix-config.git`
 2. **Configure:** Modify `user-settings.nix` for your specific user/git credentials and update the hardware symlink.
