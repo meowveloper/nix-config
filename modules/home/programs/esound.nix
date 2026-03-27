@@ -1,9 +1,9 @@
-{ pkgs, ... }: let 
+{ pkgs, ... }: let
     pname = "esound";
     version = "2.8.8";
     src = pkgs.fetchurl {
         url = "https://github.com/Spicy-Sparks/eSound-Desktop-Releases/releases/download/v2.8.8/eSound-Music-Setup-2.8.8.AppImage";
-        hash = "sha256-W6sx+Xj3ur3SalMzDbiLTwruU7/XdtH6foVckKw2p7o=";
+        hash = "sha256-+aJg12D9upKYqH5ZZS8RsGwjOiX/3TwAHMrRPjodfW8=";
     };
 
     appimage-contents = pkgs.appimageTools.extractType2 {
