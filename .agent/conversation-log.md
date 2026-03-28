@@ -88,3 +88,15 @@
 - **Troubleshooting & Fixes**:
     - Resolved TOML parsing errors by refining the `[font]` and `[[font.normal]]` structures.
     - Identified and diagnosed a `nixos-rebuild` hang caused by an automatic `flatpak update` command in the system activation scripts.
+
+## Session 11: Matugen 4.0 Migration and Script Robustness
+- **Matugen 4.0.0 Compatibility**:
+    - Updated `config.toml` to the new `[config.wallpaper]` format, replacing `arguments` with a single `command` string using the `{{ image }}` placeholder.
+    - Implemented `--source-color-index 0` across all `matugen` calls (wallpaper scripts, startup scripts) to ensure non-interactive execution and fix breaking changes.
+    - Fixed a logic error in the `hyprland-colors.conf` template that caused `$image` to be redundantly generated inside a loop.
+- **Nix-Wrapped Script Hardening**:
+    - Enhanced `wallpaper.nix` and `rofi.nix` by adding `runtimeInputs` (including `glib`, `swaynotificationcenter`, `hyprland`, `procps`, etc.) to ensure all script dependencies and `post_hook` commands are available in the Nix store environment.
+    - Added a `post_hook` to Matugen for SwayNC to trigger automatic CSS reloading via `swaync-client -rs`.
+- **Neovim Workflow Optimization**:
+    - Refined `project-explorer.nvim` to restrict project discovery to the top level of `~/dev/`, eliminating deep recursive searching.
+    - Replaced the default Neo-tree integration with **Yazi** for a faster, CLI-native project browsing experience.
