@@ -72,3 +72,19 @@
 - **Window Management**:
     - Established `rules.conf` in Hyprland configuration.
     - Added window rules to ensure `nm-connection-editor` always opens as a centered, floating window (800x600).
+
+## Session 10: Neovide Configuration and Complex Script Rendering
+- **Neovide Integration**: Configured Neovide as a high-performance GUI for Neovim, enabling features like smooth animations and hardware-accelerated rendering.
+- **Burmese Script Optimization**: 
+    - Addressed overlapping and misaligned Burmese characters by configuring `Padauk` as a fallback font.
+    - Implemented vertical spacing adjustments (`line_spacing = 1.2`) to prevent glyph collisions.
+    - Researched and discussed Unicode vs. Zawgyi typing orders and their impact on text shaping.
+- **Modular Neovide Config**: 
+    - Created a dedicated `config.toml` and a complementary `neovide.lua` file.
+    - Integrated these into the Nix configuration using `mkOutOfStoreSymlink` for real-time updates.
+- **Aesthetic Alignment**: 
+    - Successfully implemented 80% window transparency and blur in Neovide to match the Ghostty/Neovim visual style.
+    - Configured `vim.g.neovide_opacity` and `vim.g.neovide_normal_opacity` for consistent rendering across Neovide versions.
+- **Troubleshooting & Fixes**:
+    - Resolved TOML parsing errors by refining the `[font]` and `[[font.normal]]` structures.
+    - Identified and diagnosed a `nixos-rebuild` hang caused by an automatic `flatpak update` command in the system activation scripts.

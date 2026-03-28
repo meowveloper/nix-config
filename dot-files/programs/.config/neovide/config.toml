@@ -1,0 +1,23 @@
+# Neovide Configuration
+[font]
+size = 11.0
+
+# Using explicit array of tables for font fallback
+[[font.normal]]
+family = "Fira Code"
+
+[[font.normal]]
+family = "Padauk"
+
+[window]
+line_spacing = 1.2
+# 'opacity' is the standard key for 0.15+
+opacity = 0.4
+# Blur is mostly for macOS/Windows, but we'll leave it in for compatibility
+blur = false
+
+# Aesthetics
+cursor_animation_length = 0.13
+cursor_trail_size = 0.8
+refresh_rate = 60
+idle = false
