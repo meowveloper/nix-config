@@ -1,10 +1,12 @@
 { pkgs, config, userSettings, ... }: let
     rofi-apps = pkgs.writeShellApplication {
         name = "rofi-apps-sh";
+        runtimeInputs = with pkgs; [ rofi ];
         text = builtins.readFile ../../../../dot-files/meow/.config/rofi/apps.sh;
     };
     rofi-wallpaper = pkgs.writeShellApplication {
         name = "rofi-wallpaper-sh";
+        runtimeInputs = with pkgs; [ rofi libnotify findutils coreutils ];
         text = builtins.readFile ../../../../dot-files/meow/.config/rofi/wallpaper.sh;
     };
 in {

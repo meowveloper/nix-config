@@ -7,4 +7,4 @@ if [[ -f ~/.cache/last-wallpaper ]]; then
 fi
 cp "$WALL" ~/.cache/last-wallpaper
 
-matugen image "$WALL"
+matugen image "$WALL" --source-color-index 0

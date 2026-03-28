@@ -14,7 +14,7 @@ swww-daemon &
 swaync &
 
 if [[ -f ~/.cache/last-wallpaper ]]; then
-  matugen image ~/.cache/last-wallpaper
+  matugen image ~/.cache/last-wallpaper --source-color-index 0
 else
-  matugen image ~/.config/wallpapers/default.jpg
+  matugen image ~/.config/wallpapers/default.jpg --source-color-index 0
 fi
