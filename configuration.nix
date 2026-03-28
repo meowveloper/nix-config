@@ -21,6 +21,7 @@
       ./modules/system/warp.nix
       ./modules/system/fonts.nix
       ./modules/system/battry-input.nix
+      ./modules/system/variables.nix
     ];
 
   system.stateVersion = "25.11";

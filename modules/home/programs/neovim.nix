@@ -3,10 +3,11 @@
     xdg.configFile."nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/nvim/lua";
     xdg.configFile."neovide/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/neovide/config.toml";
 
-    programs.neovide.enable = true;
+    programs.neovide = {
+        enable = true;
+    };
     programs.neovim = {
         enable = true;
-        defaultEditor = true;
         viAlias = true;
         vimAlias = true;
 
