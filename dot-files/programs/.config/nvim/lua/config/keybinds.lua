@@ -45,14 +45,13 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "join lines and keep cursor position"
 
 -- escape insert mode
 vim.keymap.set("i", "jk", "<Esc>", { desc = "escape insert mode" })
-vim.keymap.set("i", "kj", "<Esc>", { desc = "escape insert mode" })
 
 -- better save
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "write/save" })
 
 -- Terminal Emulator Settings
 vim.keymap.set("n", "<leader>t", "<Cmd>terminal<CR>", { desc = "open terminal in full window" })
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "exit terminal/insert mode and go back to normal mode" })
+vim.keymap.set("t", "xx", [[<C-\><C-n>]], { desc = "exit terminal/insert mode and go back to normal mode" })
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
