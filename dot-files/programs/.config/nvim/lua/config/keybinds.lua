@@ -45,9 +45,9 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "join lines and keep cursor position"
 
 
 
-
-
-
+-- Terminal Emulator Settings
+vim.keymap.set("n", "<leader>t", "<Cmd>terminal<CR>", { desc = "open terminal in full window" })
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "exit terminal/insert mode and go back to normal mode" })
 
 
 -- Use LspAttach autocommand to only map the following keys
