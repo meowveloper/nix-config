@@ -43,12 +43,16 @@ vim.keymap.set("v", ">", ">gv", { desc = "indent right and reselect" })
 -- better J behavior
 vim.keymap.set("n", "J", "mzJ`z", { desc = "join lines and keep cursor position" })
 
+-- escape insert mode
+vim.keymap.set("i", "jk", "<Esc>", { desc = "escape insert mode" })
+vim.keymap.set("i", "kj", "<Esc>", { desc = "escape insert mode" })
 
+-- better save
+vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "write/save" })
 
 -- Terminal Emulator Settings
 vim.keymap.set("n", "<leader>t", "<Cmd>terminal<CR>", { desc = "open terminal in full window" })
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "exit terminal/insert mode and go back to normal mode" })
-
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -59,9 +63,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         -- Navigation
         vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- go to definition
         vim.keymap.set("n", "gs", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts) -- go to definition in split
-        vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts) --  code actions       
-        vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts) -- rename symbol      
-        vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) --hover documentation     
+        vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts) --  code actions
+        vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts) -- rename symbol
+        vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) --hover documentation
 
         -- diagnostics
         vim.keymap.set("n", "<leader>D", "<cmd>lua vim.diagnostic.open_float({ scope = 'line' })<CR>", opts) -- line diagnostics(float)     
