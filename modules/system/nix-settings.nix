@@ -1,6 +1,6 @@
 { pkgs, ... }: {
     nixpkgs.config.allowUnfree = true;
-    
+
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Enable nix-ld to run unpatched binaries (like those installed by Mason)
@@ -18,8 +18,8 @@
 
     zramSwap = {
         enable = true;
-        priority = 100;     
-        algorithm = "zstd";     
+        priority = 100;
+        algorithm = "zstd";
         memoryPercent = 200;
     };
 
