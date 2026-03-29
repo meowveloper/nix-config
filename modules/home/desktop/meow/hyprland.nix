@@ -27,6 +27,7 @@ in {
   xdg.configFile."hypr/hyprlock.conf".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/hypr/hyprlock.conf"; 
 
   xdg.configFile."ghostty/config".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/ghostty/config";
+  xdg.configFile."ghostty/shaders".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/meow/.config/ghostty/shaders";
 
   xdg.configFile."hypr/start-up.sh".source = "${meow-hypr-startup-script}/bin/meow-hypr-startup-script-sh";
   xdg.configFile."hypr/start-up.sh".executable = true;
