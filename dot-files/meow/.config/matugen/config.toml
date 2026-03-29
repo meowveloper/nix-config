@@ -39,3 +39,5 @@ post_hook = 'swaync-client -rs'
 [templates.nvim]
 input_path = '~/.config/matugen/templates/nvim.lua'
 output_path = '~/.config/nvim/matugen.lua'
+post_hook = 'for s in /run/user/$(id -u)/nvim.*.0; do [ -S "$s" ] && nvim --server "$s" --remote-send "<Cmd>MatugenReload<CR>" & done'
+
