@@ -19,7 +19,7 @@ local function apply_matugen_colors(colors)
 
         -- Keywords, functions, etc.
         vim.api.nvim_set_hl(0, "Keyword", { fg = colors.primary })
-        vim.api.nvim_set_hl(0, "Function", { fg = colors.secondary })
+        vim.api.nvim_set_hl(0, "Function", { fg = colors.surface_tint })
         vim.api.nvim_set_hl(0, "String", { fg = colors.tertiary })
         vim.api.nvim_set_hl(0, "Comment", { fg = colors.outline, italic = true })
 
