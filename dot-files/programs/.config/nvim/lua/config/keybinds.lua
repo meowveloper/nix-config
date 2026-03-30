@@ -44,7 +44,7 @@ vim.keymap.set("v", ">", ">gv", { desc = "indent right and reselect" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "join lines and keep cursor position" })
 
 -- escape insert mode
-vim.keymap.set("i", "jk", "<Esc>", { desc = "escape insert mode" })
+vim.keymap.set("i", "kk", "<Esc>", { desc = "escape insert mode" })
 
 -- better save
 vim.keymap.set("n", "<leader>w", "<Cmd>write<CR>", { desc = "write/save" })
