@@ -8,14 +8,37 @@ local function get_matugen_colors()
 end
 
 local function enable_transparency()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    local groups = {
+        "Normal",
+        "NormalNC",
+        "NormalFloat",
+        "FloatBorder",
+        "SignColumn",
+        "LineNr",
+        "CursorLineNr",
+        "EndOfBuffer",
+        "MsgArea",
+        "FoldColumn",
+        "WinBar",
+        "Pmenu",
+        "PmenuSel",
+        "PmenuSbar",
+        "PmenuThumb",
+        "StatusLine",
+        "StatusLineNC",
+        "WinSeparator",
+    }
+    for _, group in ipairs(groups) do
+        vim.api.nvim_set_hl(0, group, { bg = "none", ctermbg = "none" })
+    end
 end
 
 local function apply_matugen_colors(colors)
     if colors then
         -- Surface / Foreground
         vim.api.nvim_set_hl(0, "Normal", { fg = colors.on_surface, bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalNC", { fg = colors.on_surface, bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
         -- Keywords, functions, etc.
         vim.api.nvim_set_hl(0, "Keyword", { fg = colors.primary })
