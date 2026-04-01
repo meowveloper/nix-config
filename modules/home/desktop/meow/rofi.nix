@@ -16,22 +16,39 @@
             dir="$HOME/.config/rofi"
             theme='clipboard'
 
-            # Prepend a Clear All option to the list
-            choice=$( (echo "󰃢  Clear All History"; cliphist list) | rofi -dmenu -theme "''${dir}"/"''${theme}".rasi -p "Clipboard")
+            while true; do
+                choice=$( (echo "󰃢  Clear All History"; cliphist list) | \
+                    rofi -dmenu -theme "''${dir}"/"''${theme}".rasi -p "Clipboard" -mesg "Select item to manage")
 
-            if [ -z "$choice" ]; then
-                exit 0
-            fi
-
-            if [ "$choice" = "󰃢  Clear All History" ]; then
-                # Nested confirmation
-                res=$(echo -e "No\nYes" | rofi -dmenu -p "Wipe all history?" -theme "''${dir}"/"''${theme}".rasi)
-                if [ "$res" = "Yes" ]; then
-                    cliphist wipe
+                if [ -z "$choice" ]; then
+                    exit 0
                 fi
-            else
-                echo "$choice" | cliphist decode | wl-copy
-            fi
+
+                if [ "$choice" = "󰃢  Clear All History" ]; then
+                    res=$(echo -e "No\nYes" | rofi -dmenu -p "Wipe all history?" -theme "''${dir}"/"''${theme}".rasi)
+                    if [ "$res" = "Yes" ]; then
+                        cliphist wipe
+                    fi
+                else
+                    # Action Sub-menu
+                    action=$(echo -e "󰆏 Copy\n󰆴 Delete\n󰅖 Cancel" | \
+                        rofi -dmenu -p "Action" -theme "''${dir}"/"''${theme}".rasi -mesg "Item: ''${choice:0:60}...")
+                    
+                    case "$action" in
+                        "󰆏 Copy")
+                            echo "$choice" | cliphist decode | wl-copy
+                            exit 0
+                            ;;
+                        "󰆴 Delete")
+                            echo "$choice" | cliphist delete
+                            # Continue loop to show updated list
+                            ;;
+                        *)
+                            # Back to list
+                            ;;
+                    esac
+                fi
+            done
         '';
     };
 in {

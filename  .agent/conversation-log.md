@@ -114,3 +114,21 @@
     - Configured Neovide to act as a full-window terminal emulator using `<leader>t`.
     - Refined navigation keymaps (`Shift-h/l`) to only trigger buffer changes when in terminal Normal mode, preventing collisions with shell input.
     - Added autocommands to ensure terminal buffers automatically enter Insert mode and use a clean, numberless UI.
+
+## Session 13: Rofi-Based Clipboard Manager with Granular Control
+- **Wayland Clipboard Integration**:
+    - Implemented a clipboard manager using `cliphist` (history) and `wl-clipboard` (Wayland clipboard utilities).
+    - Integrated clipboard watchers into the Hyprland `start-up.sh` to automatically capture both text and images.
+- **Rofi UI & Custom Theming**:
+    - Created a dedicated Rofi theme (`clipboard.rasi`) with a single-column list layout and custom prompts.
+    - Developed a Nix-wrapped `rofi-clipboard-sh` script that pipes `cliphist` output into Rofi and handles item selection.
+- **Interactive Management (Sub-menus)**:
+    - Designed an "Action Sub-menu" workflow to provide a visual, button-like interface for managing history.
+    - Selecting an item opens a secondary menu with options: **Copy**, **Delete**, or **Cancel**.
+    - Enabled continuous management: deleting an item returns the user to the refreshed clipboard list without closing the Rofi window.
+- **Global Clipboard Wipe**:
+    - Integrated a "󰃢 Clear All History" option at the top of the clipboard list.
+    - Implemented a confirmation dialog (Yes/No) to prevent accidental wipes.
+- **Technical Hardening & Fixes**:
+    - Switched back to the unified `rofi` package after resolving a build error where `rofi-wayland` was found to be merged into the main package in `nixpkgs`.
+    - Resolved keybinding conflicts by moving from keyboard-only shortcuts (`Alt+d`) to the more reliable sub-menu interaction model.

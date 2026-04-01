@@ -100,3 +100,35 @@
 - **Neovim Workflow Optimization**:
     - Refined `project-explorer.nvim` to restrict project discovery to the top level of `~/dev/`, eliminating deep recursive searching.
     - Replaced the default Neo-tree integration with **Yazi** for a faster, CLI-native project browsing experience.
+
+## Session 12: VS Code Integration, Shader Tuning, and Real-Time Theme Sync
+- **VS Code Neovim**: Integrated the `asvetliakov.vscode-neovim` extension into the VS Code Home Manager module to provide a real Neovim instance as the editor backend.
+- **Shader & Animation Tuning**:
+    - Reverted Ghostty's `cursor_warp.glsl` to `EaseOutCirc` after testing spring-based easing to ensure consistent visibility.
+    - Implemented mode-specific paste mappings (`Ctrl+v`) for Neovide to prevent literal text injection in Insert mode while maintaining system clipboard compatibility.
+- **Automated Neovim Theming**:
+    - **Matugen Template**: Created a new Matugen template to generate a Lua color palette at `~/.config/nvim/matugen.lua`.
+    - **Instant Reload**: Implemented a `:MatugenReload` command in Neovim that hot-reloads colors and updates both syntax highlights and the Lualine theme without a restart.
+    - **RPC Synchronization**: Added a backgrounded `post_hook` to Matugen that uses Neovim's RPC sockets (`nvim --server`) to automatically trigger a theme reload in all running instances whenever the wallpaper changes.
+- **Terminal-Centric Workflow**:
+    - Configured Neovide to act as a full-window terminal emulator using `<leader>t`.
+    - Refined navigation keymaps (`Shift-h/l`) to only trigger buffer changes when in terminal Normal mode, preventing collisions with shell input.
+    - Added autocommands to ensure terminal buffers automatically enter Insert mode and use a clean, numberless UI.
+
+## Session 13: Rofi-Based Clipboard Manager with Granular Control
+- **Wayland Clipboard Integration**:
+    - Implemented a clipboard manager using `cliphist` (history) and `wl-clipboard` (Wayland clipboard utilities).
+    - Integrated clipboard watchers into the Hyprland `start-up.sh` to automatically capture both text and images.
+- **Rofi UI & Custom Theming**:
+    - Created a dedicated Rofi theme (`clipboard.rasi`) with a single-column list layout and custom prompts.
+    - Developed a Nix-wrapped `rofi-clipboard-sh` script that pipes `cliphist` output into Rofi and handles item selection.
+- **Interactive Management (Sub-menus)**:
+    - Designed an "Action Sub-menu" workflow to provide a visual, button-like interface for managing history.
+    - Selecting an item opens a secondary menu with options: **Copy**, **Delete**, or **Cancel**.
+    - Enabled continuous management: deleting an item returns the user to the refreshed clipboard list without closing the Rofi window.
+- **Global Clipboard Wipe**:
+    - Integrated a "󰃢 Clear All History" option at the top of the clipboard list.
+    - Implemented a confirmation dialog (Yes/No) to prevent accidental wipes.
+- **Technical Hardening & Fixes**:
+    - Switched back to the unified `rofi` package after resolving a build error where `rofi-wayland` was found to be merged into the main package in `nixpkgs`.
+    - Resolved keybinding conflicts by moving from keyboard-only shortcuts (`Alt+d`) to the more reliable sub-menu interaction model.
