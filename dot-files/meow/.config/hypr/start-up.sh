@@ -13,6 +13,10 @@ hyprsunset &
 swww-daemon &
 swaync &
 
+# Clipboard Manager
+wl-paste --type text --watch cliphist store &
+wl-paste --type image --watch cliphist store &
+
 if [[ -f ~/.cache/last-wallpaper ]]; then
   matugen image ~/.cache/last-wallpaper --source-color-index 0
 else
