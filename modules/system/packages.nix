@@ -34,5 +34,7 @@
 
         #
         cryptomator
+        obsidian
+        acl
     ];
 }

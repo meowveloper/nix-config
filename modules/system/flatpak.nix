@@ -11,7 +11,6 @@ let
     "com.github.tchx84.Flatseal"
     "org.kde.kdenlive"
     "org.gnome.TextEditor"
-    "com.zettlr.Zettlr"
   ];
 in{
   services.flatpak.enable = true;
