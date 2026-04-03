@@ -16,3 +16,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias df='duf'
+
+# Cloud Mounts
+alias mount-secret='systemctl --user start rclone-secret.service'
+alias umount-secret='systemctl --user stop rclone-secret.service'
+alias mount-gdrive='systemctl --user start rclone-gdrive.service'
+alias umount-gdrive='systemctl --user stop rclone-gdrive.service'
+alias umount-cloud='systemctl --user stop rclone-secret.service rclone-gdrive.service'
