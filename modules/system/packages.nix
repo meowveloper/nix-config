@@ -5,6 +5,8 @@
         pinentryPackage = pkgs.pinentry-tty; # Or pkgs.pinentry-curses
     };
 
+    programs.fuse.userAllowOther = true;
+
     environment.systemPackages = with pkgs; [
         wget
         lazygit
@@ -33,7 +35,6 @@
         haruna
 
         #
-        cryptomator
         obsidian
         acl
     ];

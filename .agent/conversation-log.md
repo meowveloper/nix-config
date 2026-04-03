@@ -132,3 +132,18 @@
 - **Technical Hardening & Fixes**:
     - Switched back to the unified `rofi` package after resolving a build error where `rofi-wayland` was found to be merged into the main package in `nixpkgs`.
     - Resolved keybinding conflicts by moving from keyboard-only shortcuts (`Alt+d`) to the more reliable sub-menu interaction model.
+
+## Session 14: Cloud Storage Integration and Automated Mounting
+- **Declarative Cloud Mounting**:
+    - Implemented a Google Drive mount using **Rclone** and **FUSE**, managed via a new `modules/home/programs/cloud.nix` module.
+- **Automated Mounting Service**:
+    - Developed a **Systemd User Service** (`rclone-gdrive.service`) to automatically mount Google Drive to `~/Cloud/GoogleDrive` on login.
+    - Optimized the mount with `--vfs-cache-mode full` and a 10GB local cache to ensure stability for Cryptomator and heavy file operations.
+- **Security & Permissions**:
+    - Enabled `programs.fuse.userAllowOther` globally in `modules/system/packages.nix`.
+    - Resolved "Operation not permitted" errors by explicitly adding `/run/wrappers/bin` to the systemd service environment, ensuring access to the SUID `fusermount3` wrapper.
+- **Cryptomator Integration**:
+    - Integrated `cryptomator` into the Home Manager configuration to manage encrypted vaults directly on the mounted Google Drive.
+- **System Cleanup**:
+    - Deduplicated `rclone` from system-level packages, keeping it exclusively in the Home Manager module for better user isolation.
+

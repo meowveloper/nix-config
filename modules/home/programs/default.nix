@@ -8,5 +8,6 @@
         ./mpd.nix
         ./meowveloper.nix
         ./esound.nix
+        ./cloud.nix
     ];
 }
