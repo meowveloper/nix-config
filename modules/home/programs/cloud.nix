@@ -64,7 +64,7 @@
         ${pkgs.rclone}/bin/rclone mount secret: ${config.home.homeDirectory}/Cloud/Secret \
           --allow-other \
           --vfs-cache-mode full \
-          --vfs-cache-max-size 2G \
+          --vfs-cache-max-size 20G \
           --vfs-cache-max-age 24h \
           --dir-cache-time 72h \
           --log-level INFO \
