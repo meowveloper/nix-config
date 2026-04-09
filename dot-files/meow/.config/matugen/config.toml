@@ -47,7 +47,5 @@ output_path = '~/.config/tmux/colors.conf'
 post_hook = 'tmux source-file ~/.config/tmux/tmux.conf'
 
 [templates.niri]
-input_path = '~/.config/matugen/templates/niri-colors.sh'
-output_path = '~/.config/niri/niri-colors.sh'
-post_hook = 'chmod +x ~/.config/niri/niri-colors.sh && ~/.config/niri/niri-colors.sh'
-
+input_path = '~/.config/matugen/templates/niri-colors.kdl'
+output_path = '~/.config/niri/colors.kdl'

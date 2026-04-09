@@ -1,3 +1,16 @@
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
+spawn-at-startup "polkit-kde-authentication-agent-1"
+spawn-at-startup "hyprsunset"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "waybar"
+spawn-at-startup "swaync"
+spawn-at-startup "nm-applet"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+
+// Run matugen to apply theme on startup
+spawn-at-startup "bash" "-c" "if [[ -f ~/.cache/last-wallpaper ]]; then matugen image $(cat ~/.cache/last-wallpaper) --source-color-index 0; fi"
+
 input {
     keyboard {
         xkb {
@@ -29,40 +42,14 @@ layout {
     center-focused-column "always"
 
     default-column-width { proportion 0.9; }
-    focus-ring {
-        on
-        width 2
-        active-color "#50505006"
-        inactive-color "#50505004"
-    }
-    shadow {
-        on
-        softness 40
-        spread 5
-        offset x=0 y=5
-        draw-behind-window true
-        color "#00000064"
-        // inactive-color "#00000064"
-    }
 
     border {
         off
     }
 }
 
-spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
-spawn-at-startup "polkit-kde-authentication-agent-1"
-spawn-at-startup "hyprsunset"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "waybar"
-spawn-at-startup "swaync"
-spawn-at-startup "nm-applet"
-spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
-spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+include "colors.kdl"
 
-// Run matugen to apply theme on startup
-spawn-at-startup "bash" "-c" "if [[ -f ~/.cache/last-wallpaper ]]; then matugen image $(cat ~/.cache/last-wallpaper) --source-color-index 0; fi"
-spawn-at-startup "bash" "-c" "sleep 1 && [[ -f ~/.config/niri/niri-colors.sh ]] && ~/.config/niri/niri-colors.sh"
 
 // Keybindings
 binds {
