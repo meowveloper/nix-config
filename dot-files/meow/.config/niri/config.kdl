@@ -1,6 +1,5 @@
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
 spawn-at-startup "polkit-kde-authentication-agent-1"
-spawn-at-startup "hyprsunset"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
@@ -92,26 +91,21 @@ binds {
     Super+Print { spawn "hyprshot" "-m" "window"; }
     Super+Shift+Print { spawn "hyprshot" "-m" "region"; }
 
-    XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
-    XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
-    XF86AudioMute        { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-
-    XF86MonBrightnessUp   { spawn "brightnessctl" "set" "10%+"; }
-    XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
 
     // Fallback number key bindings
     Super+Ctrl+1 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "6%-"; }
     Super+Ctrl+2 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "6%+"; }
     Super+Ctrl+3 { spawn "brightnessctl" "set" "5%-"; }
     Super+Ctrl+4 { spawn "brightnessctl" "set" "5%+"; }
+    Super+Ctrl+I { spawn "bash" "-c" "~/.config/hypr/toggle-nightlight.sh"; }
 
     // Mouse wheel bindings
     Super+WheelScrollDown      cooldown-ms=150 { focus-column-right; }
     Super+WheelScrollUp        cooldown-ms=150 { focus-column-left; }
-    Super+Ctrl+WheelScrollDown cooldown-ms=150 { spawn "brightnessctl" "set" "5%+"; }
-    Super+Ctrl+WheelScrollUp   cooldown-ms=150 { spawn "brightnessctl" "set" "5%-"; }
-    Super+Shift+WheelScrollDown cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
-    Super+Shift+WheelScrollUp   cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    Super+Ctrl+WheelScrollUp cooldown-ms=150 { spawn "brightnessctl" "set" "5%+"; }
+    Super+Ctrl+WheelScrollDown   cooldown-ms=150 { spawn "brightnessctl" "set" "5%-"; }
+    Super+Shift+WheelScrollUp cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    Super+Shift+WheelScrollDown   cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
 }
 
 // Window rules

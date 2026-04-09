@@ -17,7 +17,7 @@ in {
     libnotify
     brightnessctl
     hyprlock
-    hyprsunset
+    wlsunset
     meow-hypr-startup-script
     meow-toggle-nightlight
   ];

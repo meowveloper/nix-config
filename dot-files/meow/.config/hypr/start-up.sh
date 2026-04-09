@@ -9,7 +9,6 @@ polkit-kde-authentication-agent-1 &
 fcitx5 -d --replace
 
 waybar &
-hyprsunset &
 swww-daemon &
 swaync &
 

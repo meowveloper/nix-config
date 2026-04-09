@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-# Toggle nightlight
-current_temp=$(hyprctl hyprsunset temperature)
-if [ "$current_temp" -eq 3000 ]; then
-    hyprctl hyprsunset temperature 6000  # Set to daytime temperature
+# Toggle wlsunset nightlight
+if pgrep -x "wlsunset" > /dev/null; then
+    pkill -x "wlsunset"
 else
-    hyprctl hyprsunset temperature 3000   # Set to nightlight temperature
+    # Start wlsunset with a fixed temperature (3000K)
+    # Using neutral coordinates to avoid location-based calculation
+    wlsunset -T 6500 -t 3000 -l 0 -L 0 &
 fi
