@@ -1,6 +1,3 @@
-// This is a basic Niri configuration file.
-// Check out the wiki for more information: https://github.com/YaLTeR/niri/wiki
-
 input {
     keyboard {
         xkb {
@@ -29,20 +26,15 @@ output "eDP-1" {
 
 layout {
     gaps 8
-    center-focused-column "never"
+    center-focused-column "always"
 
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
-    }
-
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.9; }
 
     focus-ring {
+        on
         width 2
-        active-color "#7fc8ff"
-        inactive-color "#505050"
+        active-color "#50505006"
+        inactive-color "#50505004"
     }
 
     border {
@@ -62,6 +54,7 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
 // Run matugen to apply theme on startup
 spawn-at-startup "bash" "-c" "if [[ -f ~/.cache/last-wallpaper ]]; then matugen image $(cat ~/.cache/last-wallpaper) --source-color-index 0; fi"
+spawn-at-startup "bash" "-c" "sleep 1 && [[ -f ~/.config/niri/niri-colors.sh ]] && ~/.config/niri/niri-colors.sh"
 
 // Keybindings
 binds {
@@ -72,6 +65,7 @@ binds {
     Super+E { spawn "neovide"; }
     Super+N { spawn "swaync-client" "-t"; }
     Super+Escape { spawn "hyprlock"; }
+    Super+M { spawn "ghostty" "-e" "meowmux";}
 
     Super+W { close-window; }
     Super+Shift+E { quit; }
@@ -106,7 +100,7 @@ binds {
     XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
     XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
     XF86AudioMute        { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    
+
     XF86MonBrightnessUp   { spawn "brightnessctl" "set" "10%+"; }
     XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
 }
