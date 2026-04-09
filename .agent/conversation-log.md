@@ -153,3 +153,19 @@
     - Deleted all legacy DMS configuration modules (`modules/home/desktop/dms/`) and dotfiles (`dot-files/dms/`).
     - Cleaned up imports in `home.nix` and `modules/home/desktop/default.nix` to finalize the migration to the custom "Meow" desktop environment.
 
+## Session 16: Niri Compositor Integration and Cross-WM Refinement
+- **Niri Implementation**:
+    - Created `modules/system/niri.nix` and `modules/home/desktop/meow/niri.nix` to enable the scrollable-tiling compositor system-wide and manage user settings.
+    - Initialized a comprehensive `config.kdl` with familiar `SUPER` keybindings, auto-startup for system services (`waybar`, `swaync`, `swww`), and specific window rules.
+- **Dynamic Color Syncing (Niri)**:
+    - Developed a Matugen template (`niri-colors.kdl`) to generate a `colors.kdl` file.
+    - Integrated this into Niri using the `include` command for declarative theme management.
+    - Configured a Matugen `post_hook` to run `niri msg action reload-config` for instant theme updates on wallpaper changes.
+- **Aesthetic Alignment**:
+    - Implemented global window transparency (`opacity 0.8`) in Niri via a catch-all `window-rule` to match the look of Ghostty and Hyprland.
+    - Discussed the current lack of background blur support in Niri 25.11 and prioritized transparency for consistency.
+    - Added alpha-blending (`80` suffix) to focus ring colors in the Matugen template.
+- **TTY-Centric Workflow Refinement**:
+    - Added a `SUPER+SHIFT+E` keybinding to Hyprland's `bindings.conf` to allow a clean exit to the TTY without logging out.
+    - Ensured consistent quit shortcuts between Niri and Hyprland for seamless switching.
+
