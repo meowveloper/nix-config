@@ -1,0 +1,123 @@
+// This is a basic Niri configuration file.
+// Check out the wiki for more information: https://github.com/YaLTeR/niri/wiki
+
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+    }
+
+    mouse {
+        // natural-scroll
+    }
+
+    warp-mouse-to-focus
+    focus-follows-mouse
+}
+
+output "eDP-1" {
+    mode "1920x1080@60.000"
+    scale 1.0
+}
+
+layout {
+    gaps 8
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 2
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+
+    border {
+        off
+    }
+}
+
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
+spawn-at-startup "polkit-kde-authentication-agent-1"
+spawn-at-startup "hyprsunset"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "waybar"
+spawn-at-startup "swaync"
+spawn-at-startup "nm-applet"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+
+// Run matugen to apply theme on startup
+spawn-at-startup "bash" "-c" "if [[ -f ~/.cache/last-wallpaper ]]; then matugen image $(cat ~/.cache/last-wallpaper) --source-color-index 0; fi"
+
+// Keybindings
+binds {
+    Super+Return { spawn "ghostty"; }
+    Super+Space { spawn "bash" "-c" "~/.config/rofi/apps.sh"; }
+    Super+Q { spawn "bash" "-c" "~/.config/rofi/wallpaper.sh"; }
+    Super+V { spawn "bash" "-c" "~/.config/rofi/clipboard.sh"; }
+    Super+E { spawn "neovide"; }
+    Super+N { spawn "swaync-client" "-t"; }
+    Super+Escape { spawn "hyprlock"; }
+
+    Super+W { close-window; }
+    Super+Shift+E { quit; }
+
+    Super+H { focus-column-left; }
+    Super+L { focus-column-right; }
+    Super+K { focus-window-or-workspace-up; }
+    Super+J { focus-window-or-workspace-down; }
+
+    Super+Shift+H { move-column-left; }
+    Super+Shift+L { move-column-right; }
+    Super+Shift+K { move-window-up-or-to-workspace-up; }
+    Super+Shift+J { move-window-down-or-to-workspace-down; }
+
+    Super+Comma  { consume-window-into-column; }
+    Super+Period { expel-window-from-column; }
+
+    Super+R { switch-preset-column-width; }
+    Super+F { maximize-column; }
+    Super+Shift+F { fullscreen-window; }
+    Super+C { center-column; }
+
+    Super+Minus { set-column-width "-10%"; }
+    Super+Equal { set-column-width "+10%"; }
+    Super+Shift+Minus { set-window-height "-10%"; }
+    Super+Shift+Equal { set-window-height "+10%"; }
+
+    Print { spawn "hyprshot" "-m" "output"; }
+    Super+Print { spawn "hyprshot" "-m" "window"; }
+    Super+Shift+Print { spawn "hyprshot" "-m" "region"; }
+
+    XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute        { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    
+    XF86MonBrightnessUp   { spawn "brightnessctl" "set" "10%+"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
+}
+
+// Window rules
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="nm-connection-editor"
+    open-floating true
+}
