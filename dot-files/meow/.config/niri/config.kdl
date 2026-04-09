@@ -62,7 +62,8 @@ binds {
     Super+E { spawn "neovide"; }
     Super+N { spawn "swaync-client" "-t"; }
     Super+Escape { spawn "hyprlock"; }
-    Super+M { spawn "ghostty" "-e" "meowmux";}
+    Super+M { spawn "ghostty" "-e" "meowmux"; }
+    Super+Shift+M { spawn "ghostty" "-e" "rmpc"; }
 
     Super+W { close-window; }
     Super+Shift+E { quit; }

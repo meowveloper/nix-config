@@ -169,3 +169,18 @@
     - Added a `SUPER+SHIFT+E` keybinding to Hyprland's `bindings.conf` to allow a clean exit to the TTY without logging out.
     - Ensured consistent quit shortcuts between Niri and Hyprland for seamless switching.
 
+## Session 17: Cross-Compositor Parity and Nightlight Migration
+- **Niri Keybinding Parity**:
+    - Added mouse wheel bindings for column navigation (`Super + Scroll`), brightness (`Super + Ctrl + Scroll`), and volume (`Super + Shift + Scroll`) to Niri.
+    - Implemented `cooldown-ms=150` for all scroll-based bindings to ensure smooth, controlled operation.
+    - Added fallback number-key bindings (`Super + Ctrl + 1-4`) for volume and brightness control to match the Hyprland setup.
+- **Nightlight Migration (wlsunset)**:
+    - Replaced `hyprsunset` with **`wlsunset`** across both Hyprland and Niri for better compatibility with standard Wayland protocols.
+    - Updated `modules/home/desktop/meow/hyprland.nix` to manage the `wlsunset` package.
+    - Developed a compositor-agnostic `toggle-nightlight.sh` script that manages `wlsunset` via process signals (start/kill) with a fixed 3000K temperature.
+    - Integrated the `Super + Ctrl + I` nightlight toggle into the Niri configuration.
+- **UI Consistency (No-CSD)**:
+    - Enabled `prefer-no-csd` in Niri's `config.kdl` to request that applications omit client-side decorations (title bars, minimize/close buttons).
+    - This achieves a consistent "plain plane" aesthetic in Niri that matches the tiling behavior of Hyprland.
+- **Startup Cleanup**: Removed redundant `hyprsunset` calls from both Hyprland's `start-up.sh` and Niri's `spawn-at-startup` section to prevent daemon conflicts.
+
