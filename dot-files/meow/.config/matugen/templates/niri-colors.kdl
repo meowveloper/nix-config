@@ -1,7 +1,7 @@
 layout {
     focus-ring {
         width 2
-        active-color "{{colors.primary.default.hex}}20"
+        active-color "{{colors.primary.default.hex}}10"
         inactive-color "{{colors.surface_container.default.hex}}20"
     }
     shadow {

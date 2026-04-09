@@ -98,6 +98,20 @@ binds {
 
     XF86MonBrightnessUp   { spawn "brightnessctl" "set" "10%+"; }
     XF86MonBrightnessDown { spawn "brightnessctl" "set" "10%-"; }
+
+    // Fallback number key bindings
+    Super+Ctrl+1 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "6%-"; }
+    Super+Ctrl+2 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "6%+"; }
+    Super+Ctrl+3 { spawn "brightnessctl" "set" "5%-"; }
+    Super+Ctrl+4 { spawn "brightnessctl" "set" "5%+"; }
+
+    // Mouse wheel bindings
+    Super+WheelScrollDown      cooldown-ms=150 { focus-column-right; }
+    Super+WheelScrollUp        cooldown-ms=150 { focus-column-left; }
+    Super+Ctrl+WheelScrollDown cooldown-ms=150 { spawn "brightnessctl" "set" "5%+"; }
+    Super+Ctrl+WheelScrollUp   cooldown-ms=150 { spawn "brightnessctl" "set" "5%-"; }
+    Super+Shift+WheelScrollDown cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    Super+Shift+WheelScrollUp   cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
 }
 
 // Window rules
