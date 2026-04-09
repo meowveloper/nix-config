@@ -1,14 +1,4 @@
-spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
-spawn-at-startup "polkit-kde-authentication-agent-1"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "waybar"
-spawn-at-startup "swaync"
-spawn-at-startup "nm-applet"
-spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
-spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-
-// Run matugen to apply theme on startup
-spawn-at-startup "bash" "-c" "if [[ -f ~/.cache/last-wallpaper ]]; then matugen image $(cat ~/.cache/last-wallpaper) --source-color-index 0; fi"
+spawn-at-startup "bash" "-c" "~/.config/niri/start-up.sh"
 
 // Ask clients to omit client-side decorations (CSD)
 prefer-no-csd
@@ -122,4 +112,25 @@ window-rule {
 window-rule {
     match app-id="nm-connection-editor"
     open-floating true
+}
+
+gestures {
+    dnd-edge-view-scroll {
+        trigger-width 30
+        delay-ms 100
+        max-speed 1500
+    }
+
+    dnd-edge-workspace-switch {
+        trigger-height 50
+        delay-ms 100
+        max-speed 1500
+    }
+
+    hot-corners {
+        top-left
+        // top-right
+        bottom-left
+        // bottom-right
+    }
 }

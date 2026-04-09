@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+
 dbus-update-activation-environment --systemd --all
+
 mkdir -p ~/.cache
 mkdir -p ~/.config/ghostty/themes
 touch ~/.config/zsh-config/user
 
-# Just use the name; Nix will find the path for you
 polkit-kde-authentication-agent-1 &
 fcitx5 -d --replace
 
@@ -12,8 +13,6 @@ waybar &
 swww-daemon &
 swaync &
 nm-applet &
-
-# Clipboard Manager
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
