@@ -10,6 +10,9 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 // Run matugen to apply theme on startup
 spawn-at-startup "bash" "-c" "if [[ -f ~/.cache/last-wallpaper ]]; then matugen image $(cat ~/.cache/last-wallpaper) --source-color-index 0; fi"
 
+// Ask clients to omit client-side decorations (CSD)
+prefer-no-csd
+
 input {
     keyboard {
         xkb {
