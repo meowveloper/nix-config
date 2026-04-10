@@ -75,6 +75,8 @@ binds {
     Super+L { focus-column-right; }
     Super+K { focus-window-or-workspace-up; }
     Super+J { focus-window-or-workspace-down; }
+    Super+Ctrl+WheelScrollUp cooldown-ms=150 { focus-window-or-workspace-up; }
+    Super+Ctrl+WheelScrollDown   cooldown-ms=150 { focus-window-or-workspace-down; }
 
     Super+Shift+H { move-column-left; }
     Super+Shift+L { move-column-right; }
@@ -109,8 +111,8 @@ binds {
     // Mouse wheel bindings
     Super+WheelScrollDown      cooldown-ms=150 { focus-column-right; }
     Super+WheelScrollUp        cooldown-ms=150 { focus-column-left; }
-    Super+Ctrl+WheelScrollUp cooldown-ms=150 { spawn "brightnessctl" "set" "5%+"; }
-    Super+Ctrl+WheelScrollDown   cooldown-ms=150 { spawn "brightnessctl" "set" "5%-"; }
+    Super+Alt+WheelScrollUp cooldown-ms=150 { spawn "brightnessctl" "set" "5%+"; }
+    Super+Alt+WheelScrollDown   cooldown-ms=150 { spawn "brightnessctl" "set" "5%-"; }
     Super+Shift+WheelScrollUp cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
     Super+Shift+WheelScrollDown   cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
 }
@@ -142,8 +144,8 @@ gestures {
 
     hot-corners {
         top-left
-        // top-right
+        top-right
         bottom-left
-        // bottom-right
+        bottom-right
     }
 }
