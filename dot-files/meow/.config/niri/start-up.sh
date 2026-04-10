@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export XDG_CURRENT_DESKTOP=niri
 dbus-update-activation-environment --systemd --all
 
 mkdir -p ~/.cache
