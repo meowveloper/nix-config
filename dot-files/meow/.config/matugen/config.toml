@@ -2,10 +2,6 @@
 set = true
 command = "swww img --transition-type center {{ image }}"
 
-[templates.niri]
-input_path = '~/.config/matugen/templates/niri-colors.kdl'
-output_path = '~/.config/niri/colors.kdl'
-
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
