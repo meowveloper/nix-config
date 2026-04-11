@@ -42,6 +42,7 @@ layout {
         inactive-color "#1b211f50"
     }
     focus-ring {
+        on
         width 2
         active-color "#00000015"
         inactive-color "#1b211f20"
@@ -96,11 +97,6 @@ binds {
     Super+Shift+Minus { set-window-height "-10%"; }
     Super+Shift+Equal { set-window-height "+10%"; }
 
-    Print { spawn "hyprshot" "-m" "output"; }
-    Super+Print { spawn "hyprshot" "-m" "window"; }
-    Super+Shift+Print { spawn "hyprshot" "-m" "region"; }
-
-
     // Fallback number key bindings
     Super+Ctrl+1 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "6%-"; }
     Super+Ctrl+2 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "6%+"; }
@@ -115,6 +111,9 @@ binds {
     Super+Alt+WheelScrollDown   cooldown-ms=150 { spawn "brightnessctl" "set" "5%-"; }
     Super+Ctrl+WheelScrollUp cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
     Super+Ctrl+WheelScrollDown   cooldown-ms=150 { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+
+    Print { screenshot-screen write-to-disk=false; }
+    Super+Print { screenshot-window write-to-disk=false; }
 }
 
 // Window rules
@@ -123,6 +122,13 @@ window-rule {
     clip-to-geometry true
     opacity 0.8
 }
+
+window-rule {
+    match app-id="ghostty"
+    opacity 0.8
+}
+
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
 
 window-rule {
     match app-id="nm-connection-editor"
