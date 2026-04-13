@@ -38,8 +38,8 @@ layout {
     border {
         on
         width 1.5
-        active-color "#1b211f"
-        inactive-color "#1b211f50"
+        active-color "#1b211f50"
+        inactive-color "#1b211f20"
     }
     focus-ring {
         on
