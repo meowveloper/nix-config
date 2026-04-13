@@ -3,6 +3,16 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    # this is to prevent from overheating during builds
+    nix.settings = {
+        # Limit the number of concurrent builds
+        max-jobs = 4;
+        # Limit the number of cores each build can use
+        cores = 2;
+        # Give the build process lower priority so your UI doesn't lag
+        auto-optimise-store = true;
+    };
+
     # Enable nix-ld to run unpatched binaries (like those installed by Mason)
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
