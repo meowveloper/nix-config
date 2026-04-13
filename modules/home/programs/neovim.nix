@@ -10,6 +10,8 @@
         enable = true;
         viAlias = true;
         vimAlias = true;
+        withRuby = false;
+        withPython3 = false;
 
         # These packages will be available in Neovim's PATH. 
         # Mason-installed binaries will use nix-ld to run.

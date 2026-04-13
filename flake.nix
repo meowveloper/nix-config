@@ -32,9 +32,9 @@
   in
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
       specialArgs = { inherit inputs userSettings; };
       modules = [
+        { nixpkgs.hostPlatform = system; }
         ./configuration.nix
 
         home-manager.nixosModules.home-manager

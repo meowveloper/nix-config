@@ -11,7 +11,7 @@ polkit-kde-authentication-agent-1 &
 fcitx5 -d --replace
 
 waybar &
-swww-daemon &
+awww-daemon &
 swaync &
 nm-applet &
 wl-paste --type text --watch cliphist store &

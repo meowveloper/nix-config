@@ -184,3 +184,14 @@
     - This achieves a consistent "plain plane" aesthetic in Niri that matches the tiling behavior of Hyprland.
 - **Startup Cleanup**: Removed redundant `hyprsunset` calls from both Hyprland's `start-up.sh` and Niri's `spawn-at-startup` section to prevent daemon conflicts.
 
+## Session 18: Post-Update Maintenance and Warning Resolution
+- **Neovim Provider Cleanup**: Explicitly disabled Ruby and Python3 providers in `modules/home/programs/neovim.nix` (`withRuby = false`, `withPython3 = false`) to resolve Home Manager evaluation warnings.
+- **Awww Migration**:
+    - Replaced `swww` with **`awww`** in `modules/home/desktop/meow/wallpaper.nix` following its rename in `nixpkgs`.
+    - Updated `matugen/config.toml` to use `awww img` for wallpaper setting.
+    - Updated both Hyprland and Niri `start-up.sh` scripts to use `awww-daemon`.
+- **Flake Syntax Modernization**:
+    - Refactored `flake.nix` to use `nixpkgs.hostPlatform` instead of the deprecated `system` argument.
+    - Updated `modules/home/programs/meowveloper.nix` to use `pkgs.stdenv.hostPlatform.system` for cross-version compatibility.
+- **Validation**: Verified the resolution of all evaluation warnings via `nixos-rebuild dry-run`.
+

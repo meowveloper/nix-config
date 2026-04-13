@@ -1,6 +1,6 @@
 [config.wallpaper]
 set = true
-command = "swww img --transition-type center {{ image }}"
+command = "awww img --transition-type random {{ image }}"
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
