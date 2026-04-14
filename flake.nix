@@ -23,9 +23,14 @@
       url = "github:mitchellh/zig-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, mangowm, ... }@inputs: 
   let
     userSettings = import ./user-settings.nix;
     system = "x86_64-linux";
@@ -37,6 +42,7 @@
         { nixpkgs.hostPlatform = system; }
         ./configuration.nix
 
+        mangowm.nixosModules.mango
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
