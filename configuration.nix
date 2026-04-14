@@ -10,7 +10,6 @@
       ./modules/system/locale.nix
       ./modules/system/display.nix
       ./modules/system/hyprland.nix
-      ./modules/system/niri.nix
       ./modules/system/nix-settings.nix
       ./modules/system/packages.nix
       ./modules/system/shell.nix
