@@ -23,3 +23,5 @@ if [[ -f ~/.cache/last-wallpaper ]]; then
 else
   matugen image ~/.config/wallpapers/default.jpg --source-color-index 0
 fi
+
+mmsg -l "S"
