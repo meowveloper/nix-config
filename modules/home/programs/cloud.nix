@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     rclone
+    cryptomator
   ];
 
   # Rclone systemd user service to mount Google Drive
