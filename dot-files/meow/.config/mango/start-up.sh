@@ -13,6 +13,7 @@ waybar &
 awww-daemon &
 swaync &
 nm-applet &
+wlsunset &
 
 # Clipboard Manager
 wl-paste --type text --watch cliphist store &
