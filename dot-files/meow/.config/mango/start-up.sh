@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
+export XDG_CURRENT_DESKTOP=wlroots
+export XDG_SESSION_TYPE=wayland
+
 dbus-update-activation-environment --systemd --all
+
 
 mkdir -p ~/.cache
 mkdir -p ~/.config/ghostty/themes

@@ -6,6 +6,8 @@
 in {
     home.packages = with pkgs; [
         meow-mango-startup-script
+        grim
+        slurp
     ];
 
     # Symlink the main config

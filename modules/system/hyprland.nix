@@ -11,9 +11,14 @@
   # XDG Portals are required for many things (screen sharing, file picking, etc.)
   xdg.portal = {
     enable = true;
-    extraPortals = [ 
+    extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk 
+      pkgs.xdg-desktop-portal-gtk
     ];
+    config = {
+        common.default = [ "gtk" ];
+        hyprland.default = [ "hyprland" "gtk" ];
+    };
   };
+
 }
