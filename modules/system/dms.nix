@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+    programs.dconf.enable = true;
     programs.dsearch = {
         enable = true;
         systemd = {
