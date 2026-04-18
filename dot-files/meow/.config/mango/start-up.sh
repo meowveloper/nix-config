@@ -15,6 +15,7 @@ fcitx5 -d --replace
 
 nm-applet &
 wlsunset &
+dms run &
 
 # Clipboard Manager
 wl-paste --type text --watch cliphist store &
