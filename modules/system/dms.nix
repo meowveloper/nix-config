@@ -1,9 +1,18 @@
 { pkgs, ... }: {
+    programs.dsearch = {
+        enable = true;
+        systemd = {
+            enable = true;               # Enable systemd user service
+            target = "default.target";   # Start with user session
+        };
+    };
+
     programs.dms-shell = {
         enable = true;
 
         systemd = {
             enable = true;
+            target = "default.target";
             restartIfChanged = true;
         };
 
@@ -13,16 +22,5 @@
         enableAudioWavelength = true;
         enableCalendarEvents = true;
         enableClipboardPaste = true;
-
-        plugins = {
-            full-screen-power-menu = {
-                src = pkgs.fetchFromGitHub {
-                    owner = "JDKamalakar";
-                    repo = "DMS-Fullscreen_Power_Menu";
-                    rev = "main";
-                    sha256 = "sha256-Q49P4ANfkIEvWzFPh4Wf4vL5ZvrYDjOEjr/L3r2ZicE=";
-                };
-            };
-        };
     };
 }

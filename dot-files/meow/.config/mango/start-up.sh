@@ -4,7 +4,7 @@ export XDG_CURRENT_DESKTOP=wlroots
 export XDG_SESSION_TYPE=wayland
 
 dbus-update-activation-environment --systemd --all
-systemctl --user start graphical-session.target
+systemctl --user restart dms.service
 
 mkdir -p ~/.cache
 mkdir -p ~/.config/ghostty/themes
@@ -15,10 +15,8 @@ fcitx5 -d --replace
 
 nm-applet &
 wlsunset &
-dms run &
 
 # Clipboard Manager
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
-mmsg -l "S"
