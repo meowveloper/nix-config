@@ -195,3 +195,19 @@
     - Updated `modules/home/programs/meowveloper.nix` to use `pkgs.stdenv.hostPlatform.system` for cross-version compatibility.
 - **Validation**: Verified the resolution of all evaluation warnings via `nixos-rebuild dry-run`.
 
+## Session 19: Migration to DankMaterialShell and Hyprland Removal
+- **Hyprland Purge**:
+    - Removed Hyprland system (`modules/system/hyprland.nix`) and home (`modules/home/desktop/meow/hyprland.nix`) modules.
+    - Deleted the `.config/hypr` directory and the `hyprland-colors.conf` Matugen template.
+    - Removed `hyprland` from the `runtimeInputs` of the wallpaper script and disabled it in `configuration.nix`.
+- **MangoWM Hardening**:
+    - Migrated core utilities (`ghostty`, `polkit-kde-agent-1`, `wlsunset`, `brightnessctl`, etc.) from the Hyprland module to the MangoWM module.
+    - Relocated the `toggle-nightlight.sh` script to the `mango` config directory and updated all internal paths and bindings.
+- **Integrated UI with DMS**:
+    - Activated **DankMaterialShell (DMS)** via the standard `programs.dms-shell` NixOS module.
+    - Configured DMS with integrated system monitoring, dynamic theming (Matugen), audio visualization (Cava), and clipboard support.
+- **Modular Cleanup**:
+    - Disabled standalone `waybar`, `swaync`, and `rofi` modules in Home Manager to avoid conflicts with the integrated DMS shell.
+    - Cleaned up the `mango/start-up.sh` script to remove redundant daemon launches.
+- **Build Success**: Verified the new configuration using `nixos-rebuild boot --flake "path:/mnt/extra-volume/nix-config"`.
+
