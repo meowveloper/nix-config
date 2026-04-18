@@ -207,7 +207,9 @@
     - Activated **DankMaterialShell (DMS)** via the standard `programs.dms-shell` NixOS module.
     - Configured DMS with integrated system monitoring, dynamic theming (Matugen), audio visualization (Cava), and clipboard support.
 - **Modular Cleanup**:
-    - Disabled standalone `waybar`, `swaync`, and `rofi` modules in Home Manager to avoid conflicts with the integrated DMS shell.
-    - Cleaned up the `mango/start-up.sh` script to remove redundant daemon launches.
+    - Disabled and **deleted** standalone `waybar.nix`, `swaync.nix`, `rofi.nix`, `hyprland.nix`, and `wallpaper.nix` modules.
+    - Purged associated configuration directories (`.config/waybar`, `.config/swaync`, `.config/rofi`, `.config/hypr`) from dot-files.
+    - Cleaned up the `mango/start-up.sh` script to remove redundant daemon launches and add `graphical-session.target` activation for DMS.
+    - Removed all Rofi, SwayNC, and Hyprland-specific keybindings from `mango/bindings.conf`.
 - **Build Success**: Verified the new configuration using `nixos-rebuild boot --flake "path:/mnt/extra-volume/nix-config"`.
 

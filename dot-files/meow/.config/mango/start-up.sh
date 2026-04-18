@@ -4,7 +4,7 @@ export XDG_CURRENT_DESKTOP=wlroots
 export XDG_SESSION_TYPE=wayland
 
 dbus-update-activation-environment --systemd --all
-
+systemctl --user start graphical-session.target
 
 mkdir -p ~/.cache
 mkdir -p ~/.config/ghostty/themes
@@ -19,11 +19,5 @@ wlsunset &
 # Clipboard Manager
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
-
-if [[ -f ~/.cache/last-wallpaper ]]; then
-  matugen image ~/.cache/last-wallpaper --source-color-index 0
-else
-  matugen image ~/.config/wallpapers/default.jpg --source-color-index 0
-fi
 
 mmsg -l "S"

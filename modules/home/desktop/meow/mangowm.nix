@@ -17,7 +17,6 @@ in {
         slurp
         libnotify
         brightnessctl
-        hyprlock
         wlsunset
     ];
 
