@@ -1,20 +1,9 @@
-[config.wallpaper]
-set = true
-command = "awww img --transition-type random {{ image }}"
+# [config.wallpaper]
+# set = true
+# command = "awww img --transition-type random {{ image }}"
 
-[templates.ghostty]
-input_path = '~/.config/matugen/templates/ghostty' # Path to the ghostty template file
-output_path = '~/.config/ghostty/themes/matugen'
-post_hook = 'pkill -SIGUSR2 ghostty'
+[config]
 
-[templates.rofi]
-input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/matugen-colors.rasi'
-
-[templates.waybar]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
-post_hook = '~/.config/waybar/restart.sh'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
@@ -29,11 +18,6 @@ output_path = '~/.config/gtk-4.0/colors.css'
 input_path = '~/.config/matugen/templates/nvim.lua'
 output_path = '~/.config/nvim/matugen.lua'
 post_hook = 'for s in /run/user/$(id -u)/nvim.*.0; do [ -S "$s" ] && nvim --server "$s" --remote-send "<Cmd>MatugenReload<CR>" & done'
-
-[templates.mangowm]
-input_path = '~/.config/matugen/templates/mangowm-colors.conf'
-output_path = '~/.config/mango/colors.conf'
-post_hook = 'touch ~/.config/mango/config.conf'
 
 [templates.tmux]
 input_path = '~/.config/matugen/templates/tmux.conf'
