@@ -1,7 +1,7 @@
 { pkgs, ... }: let
     matugen-wallpaper-script = pkgs.writeShellApplication {
         name = "matugen-wallpaper-sh"; # The name of the resulting executable
-        runtimeInputs = with pkgs; [ matugen awww glib swaynotificationcenter hyprland procps ];
+        runtimeInputs = with pkgs; [ matugen awww glib swaynotificationcenter procps ];
         text = builtins.readFile ../../../../dot-files/meow/.config/matugen/wallpaper.sh;
     };
 in {

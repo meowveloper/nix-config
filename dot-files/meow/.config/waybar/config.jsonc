@@ -18,7 +18,6 @@
         "modules": [
             "ext/workspaces",
             "dwl/window",
-            "hyprland/workspaces",
             "network",
             "battery",
             "clock",
