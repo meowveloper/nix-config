@@ -7,7 +7,7 @@
         }
     ],
     "states": {
-        "sticky-notes": {
+        "clipper": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
         }
