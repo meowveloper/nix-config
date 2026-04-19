@@ -140,27 +140,11 @@
                     "usePadding": false
                 },
                 {
-                    "compactMode": false,
-                    "hideMode": "hidden",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 145,
-                    "panelShowAlbumArt": true,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": true,
-                    "showArtistFirst": true,
-                    "showProgressRing": true,
-                    "showVisualizer": false,
-                    "textColor": "none",
-                    "useFixedWidth": false,
-                    "visualizerType": "linear"
-                },
-                {
                     "blacklist": [
                     ],
                     "chevronColor": "none",
                     "colorizeIcons": false,
-                    "drawerEnabled": true,
+                    "drawerEnabled": false,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
@@ -176,12 +160,12 @@
                 },
                 {
                     "deviceNativePath": "__default__",
-                    "displayMode": "graphic-clean",
+                    "displayMode": "icon-always",
                     "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false
+                    "showPowerProfiles": true
                 },
                 {
                     "displayMode": "onhover",
@@ -308,10 +292,41 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
-        "gridSnap": false,
+        "enabled": true,
+        "gridSnap": true,
         "gridSnapScale": false,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "minimal",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 1.399261587128981,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 25,
+                        "y": 25
+                    },
+                    {
+                        "hideMode": "hidden",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "scale": 1.1478826816420913,
+                        "showAlbumArt": false,
+                        "showBackground": true,
+                        "showButtons": false,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 1101,
+                        "y": 28
+                    }
+                ]
+            }
         ],
         "overviewEnabled": true
     },
