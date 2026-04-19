@@ -16,3 +16,8 @@ post_hook = 'for s in /run/user/$(id -u)/nvim.*.0; do [ -S "$s" ] && nvim --serv
 input_path = '~/.config/matugen/templates/tmux.conf'
 output_path = '~/.config/tmux/colors.conf'
 post_hook = 'tmux source-file ~/.config/tmux/tmux.conf'
+
+[templates.mango]
+input_path = '~/.config/matugen/templates/mangowm-colors.conf'
+output_path = '~/.config/mango/colors.conf'
+post_hook = 'mmsg -s -d "reload_config"'
