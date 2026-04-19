@@ -13,8 +13,10 @@
             wlroots.default = [ "wlr" "gtk" ];
         };
     };
-    environment.systemPackages = [
-        pkgs.noctalia-shell
+    environment.systemPackages = with pkgs; [
+        noctalia-shell
+        cliphist
+        wl-clipboard
     ];
     programs.dconf.enable = true;
 }
