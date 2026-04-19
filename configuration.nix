@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
       ./modules/system/users.nix
       ./modules/system/boot.nix
@@ -10,7 +10,6 @@
       ./modules/system/locale.nix
       ./modules/system/display.nix
       ./modules/system/mangowm.nix
-      ./modules/system/dms.nix
       ./modules/system/nix-settings.nix
       ./modules/system/packages.nix
       ./modules/system/shell.nix

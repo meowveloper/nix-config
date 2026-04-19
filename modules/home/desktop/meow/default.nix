@@ -2,6 +2,6 @@
     imports = [
         ./mangowm.nix
         ./gtk.nix
-        ./dms.nix
+        ./noctalia-shell.nix
     ];
 }
