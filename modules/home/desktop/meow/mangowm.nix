@@ -3,14 +3,14 @@
         name = "meow-mango-startup-script-sh";
         text = builtins.readFile ../../../../dot-files/meow/.config/mango/start-up.sh;
     };
-    meow-toggle-nightlight = pkgs.writeShellApplication {
-      name = "meow-toggle-nightlight-sh";
-      text = builtins.readFile ../../../../dot-files/meow/.config/mango/toggle-nightlight.sh;
+    meow-mango-screen-shot-script = pkgs.writeShellApplication {
+        name = "meow-mango-screen-shot-script-sh";
+        text = builtins.readFile ../../../../dot-files/meow/.config/mango/screen-shot.sh;
     };
 in {
     home.packages = with pkgs; [
         meow-mango-startup-script
-        meow-toggle-nightlight
+        meow-mango-screen-shot-script
         ghostty
         kdePackages.polkit-kde-agent-1
         grim
@@ -34,6 +34,7 @@ in {
     xdg.configFile."mango/start-up.sh".source = "${meow-mango-startup-script}/bin/meow-mango-startup-script-sh";
     xdg.configFile."mango/start-up.sh".executable = true;
 
-    xdg.configFile."mango/toggle-nightlight.sh".source = "${meow-toggle-nightlight}/bin/meow-toggle-nightlight-sh";
-    xdg.configFile."mango/toggle-nightlight.sh".executable = true;
+    xdg.configFile."mango/screen-shot.sh".source = "${meow-mango-screen-shot-script}/bin/meow-mango-screen-shot-script-sh";
+    xdg.configFile."mango/screen-shot.sh".executable = true;
+
 }
