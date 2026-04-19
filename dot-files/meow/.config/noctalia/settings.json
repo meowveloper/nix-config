@@ -46,16 +46,16 @@
         "barType": "floating",
         "capsuleColorKey": "none",
         "capsuleOpacity": 0.5,
-        "contentPadding": 4,
-        "density": "comfortable",
+        "contentPadding": 0,
+        "density": "compact",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1,
+        "fontScale": 0.86,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
         "marginHorizontal": 4,
-        "marginVertical": 4,
+        "marginVertical": 11,
         "middleClickAction": "none",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
@@ -79,22 +79,13 @@
         "widgets": {
             "center": [
                 {
-                    "colorizeSystemIcon": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "rocket",
-                    "iconColor": "none",
-                    "id": "Launcher",
-                    "useDistroLogo": false
-                },
-                {
                     "characterCount": 2,
                     "colorizeIcons": false,
                     "emptyColor": "secondary",
                     "enableScrollWheel": true,
                     "focusedColor": "primary",
                     "followFocusedScreen": false,
-                    "fontWeight": "bold",
+                    "fontWeight": "semibold",
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
                     "iconScale": 0.8,
@@ -127,8 +118,8 @@
                     "showCpuTemp": false,
                     "showCpuUsage": false,
                     "showDiskAvailable": false,
-                    "showDiskUsage": true,
-                    "showDiskUsageAsPercent": true,
+                    "showDiskUsage": false,
+                    "showDiskUsageAsPercent": false,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
                     "showMemoryAsPercent": true,
@@ -164,7 +155,7 @@
                 },
                 {
                     "hideWhenZero": false,
-                    "hideWhenZeroUnread": false,
+                    "hideWhenZeroUnread": true,
                     "iconColor": "none",
                     "id": "NotificationHistory",
                     "showUnreadBadge": true,
@@ -176,7 +167,7 @@
                     "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
-                    "showNoctaliaPerformance": false,
+                    "showNoctaliaPerformance": true,
                     "showPowerProfiles": true
                 },
                 {
@@ -200,7 +191,7 @@
                     "enableColorization": false,
                     "icon": "noctalia",
                     "id": "ControlCenter",
-                    "useDistroLogo": false
+                    "useDistroLogo": true
                 }
             ],
             "left": [
