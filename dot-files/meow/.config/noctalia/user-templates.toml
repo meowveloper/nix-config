@@ -21,3 +21,8 @@ post_hook = 'tmux source-file ~/.config/tmux/tmux.conf'
 input_path = '~/.config/matugen/templates/mangowm-colors.conf'
 output_path = '~/.config/mango/colors.conf'
 post_hook = 'mmsg -s -d "reload_config"'
+
+[templates.ghostty]
+input_path = '~/.config/matugen/templates/ghostty'
+output_path = '~/.config/ghostty/themes/matugen'
+post_hook = 'pkill -SIGUSR2 ghostty'
