@@ -5,7 +5,6 @@ let
     "com.github.unrud.VideoDownloader"
     "app.zen_browser.zen"
     "com.stremio.Stremio"
-    "com.obsproject.Studio"
     "com.viber.Viber"
     "com.usebruno.Bruno"
     "com.github.tchx84.Flatseal"

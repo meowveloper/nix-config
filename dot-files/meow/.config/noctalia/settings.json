@@ -192,6 +192,9 @@
                     "icon": "noctalia",
                     "id": "ControlCenter",
                     "useDistroLogo": true
+                },
+                {
+                    "id": "plugin:screen-recorder"
                 }
             ],
             "left": [
@@ -497,7 +500,7 @@
         "disableWallpaper": true
     },
     "notifications": {
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0,
         "clearDismissed": true,
         "criticalUrgencyDuration": 15,
         "density": "default",
