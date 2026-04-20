@@ -6,3 +6,5 @@ background-blur = 0
 custom-shader = shaders/cursor_warp.glsl
 custom-shader-animation = always
 theme = matugen
+tab-inherit-working-directory = true
+gtk-tabs-location = bottom
