@@ -336,14 +336,14 @@
                 "name": "eDP-1",
                 "widgets": [
                     {
-                        "clockColor": "none",
+                        "clockColor": "primary",
                         "clockStyle": "minimal",
                         "customFont": "",
                         "format": "HH:mm\\nd MMMM yyyy",
                         "id": "Clock",
                         "roundedCorners": true,
                         "scale": 1.399261587128981,
-                        "showBackground": true,
+                        "showBackground": false,
                         "useCustomFont": false,
                         "x": 75,
                         "y": 25
@@ -354,7 +354,7 @@
                         "roundedCorners": true,
                         "scale": 1.1478826816420913,
                         "showAlbumArt": false,
-                        "showBackground": true,
+                        "showBackground": false,
                         "showButtons": false,
                         "showVisualizer": true,
                         "visualizerType": "linear",
