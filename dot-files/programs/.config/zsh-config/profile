@@ -4,3 +4,5 @@ export EDITOR=nvim
 export VISUAL=nvim
 export SUDO_EDITOR=nvim
 export GPG_TTY=$(tty)
+
+export PATH="$HOME/.config/emacs/bin:$PATH"

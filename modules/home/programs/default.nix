@@ -9,5 +9,6 @@
         ./meowveloper.nix
         ./esound.nix
         ./cloud.nix
+        ./emacs.nix
     ];
 }
