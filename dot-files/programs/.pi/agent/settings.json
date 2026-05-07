@@ -1,0 +1,13 @@
+{
+  "lastChangelogVersion": "0.70.5",
+  "defaultProvider": "google-gemini-cli",
+  "defaultModel": "gemini-3.1-flash-lite-preview",
+  "packages": [
+    "git:github.com/nicobailon/pi-subagents",
+    "git:github.com/nicobailon/pi-intercom",
+    "git:github.com/nicobailon/pi-web-access.git",
+    "git:git@github.com:khimaros/pi-webui.git",
+    "git:git@github.com:fitchmultz/pi-agent-browser-native.git",
+    "git:git@github.com:edlsh/pi-ask-user.git"
+  ]
+}
