@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.70.5",
+  "lastChangelogVersion": "0.74.0",
   "defaultProvider": "google-gemini-cli",
   "defaultModel": "gemini-3.1-flash-lite-preview",
   "packages": [
@@ -10,5 +10,11 @@
     "git:git@github.com:fitchmultz/pi-agent-browser-native.git",
     "git:git@github.com:edlsh/pi-ask-user.git",
     "git:git@github.com:samfoy/pi-memory.git"
-  ]
+  ],
+  "terminal": {
+    "showTerminalProgress": false
+  },
+  "followUpMode": "one-at-a-time",
+  "collapseChangelog": true,
+  "quietStartup": true
 }
