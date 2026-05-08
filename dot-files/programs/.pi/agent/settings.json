@@ -8,6 +8,7 @@
     "git:github.com/nicobailon/pi-web-access.git",
     "git:git@github.com:khimaros/pi-webui.git",
     "git:git@github.com:fitchmultz/pi-agent-browser-native.git",
-    "git:git@github.com:edlsh/pi-ask-user.git"
+    "git:git@github.com:edlsh/pi-ask-user.git",
+    "git:git@github.com:samfoy/pi-memory.git"
   ]
 }

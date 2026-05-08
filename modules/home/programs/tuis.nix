@@ -1,7 +1,6 @@
 { pkgs, config, userSettings, ... }: {
     programs.fastfetch.enable = true;
     programs.gemini-cli.enable = true;
-    home.packages = with pkgs; [pi-coding-agent];
     programs.yazi = {
         enable = true;
         enableBashIntegration = true;
