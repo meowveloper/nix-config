@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.74.0",
-  "defaultProvider": "google-gemini-cli",
-  "defaultModel": "gemini-3.1-flash-lite-preview",
+  "defaultProvider": "github-copilot",
+  "defaultModel": "gemini-3-flash-preview",
   "packages": [
     "git:github.com/nicobailon/pi-subagents",
     "git:github.com/nicobailon/pi-intercom",

@@ -1,6 +1,5 @@
 { pkgs, config, userSettings, ... }: {
     programs.fastfetch.enable = true;
-    programs.gemini-cli.enable = true;
     programs.yazi = {
         enable = true;
         enableBashIntegration = true;
