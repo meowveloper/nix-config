@@ -5,7 +5,7 @@ background-opacity = 0.4
 background-blur = 0
 custom-shader = shaders/cursor_warp.glsl
 custom-shader-animation = always
-theme = matugen
+theme = noctalia
 tab-inherit-working-directory = true
 gtk-tabs-location = bottom
 
