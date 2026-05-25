@@ -12,6 +12,7 @@ return {
             "clangd",
             "rnix",
             "efm",
+            "bash-language-server",
         }
     },
     config = function()
