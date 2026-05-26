@@ -17,11 +17,12 @@
         git
         git-remote-gcrypt
         bat
-        
+
         # Development Basics
         gcc
         gnumake
-        nodejs
+        nodejs_latest
+        python3
         eza
 
         #others
