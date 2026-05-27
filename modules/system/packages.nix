@@ -31,6 +31,7 @@
         git-lfs
         chromium
         ffmpeg
+        cacert
 
         # video player
         haruna
