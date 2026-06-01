@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
     programs.gnupg.agent = {
         enable = true;
         enableExtraSocket = true;
@@ -40,5 +40,7 @@
         #
         obsidian
         acl
+
+        inputs.hermes-agent.packages.${pkgs.system}.full
     ];
 }

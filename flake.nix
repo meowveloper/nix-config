@@ -28,6 +28,11 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, mangowm, ... }@inputs: 
@@ -49,7 +54,6 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs userSettings; };
           home-manager.backupFileExtension = "backup";
-          
           home-manager.users.${userSettings.username1} = {
             imports = [ ./home.nix ];
             home.username = userSettings.username1;
