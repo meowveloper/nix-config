@@ -40,7 +40,5 @@
         #
         obsidian
         acl
-
-        inputs.hermes-agent.packages.${pkgs.system}.full
     ];
 }

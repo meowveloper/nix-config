@@ -10,5 +10,6 @@
         ./esound.nix
         ./cloud.nix
         ./emacs.nix
+        ./hermes.nix
     ];
 }
