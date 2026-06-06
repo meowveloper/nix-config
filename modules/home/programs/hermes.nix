@@ -19,5 +19,18 @@ in
     imagemagick
     zip
     himalaya
+
+    # AI agent tools
+    agent-browser
+    chromium
+
+    # Container & automation
+    docker
+
+    # Static analysis
+    shellcheck
+
+    # Diagram & document generation
+    graphviz
   ];
 }
