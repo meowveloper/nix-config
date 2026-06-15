@@ -1,15 +1,10 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 let
   grep = pkgs.gnugrep;
   desiredFlatpaks = [
     "com.github.unrud.VideoDownloader"
     "app.zen_browser.zen"
     "com.stremio.Stremio"
-    "com.viber.Viber"
-    "com.usebruno.Bruno"
-    "com.github.tchx84.Flatseal"
-    "org.kde.kdenlive"
-    "org.gnome.TextEditor"
   ];
 in{
   services.flatpak.enable = true;
