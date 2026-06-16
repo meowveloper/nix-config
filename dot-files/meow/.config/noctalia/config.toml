@@ -1,0 +1,94 @@
+[bar.default]
+background_opacity = 0.1099999975413084
+capsule_thickness = 0.63999998942017555
+center = [ "wallpaper", "group:g3", "group:g2", "battery", "power_profile" ]
+end = [ "control-center", "session" ]
+position = "bottom"
+shadow = false
+start = [ "launcher", "workspaces", "clock" ]
+widget_spacing = 12
+    [[bar.default.capsule_group]]
+    fill = "primary"
+    id = "g1"
+    members = [ "clock", "wallpaper" ]
+    opacity = 0.5
+    padding = 11.0
+
+    [[bar.default.capsule_group]]
+    fill = "primary"
+    id = "g2"
+    members = [ "network", "bluetooth", "volume", "brightness" ]
+    opacity = 0.5
+    padding = 11.0
+
+    [[bar.default.capsule_group]]
+    fill = "primary"
+    id = "g3"
+    members = [ "tray", "notifications", "clipboard" ]
+    opacity = 0.5
+    padding = 6.0
+
+[location]
+address = "Bangkok, Thailand"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 800.0
+    cy = 777.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+[shell]
+lang = "en"
+settings_show_advanced = true
+
+    [shell.panel]
+    control_center_placement = "centered"
+    session_placement = "centered"
+    shadow = false
+    transparency_mode = "soft"
+    wallpaper_placement = "centered"
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "ghostty", "mango" ]
+    community_ids = [ "yazi" ]
+
+[wallpaper]
+fill_mode = "stretch"
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+    order = "alphabetical"
+
+[widget.battery]
+capsule = true
+capsule_fill = "on_primary"
+color = "primary"
+display_mode = "graphic"
+icon_color = "primary"
