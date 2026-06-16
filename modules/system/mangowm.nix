@@ -1,5 +1,10 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, inputs, ... }: {
     programs.mango.enable = true;
+
+    nix.settings = {
+      extra-substituters = [ "https://noctalia.cachix.org" ];
+      extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+    };
 
     # for screen recorder plugin
     programs.gpu-screen-recorder.enable = true;
@@ -25,9 +30,7 @@
         };
     };
     environment.systemPackages = with pkgs; [
-        noctalia-shell
-
-        # for clipper plugin
+        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         cliphist
         wl-clipboard
     ];
