@@ -5,6 +5,7 @@ let
     "com.github.unrud.VideoDownloader"
     "app.zen_browser.zen"
     "com.stremio.Stremio"
+    "org.telegram.desktop"
   ];
 in{
   services.flatpak.enable = true;
