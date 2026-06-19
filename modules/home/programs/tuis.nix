@@ -6,6 +6,7 @@
         enableZshIntegration = true;
         shellWrapperName = "y";
     };
+    programs.opencode.enable = true;
 
     xdg.configFile."yazi/yazi.toml".source = ../../../dot-files/programs/.config/yazi/executable_yazi.toml;
     xdg.configFile."yazi/keymap.toml".source = ../../../dot-files/programs/.config/yazi/keymap.toml;

@@ -40,5 +40,6 @@
         #
         obsidian
         acl
+        discord
     ];
 }
