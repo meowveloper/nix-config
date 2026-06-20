@@ -2,11 +2,11 @@
 background_opacity = 0.1099999975413084
 capsule_thickness = 0.63999998942017555
 center = [ "group:g3", "group:g2", "group:g4" ]
-end = [ "control-center", "session" ]
+end = [ "recorder", "screenshot", "control-center", "session" ]
 margin_ends = 114
 position = "bottom"
 shadow = false
-start = [ "launcher", "workspaces", "clock" ]
+start = [ "workspaces", "clock" ]
 widget_spacing = 12
 
     [[bar.default.capsule_group]]
@@ -83,6 +83,12 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
         background_opacity = 0.42999999999999999
         clock_style = "digital"
 
+[nightlight]
+force = true
+
+[plugins]
+enabled = [ "noctalia/screen_recorder" ]
+
 [shell]
 lang = "en"
 polkit_agent = true
@@ -103,7 +109,7 @@ wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "ghostty", "mango" ]
-    community_ids = [ "yazi" ]
+    community_ids = [ "zen-browser", "zed", "yazi" ]
 
 [wallpaper]
 fill_mode = "stretch"
@@ -119,6 +125,9 @@ capsule_fill = "on_primary"
 color = "primary"
 display_mode = "graphic"
 icon_color = "primary"
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
 
 [widget.workspaces]
 hide_when_empty = true
