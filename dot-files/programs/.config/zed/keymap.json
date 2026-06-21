@@ -1,1 +1,94 @@
-[]
+[
+  // ========================================
+  // CORE VIM CONTROL - Normal & Visual mode
+  // ========================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // ---- Window Navigation (like neovim's <C-h/j/k/l>) ----
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+
+      // ---- Buffer Navigation (like neovim's <S-h>/<S-l>) ----
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem",
+
+      // ---- Hover documentation (like neovim's K) ----
+      "shift-k": "editor::Hover",
+
+      // ---- Resize splits (like neovim's <C-arrows>) ----
+      "ctrl-up": "workspace::ActivatePaneUp",
+      "ctrl-down": "workspace::ActivatePaneDown",
+      "ctrl-left": "workspace::ActivatePaneLeft",
+      "ctrl-right": "workspace::ActivatePaneRight"
+    }
+  },
+
+  // ========================================
+  // LEADER KEY MAPPINGS (Space as leader)
+  // ========================================
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // ---- BUFFER MANAGEMENT ----
+      "space c": "pane::CloseActiveItem",            // Close current buffer
+      // "space b c" → close others not available as single action in Zed
+
+      // ---- FILE OPERATIONS ----
+      "space w": "workspace::Save",                  // Save file
+
+      // ---- SPLITS ----
+      "space s v": "pane::SplitRight",          // Vertical split
+      "space s h": "pane::SplitDown",           // Horizontal split
+
+      // ---- FINDING / NAVIGATION ----
+      "space f f": "file_finder::Toggle",            // Find files (like Telescope)
+      "space f w": "project_search::ToggleFocus",   // Live grep / project search
+      "space f b": "file_finder::Toggle",            // Buffer picker (file finder shows recent)
+
+      // ---- LSP NAVIGATION (<leader>l prefix, like neovim) ----
+      "space l r": "editor::FindAllReferences",            // References
+      "space l t": "editor::GoToTypeDefinition",           // Type definitions
+      "space l i": "editor::GoToImplementation",           // Implementations
+      "space l d": "outline::Toggle",                      // Document symbols (outline panel)
+      "space l w": "project_symbols::Toggle",              // Workspace symbols
+
+      // ---- LSP / CODE ACTIONS ----
+      "space c a": "editor::ToggleCodeActions",      // Code actions
+      "space r n": "editor::Rename",                 // Rename symbol
+
+      // ---- DIAGNOSTICS ----
+      "space d": "editor::Hover",                          // Cursor diagnostics float (like neovim's <leader>d)
+      "space d n": "editor::GoToDiagnostic",         // Next diagnostic
+      "space d p": "editor::GoToPreviousDiagnostic", // Previous diagnostic
+
+      // ---- PROJECT PANEL (closest to Yazi/explorer) ----
+      "space e": "project_panel::Toggle",    // Toggle project panel
+
+      // ---- GIT ----
+      "space g g": "git_panel::Toggle"       // Toggle git panel
+    }
+  },
+
+  // ========================================
+  // INSERT MODE - Escape mappings
+  // ========================================
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "k k": "vim::NormalBefore"                     // kk → escape (like neovim)
+    }
+  },
+
+  // ========================================
+  // TERMINAL MODE - Escape mappings
+  // ========================================
+  {
+    "context": "Terminal && vim_mode == insert",
+    "bindings": {
+      "x x": "vim::NormalBefore"                     // xx → escape terminal (like neovim)
+    }
+  }
+]
