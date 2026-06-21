@@ -25,6 +25,7 @@
         python3
         eza
         docker
+        rustup
 
         #others
         nautilus

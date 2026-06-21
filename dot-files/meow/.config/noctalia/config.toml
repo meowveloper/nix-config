@@ -102,6 +102,9 @@ telemetry_enabled = true
     transparency_mode = "soft"
     wallpaper_placement = "centered"
 
+    [shell.screenshot]
+    save_to_file = false
+
 [theme]
 mode = "dark"
 source = "wallpaper"

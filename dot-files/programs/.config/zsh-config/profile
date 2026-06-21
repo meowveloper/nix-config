@@ -12,4 +12,5 @@ mkdir -p $HOME/.npm-global
 export NPM_CONFIG_PREFIX="$HOME/.npm-global"
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
