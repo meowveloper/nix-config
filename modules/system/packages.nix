@@ -37,6 +37,7 @@
 
         # video player
         haruna
+        video-downloader
 
         #
         obsidian

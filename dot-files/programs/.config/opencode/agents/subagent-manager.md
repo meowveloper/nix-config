@@ -7,6 +7,7 @@ permission:
   read: ask
   glob: deny
   grep: deny
+  webfetch: deny
   question: allow
 ---
 
@@ -67,4 +68,5 @@ For each work unit:
 - Never run bash commands yourself. Delegate to subagents.
 - Never consume subagent verbatim output or summarize it into another prompt. Use the state file.
 - Keep me in the loop — a quick status after each subagent is enough.
+- Never use `webfetch` yourself — delegate any web fetching to a subagent using `task`.
 - If blocked by ambiguity, ask me before guessing.
