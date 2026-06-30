@@ -38,6 +38,7 @@
         # video player
         haruna
         video-downloader
+        stremio-linux-shell
 
         #
         obsidian
