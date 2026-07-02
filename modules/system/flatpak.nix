@@ -4,6 +4,8 @@ let
   desiredFlatpaks = [
     "app.zen_browser.zen"
     "org.telegram.desktop"
+    "com.stremio.Stremio"
+    "org.freedesktop.Platform.codecs-extra"
   ];
 in{
   services.flatpak.enable = true;

@@ -1,6 +1,6 @@
 local fix_vue_lsp = {}
 
-function fix_vue_lsp.main(_, opts)
+function fix_vue_lsp.main()
     local vue_language_server_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
     local vue_plugin = {
         name = "@vue/typescript-plugin",
@@ -20,8 +20,6 @@ function fix_vue_lsp.main(_, opts)
 	},
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
     })
-
-    require("mason-lspconfig").setup(opts)
 end
 
 return fix_vue_lsp
