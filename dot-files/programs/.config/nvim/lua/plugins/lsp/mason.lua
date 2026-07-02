@@ -11,6 +11,7 @@ return {
             "zls",
             "clangd",
             "rnix",
+            "rust_analyzer",
             "efm",
             "bash-language-server",
         }

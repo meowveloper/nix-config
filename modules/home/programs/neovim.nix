@@ -27,6 +27,9 @@
             gnumake
             curl
             cargo
+            # Rust tooling
+            rustfmt
+            clippy
             go
         ];
     };
