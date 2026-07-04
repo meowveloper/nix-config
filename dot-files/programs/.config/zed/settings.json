@@ -16,7 +16,7 @@
   "agent_servers": {
     "opencode": {
       "default_config_options": {
-        "effort": "high",
+        "effort": "medium",
         "model": "opencode-go/deepseek-v4-flash"
       },
       "type": "registry"
@@ -32,7 +32,7 @@
     "dock": "left"
   },
   "agent": {
-    "dock": "bottom",
+    "dock": "left",
     "favorite_models": [],
     "model_parameters": []
   },

@@ -6,6 +6,7 @@ let
     "org.telegram.desktop"
     "com.stremio.Stremio"
     "org.freedesktop.Platform.codecs-extra"
+    "com.viber.Viber"
   ];
 in{
   services.flatpak.enable = true;

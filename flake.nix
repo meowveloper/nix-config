@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     meowmux = {
       url = "github:meowveloper/meowmux?ref=v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -1,4 +1,4 @@
-{ pkgs, config, userSettings, ... }: {
+{ pkgs, config, userSettings, inputs, ... }: {
     programs.fastfetch.enable = true;
     programs.yazi = {
         enable = true;
@@ -6,10 +6,11 @@
         enableZshIntegration = true;
         shellWrapperName = "y";
     };
-    home.packages = with pkgs;[
-        opencode
-        opencode-desktop
+    home.packages = (with pkgs; [
         zed-editor-fhs
+        opencode-desktop
+    ]) ++ [
+        inputs.llm-agents.packages.${pkgs.system}.opencode
     ];
 
     xdg.configFile."yazi/yazi.toml".source = ../../../dot-files/programs/.config/yazi/executable_yazi.toml;
@@ -21,6 +22,7 @@
 
     xdg.configFile."opencode/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/agents";
     xdg.configFile."opencode/AGENTS.md".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/AGENTS.md";
+    xdg.configFile."opencode/opencode.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/opencode.jsonc";
     home.file.".pi/agent/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.pi/agent/settings.json";
     home.file.".pi/agent/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.pi/agent/agents";
     home.file.".gemini/skills".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.gemini/skills";
