@@ -5,6 +5,7 @@ alias tree='eza --tree'
 
 alias nn='nvim .'
 alias n='nvim'
+alias ff='fastfetch'
 
 alias gg='lazygit'
 
@@ -23,3 +24,9 @@ alias umount-secret='systemctl --user stop rclone-secret.service'
 alias mount-gdrive='systemctl --user start rclone-gdrive.service'
 alias umount-gdrive='systemctl --user stop rclone-gdrive.service'
 alias umount-cloud='systemctl --user stop rclone-secret.service rclone-gdrive.service'
+
+# opencode service
+alias opc='systemctl --user start opencode-web'
+alias opcs='systemctl --user stop opencode-web'
+alias opcrs='systemctl --user restart opencode-web'
+alias opcat='opencode attach http://localhost:4096'

@@ -1,6 +1,7 @@
 {
     imports = [
         ./neovim.nix
+        ./opencode.nix
         ./starship.nix
         ./zsh.nix
         ./tmux.nix
