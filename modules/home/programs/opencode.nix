@@ -1,7 +1,5 @@
 { pkgs, config, userSettings, inputs, ... }: {
-  home.packages = (with pkgs; [
-    opencode-desktop
-  ]) ++ [
+  home.packages = [
     inputs.llm-agents.packages.${pkgs.system}.opencode
   ];
 
