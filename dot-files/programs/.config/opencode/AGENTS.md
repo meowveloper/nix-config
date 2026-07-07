@@ -46,18 +46,3 @@ When using the `question` tool, always provide multiple-choice options via the `
 **Why:** The user prefers structured choices over open-ended text input. Multiple selections (checkboxes) keep interactions quick, scannable, and unambiguous. The user can always pick only the relevant options, but having options eliminates guesswork.
 
 **Rule:** Every invocation of the `question` tool MUST include an `options` array with at least two labeled choices, and the `multiple` parameter SHOULD be set to `true` to allow selecting more than one option.
-
-# Web Tool Preference: Firecrawl First
-
-Firecrawl MCP tools are installed and preferred over built-in `webfetch` and `websearch` for all web-related tasks.
-
-**Rule:** When you need to fetch, scrape, search, or extract web content, ALWAYS use the Firecrawl tools first:
-- `firecrawl_scrape` — for fetching/scraping a known URL
-- `firecrawl_search` — for searching the web
-- `firecrawl_map` — for discovering URLs on a site
-- `firecrawl_crawl` — for crawling multiple pages
-- `firecrawl_extract` — for extracting structured data from pages
-- `firecrawl_agent` — for complex multi-step web research
-- Other `firecrawl_*` tools as appropriate
-
-**Fallback:** If a Firecrawl tool returns an error indicating credit exhaustion (e.g., "credits exceeded", "upgrade required", or similar rate-limit errors), fall back to the built-in `webfetch` or `websearch` tools instead. Do not retry Firecrawl once credits are depleted in a session.
