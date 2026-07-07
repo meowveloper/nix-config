@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_line_height": {
+    "custom": 2.618000030517578
+  },
   "language_models": {
     "opencode": {
       "show_free_models": false,

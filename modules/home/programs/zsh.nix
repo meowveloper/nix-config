@@ -15,6 +15,8 @@
 
         # Initialize extra configuration
         initContent = ''
+            umask 002
+
             # Load your existing aliases and profile
             [[ -f ~/.config/zsh-config/aliases ]] && source ~/.config/zsh-config/aliases
             [[ -f ~/.config/zsh-config/profile ]] && source ~/.config/zsh-config/profile
