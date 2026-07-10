@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     rclone
     cryptomator
+    cryptomator-cli
   ];
 
   # Rclone systemd user service to mount Google Drive
@@ -18,7 +19,7 @@
       Type = "notify";
       # Ensure the mount directory exists
       ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${config.home.homeDirectory}/Cloud/GoogleDrive";
-      
+
       # The mount command
       ExecStart = ''
         ${pkgs.rclone}/bin/rclone mount google-drive: ${config.home.homeDirectory}/Cloud/GoogleDrive \
@@ -37,10 +38,10 @@
           --log-level INFO \
           --umask 022
       '';
-      
+
       # Unmount on stop
       ExecStop = "/run/wrappers/bin/fusermount3 -u ${config.home.homeDirectory}/Cloud/GoogleDrive";
-      
+
       Restart = "on-failure";
       RestartSec = "10s";
       Environment = [ "PATH=/run/wrappers/bin:/run/current-system/sw/bin" ];
@@ -59,7 +60,7 @@
       Type = "notify";
       # Ensure the mount directory exists
       ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${config.home.homeDirectory}/Cloud/Secret";
-      
+
       # The mount command for the 'secret' remote
       ExecStart = ''
         ${pkgs.rclone}/bin/rclone mount secret: ${config.home.homeDirectory}/Cloud/Secret \
@@ -71,10 +72,10 @@
           --log-level INFO \
           --umask 022
       '';
-      
+
       # Unmount on stop
       ExecStop = "/run/wrappers/bin/fusermount3 -u ${config.home.homeDirectory}/Cloud/Secret";
-      
+
       Restart = "on-failure";
       RestartSec = "10s";
       Environment = [ "PATH=/run/wrappers/bin:/run/current-system/sw/bin" ];
