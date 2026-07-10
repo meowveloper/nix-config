@@ -1,6 +1,5 @@
 {
     imports = [
-        ./neovim.nix
         ./opencode.nix
         ./starship.nix
         ./zsh.nix
@@ -10,6 +9,6 @@
         ./meowveloper.nix
         ./esound.nix
         ./cloud.nix
-        ./emacs.nix
+        ./editors.nix
     ];
 }
