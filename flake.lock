@@ -571,11 +571,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1783299614,
-        "narHash": "sha256-1sPC20kButUeNZaZMXeUOPzG4tTUzLszKSQABaVtxH8=",
+        "lastModified": 1783602957,
+        "narHash": "sha256-rL/e7IbJ+HuesyODo7Zo1Zexq53964gwYw6O5mFACl0=",
         "owner": "mitchellh",
         "repo": "zig-overlay",
-        "rev": "13c191e21e10d2ce2d50e3aba741b32172ba5356",
+        "rev": "8735a91b48d73a00c2deaa3e61259b91ceff359b",
         "type": "github"
       },
       "original": {
