@@ -1,6 +1,7 @@
 { pkgs, config, userSettings, ... }: {
     home.packages = with pkgs; [
         helix
+        zed-editor-fhs
 
         #language servers
         nil
@@ -11,9 +12,14 @@
         zls
     ];
 
+    # neovim config
     xdg.configFile."nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/nvim/init.lua";
     xdg.configFile."nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/nvim/lua";
     xdg.configFile."neovide/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/neovide/config.toml";
+
+    # zed config
+    xdg.configFile."zed/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/zed/settings.json";
+    xdg.configFile."zed/keymap.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/zed/keymap.json";
 
     programs.neovide = {
         enable = true;
