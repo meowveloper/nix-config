@@ -1,6 +1,14 @@
 { pkgs, config, userSettings, ... }: {
     home.packages = with pkgs; [
         helix
+
+        #language servers
+        nil
+        nixd
+        rust-analyzer
+        typescript-language-server
+        vue-language-server
+        zls
     ];
 
     xdg.configFile."nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/nvim/init.lua";
