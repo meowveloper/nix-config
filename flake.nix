@@ -37,9 +37,14 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia";
     };
+
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, mangowm, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, ... }@inputs: 
   let
     userSettings = import ./user-settings.nix;
     system = "x86_64-linux";
@@ -52,6 +57,7 @@
         ./configuration.nix
 
         mangowm.nixosModules.mango
+        nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
