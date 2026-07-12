@@ -4,6 +4,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export SUDO_EDITOR=nvim
 export GPG_TTY=$(tty)
+export LANG=my_MM.UTF-8
 
 export PATH="$HOME/.config/emacs/bin:$PATH"
 

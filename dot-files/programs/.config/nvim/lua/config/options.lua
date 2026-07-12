@@ -94,3 +94,4 @@ vim.opt.foldlevel = 99 -- keep all folds open by default
 vim.opt.splitbelow = true -- horizontal splits open below
 vim.opt.splitright = true -- vertical splits open to the right
 
+vim.opt.maxcombine = 6

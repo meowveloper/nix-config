@@ -7,7 +7,7 @@
         ./tuis.nix
         ./mpd.nix
         ./meowveloper.nix
-        ./esound.nix
+        ./appimages.nix
         ./cloud.nix
         ./editors.nix
     ];
