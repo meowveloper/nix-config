@@ -1,0 +1,18 @@
+# Language server definitions
+[language-server.nil]
+command = "nil"
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+# Language configurations
+[[language]]
+name = "nix"
+auto-format = true
+language-servers = ["nil"]
+formatter = { command = "nixfmt", args = [] }
+
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer"]

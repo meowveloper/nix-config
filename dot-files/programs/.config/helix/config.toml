@@ -1,0 +1,63 @@
+# Helix Editor Configuration
+# See: https://docs.helix-editor.com/configuration.html
+
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+mouse = false
+scrolloff = 5
+cursorline = true
+color-modes = true
+text-width = 80
+completion-timeout = 5
+true-color = true
+
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "°"
+newline = "⏎"
+tab = "→"
+
+[editor.indent-guides]
+render = true
+character = "┊"
+skip-levels = 1
+
+[editor.gutters]
+layout = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+
+[keys.normal]
+space.space = "file_picker"
+space.w = ":w"
+space.q = ":q"
+esc = ["collapse_selection", "keep_primary_selection"]

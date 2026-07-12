@@ -21,11 +21,19 @@
     xdg.configFile."zed/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/zed/settings.json";
     xdg.configFile."zed/keymap.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/zed/keymap.json";
 
+    # helix config
+    xdg.configFile."helix/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/helix/config.toml";
+    xdg.configFile."helix/languages.toml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/helix/languages.toml";
+
     programs.neovide = {
         enable = true;
     };
 
     programs.emacs.enable = true;
+
+    programs.helix = {
+        enable = true;
+    };
 
     programs.neovim = {
         enable = true;
