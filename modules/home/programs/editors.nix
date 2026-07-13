@@ -24,6 +24,7 @@
     # helix config
     xdg.configFile."helix/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/helix/config.toml";
     xdg.configFile."helix/languages.toml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/helix/languages.toml";
+    xdg.configFile."helix/themes".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/helix/themes";
 
     programs.neovide = {
         enable = true;

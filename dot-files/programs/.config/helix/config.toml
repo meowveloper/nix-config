@@ -1,7 +1,7 @@
 # Helix Editor Configuration
 # See: https://docs.helix-editor.com/configuration.html
 
-theme = "catppuccin_mocha"
+theme = "catppuccin_mocha_transparent"
 
 [editor]
 line-number = "relative"
@@ -12,6 +12,7 @@ color-modes = true
 text-width = 80
 completion-timeout = 5
 true-color = true
+bufferline = "always"
 
 [editor.soft-wrap]
 enable = true
@@ -43,7 +44,7 @@ display-inlay-hints = true
 render = "all"
 
 [editor.whitespace.characters]
-space = "·"
+space = " "
 nbsp = "°"
 newline = "⏎"
 tab = "→"
@@ -61,3 +62,9 @@ space.space = "file_picker"
 space.w = ":w"
 space.q = ":q"
 esc = ["collapse_selection", "keep_primary_selection"]
+L = ":bn"
+H = ":bp"
+
+[keys.insert]
+C-c = "normal_mode"
+
