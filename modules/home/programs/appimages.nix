@@ -1,10 +1,10 @@
 { pkgs, ... }: let
     # === eSound ===
     esound-pname = "esound";
-    esound-version = "2.8.8";
+    esound-version = "3.0.3";
     esound-src = pkgs.fetchurl {
-        url = "https://github.com/Spicy-Sparks/eSound-Desktop-Releases/releases/download/v2.8.8/eSound-Music-Setup-2.8.8.AppImage";
-        hash = "sha256-+aJg12D9upKYqH5ZZS8RsGwjOiX/3TwAHMrRPjodfW8=";
+        url = "https://github.com/Spicy-Sparks/eSound-Desktop-Releases/releases/download/v3.0.3/eSound-3.0.3-x86_64.AppImage";
+        hash = "sha256-KMFEc4iKVNfLNMzMGM2TmhcJbuoOvQ+5k2duly6FTXc=";
     };
 
     esound-appimage-contents = pkgs.appimageTools.extractType2 {

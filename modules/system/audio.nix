@@ -10,6 +10,6 @@
     #jack.enable = true;
 
     # use the example session manager (no longer necessary in recent NixOS versions)
-    #wireplumber.enable = true;
+    wireplumber.enable = true; # Required for stable PipeWire session management (screen capture, audio routing)
   };
 }

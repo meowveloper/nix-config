@@ -11,10 +11,15 @@
     hardware.graphics = {
         enable = true;
         extraPackages = with pkgs; [
-            intel-media-driver
+            nvidia-vaapi-driver
+            libva-vdpau-driver
+            libva
         ];
     };
-    hardware.nvidia.open = false;
+    hardware.nvidia = {
+        open = false;
+        modesetting.enable = true;
+    };
     services.xserver.videoDrivers = [ "nvidia" ];
 
     xdg.portal = {
