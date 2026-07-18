@@ -43,6 +43,7 @@
         obsidian
         acl
         discord
+        telegram-desktop
         zoom-us
     ];
 }

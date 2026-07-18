@@ -3,7 +3,6 @@
     enable = true;
     packages = [
       "app.zen_browser.zen"
-      "org.telegram.desktop"
       "com.stremio.Stremio"
       "org.freedesktop.Platform.codecs-extra"
       "com.viber.Viber"
