@@ -8,6 +8,7 @@ position = "bottom"
 shadow = false
 start = [ "workspaces", "clock" ]
 widget_spacing = 12
+margin_edge = 6
 
     [[bar.default.capsule_group]]
     fill = "on_primary"
