@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
     programs.mango.enable = true;
 
     nix.settings = {
@@ -17,8 +17,15 @@
         ];
     };
     hardware.nvidia = {
+        package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
         open = false;
         modesetting.enable = true;
+        powerManagement.enable = true;
+        prime = {
+            offload.enable = true;
+            intelBusId = "PCI:0:2:0";
+            nvidiaBusId = "PCI:1:0:0";
+        };
     };
     services.xserver.videoDrivers = [ "nvidia" ];
 
