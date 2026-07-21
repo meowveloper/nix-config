@@ -2,7 +2,7 @@
 background_opacity = 0.1099999975413084
 capsule_thickness = 0.63999998942017555
 center = [ "group:g3", "group:g2", "group:g4" ]
-end = [ "recorder", "screenshot", "control-center", "session" ]
+end = [ "screenshot", "control-center", "session" ]
 margin_ends = 114
 position = "bottom"
 shadow = false
@@ -88,7 +88,7 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
 force = true
 
 [plugins]
-enabled = [ "noctalia/screen_recorder" ]
+enabled = []
 
 [shell]
 lang = "en"
