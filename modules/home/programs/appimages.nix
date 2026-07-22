@@ -35,9 +35,48 @@
         cp -r ${esound-desktop}/share/applications/* $out/share/applications/
         cp ${esound-appimage-contents}/.DirIcon $out/share/icons/hicolor/512x512/apps/esound.png
     '';
+
+    # === BrowserOS ===
+    browseros-pname = "browseros";
+    browseros-version = "latest";
+    browseros-src = pkgs.fetchurl {
+        url = "https://files.browseros.com/download/BrowserOS.AppImage";
+        hash = "sha256-j17ERzRxTx/0OaKtSjp02DXi132Rfz9qse5uI7auu7s=";
+    };
+
+    browseros-appimage-contents = pkgs.appimageTools.extractType2 {
+        pname = browseros-pname;
+        version = browseros-version;
+        src = browseros-src;
+    };
+
+    browseros = pkgs.appimageTools.wrapType2 {
+        pname = browseros-pname;
+        version = browseros-version;
+        src = browseros-src;
+    };
+    browseros-desktop = pkgs.makeDesktopItem {
+        name = "browseros";
+        exec = "${browseros}/bin/browseros %U";
+        icon = "browseros";
+        comment = "The AI browser for humans";
+        desktopName = "BrowserOS";
+        categories = [ "Network" "WebBrowser" ];
+        startupWMClass = "chromium-browser";
+        mimeTypes = [ "text/html" "text/xml" "application/xhtml+xml" "x-scheme-handler/http" "x-scheme-handler/https" ];
+    };
+
+    browseros-integration = pkgs.runCommand "browseros-integration" {}''
+        mkdir -p $out/share/applications
+        mkdir -p $out/share/icons/hicolor/512x512/apps
+        cp -r ${browseros-desktop}/share/applications/* $out/share/applications/
+        cp ${browseros-appimage-contents}/browseros.png $out/share/icons/hicolor/512x512/apps/browseros.png
+    '';
 in{
     home.packages = [
         esound
         esound-integration
+        browseros
+        browseros-integration
     ];
 }
