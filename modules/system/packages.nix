@@ -26,6 +26,7 @@
         eza
         docker
         rustup
+        bun
 
         #others
         nautilus
