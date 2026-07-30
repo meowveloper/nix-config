@@ -24,6 +24,29 @@
         openssl
         curl
         expat
+
+        # Chromium/Chrome browser dependencies (for agent-browser, etc.)
+        atk
+        at-spi2-atk
+        at-spi2-core
+        alsa-lib
+        cairo
+        cups
+        dbus
+        glib
+        libxkbcommon
+        libgbm
+        mesa
+        nspr
+        pango
+        systemd
+        libx11
+        libxcomposite
+        libxdamage
+        libxext
+        libxfixes
+        libxrandr
+        libxcb
     ];
 
     zramSwap = {

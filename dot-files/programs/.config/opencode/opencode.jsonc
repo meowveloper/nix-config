@@ -1,4 +1,5 @@
 {
+  "plugin": ["oh-my-openagent"],
     "$schema": "https://opencode.ai/config.json",
     "default_agent": "subagent-manager",
     "mcp": {

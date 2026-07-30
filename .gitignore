@@ -4,3 +4,4 @@ result
 .venv/
 user-settings.nix
 tmp
+.omo

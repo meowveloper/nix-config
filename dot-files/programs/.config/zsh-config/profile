@@ -6,7 +6,6 @@ export SUDO_EDITOR=nvim
 export GPG_TTY=$(tty)
 export LANG=my_MM.UTF-8
 
-export AGENT_BROWSER_PROFILE="Default"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
 mkdir -p $HOME/.npm-global
@@ -15,3 +14,4 @@ export NPM_CONFIG_PREFIX="$HOME/.npm-global"
 export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$HOME/.bun/bin:$PATH"
