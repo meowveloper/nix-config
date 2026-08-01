@@ -1,6 +1,19 @@
 { config, pkgs, lib, inputs, ... }: {
     programs.mango.enable = true;
 
+    # greetd replaces the TTY login with a proper display manager.
+    # This ensures the systemd user session starts with the correct
+    # environment for xdg-desktop-portal-wlr.
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd mango";
+          user = "greeter";
+        };
+      };
+    };
+
     nix.settings = {
       extra-substituters = [ "https://noctalia.cachix.org" ];
       extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];

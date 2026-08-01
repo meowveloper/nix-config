@@ -10,5 +10,6 @@
         ./appimages.nix
         ./cloud.nix
         ./editors.nix
+        ./hermes.nix
     ];
 }

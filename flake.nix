@@ -42,6 +42,11 @@
       url = "github:gmodena/nix-flatpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, ... }@inputs: 
@@ -54,6 +59,24 @@
       specialArgs = { inherit inputs userSettings; };
       modules = [
         { nixpkgs.hostPlatform = system; }
+
+        # Pin xdg-desktop-portal-wlr to 0.8.2 — v0.8.3 has a known
+        # freeze bug where screensharing stalls after the first frame.
+        # https://github.com/NixOS/nixpkgs/issues/546183
+        { nixpkgs.overlays = [
+          (final: prev: {
+            xdg-desktop-portal-wlr = prev.xdg-desktop-portal-wlr.overrideAttrs (old: {
+              version = "0.8.2";
+              src = prev.fetchFromGitHub {
+                owner = "emersion";
+                repo = "xdg-desktop-portal-wlr";
+                rev = "v0.8.2";
+                hash = "sha256-HITf/hgiASWvn/z49mzS8IS1vuyXwdk1JiAOOHRSQMo=";
+              };
+            });
+          })
+        ]; }
+
         ./configuration.nix
 
         mangowm.nixosModules.mango
