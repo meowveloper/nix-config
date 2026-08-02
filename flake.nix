@@ -42,9 +42,14 @@
       url = "github:gmodena/nix-flatpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    bunnix = {
+      url = "github:aster-void/bunnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, ... }@inputs:
+  outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, bunnix, ... }@inputs:
   let
     userSettings = import ./user-settings.nix;
     system = "x86_64-linux";
@@ -69,6 +74,11 @@
                 hash = "sha256-HITf/hgiASWvn/z49mzS8IS1vuyXwdk1JiAOOHRSQMo=";
               };
             });
+          })
+
+          # Use bunnix to always get the latest bun release
+          (_final: prev: {
+            bun = inputs.bunnix.packages.${prev.system}.latest;
           })
         ]; }
 

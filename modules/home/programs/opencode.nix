@@ -3,7 +3,6 @@
     inputs.llm-agents.packages.${pkgs.system}.opencode
   ];
 
-  xdg.dataFile."applications/opencode-desktop.desktop".source = "${pkgs.opencode-desktop}/share/applications/opencode-desktop.desktop";
 
   xdg.configFile."opencode/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/agents";
   xdg.configFile."opencode/AGENTS.md".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/AGENTS.md";
