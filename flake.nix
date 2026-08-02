@@ -42,14 +42,9 @@
       url = "github:gmodena/nix-flatpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hermes-agent = {
-      url = "github:NousResearch/hermes-agent";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, ... }@inputs:
   let
     userSettings = import ./user-settings.nix;
     system = "x86_64-linux";
