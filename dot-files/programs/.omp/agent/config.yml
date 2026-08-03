@@ -1,6 +1,14 @@
 modelRoles: 
-  default: opencode-go/deepseek-v4-flash
   advisor: opencode-go/deepseek-v4-flash
+  smol: opencode-go/deepseek-v4-flash
+  slow: opencode-go/deepseek-v4-flash
+  plan: opencode-go/deepseek-v4-flash
+  designer: opencode-go/deepseek-v4-flash
+  commit: opencode-go/deepseek-v4-flash
+  tiny: opencode-go/deepseek-v4-flash
+  task: opencode-go/deepseek-v4-flash
+  default: opencode-go/deepseek-v4-flash
+  vision: opencode-go/mimo-v2.5
 advisor: 
   enabled: true
 symbolPreset: unicode
@@ -9,3 +17,7 @@ theme:
 setupVersion: 1
 browser: 
   headless: false
+defaultThinkingLevel: auto
+task: 
+  agentPrewalk: 
+    designer: "off"

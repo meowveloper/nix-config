@@ -9,7 +9,10 @@
   xdg.configFile."opencode/opencode.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/opencode.jsonc";
 
   home.file.".omo/omo.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omo/omo.jsonc";
+
   home.file.".omp/agent/config.yml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omp/agent/config.yml";
+  home.file.".omp/agent/AGENTS.md".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omp/agent/AGENTS.md";
+  home.file.".omp/agent/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omp/agent/agents";
 
   systemd.user.services.opencode-web = {
     Unit = {

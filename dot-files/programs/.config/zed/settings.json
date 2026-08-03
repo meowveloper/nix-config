@@ -18,6 +18,10 @@
     }
   },
   "agent_servers": {
+    "omp": {
+      "type": "custom",
+      "command": "~/.bun/bin/omp"
+    },
     "opencode": {
       "default_config_options": {
         "effort": "medium",
