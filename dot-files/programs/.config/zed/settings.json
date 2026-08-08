@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "existing_window",
   "proxy": "",
   "buffer_line_height": {
     "custom": 2.618000030517578
@@ -19,15 +20,14 @@
   },
   "agent_servers": {
     "omp": {
+      "default_config_options": {
+        "mode": "plan"
+      },
+      "args": [
+        "acp"
+      ],
       "type": "custom",
       "command": "~/.bun/bin/omp"
-    },
-    "opencode": {
-      "default_config_options": {
-        "effort": "medium",
-        "model": "opencode-go/deepseek-v4-flash"
-      },
-      "type": "registry"
     }
   },
   "project_panel": {
