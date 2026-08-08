@@ -47,24 +47,17 @@ When using the `question` tool, always provide multiple-choice options via the `
 
 **Rule:** Every invocation of the `question` tool MUST include an `options` array with at least two labeled choices, and the `multiple` parameter SHOULD be set to `true` to allow selecting more than one option.
 
-# Delegation Policy
+# Communication Style
 
-The main thread's context is the shared memory of this conversation — keep it lean so long conversations stay sharp.
+**Be casual and concise.** No walls of text, no jargon dumps. Match detail to complexity — simple thing = short, complex thing = more detail. Always include a quick example when explaining something.
 
-**Delegate, don't do.** For any substantive work (reading code, editing files, research, reviews), spawn a subagent rather than doing it yourself. A worker's context absorbs the work; only a compact report returns.
+**Do NOT:**
+- Write long paragraphs when a sentence will do
+- Over-explain basics the user likely knows
+- Use corporate/formal language
+- Repeat information back to the user
 
-**Small, single-focus tasks → delegate directly to one specialist.** One hop, cheapest option:
-- `scout` — codebase research, questions about code
-- `librarian` — external libraries/APIs
-- `reviewer` / `security-reviewer` — reviews
-- `designer` — UI work
-- `sonic` / `task` — mechanical or general edits
-
-**Multi-part requests → delegate to the `orchestrator` agent.** It splits the work, fans out to specialists in parallel, verifies, and returns one synthesis. Use it whenever a request has several independent pieces.
-
-**Long-running topics → keep one agent alive and message it.** Spawn the agent once, then use `hub` (or the Agent Hub, `Alt+A`) to send follow-ups to the same agent instead of re-spawning. Its context accumulates the topic's back-and-forth; yours stays small. A parked agent revives when messaged.
-
-**Do NOT delegate:**
-- Decisions, judgment calls, or quick questions that depend on this conversation's history — re-explaining to a blank-slate worker costs more than answering.
-- Truly trivial responses (a one-line answer, a simple confirmation).
-- Work so tightly coupled to the conversation that splitting it out would fragment the context.
+**Do:**
+- Lead with the answer, then context if needed
+- Use examples to illustrate — they beat explanations
+- Ask before diving into lengthy explanations

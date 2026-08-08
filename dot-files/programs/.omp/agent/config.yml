@@ -11,6 +11,8 @@ modelRoles:
   vision: opencode-go/mimo-v2.5
 advisor: 
   enabled: true
+  subagents: true
+  immuneTurns: 0
 symbolPreset: unicode
 theme: 
   dark: titanium
@@ -21,3 +23,23 @@ defaultThinkingLevel: auto
 task: 
   agentPrewalk: 
     designer: "off"
+  eager: always
+  enableLsp: true
+hideThinkingBlock: true
+steeringMode: one-at-a-time
+followUpMode: one-at-a-time
+magicKeywords: 
+  orchestrate: true
+contextPromotion: 
+  enabled: false
+memory: 
+  backend: local
+autolearn: 
+  enabled: true
+  autoContinue: true
+bash: 
+  direnv: auto
+generate_image: 
+  enabled: true
+checkpoint: 
+  enabled: true
