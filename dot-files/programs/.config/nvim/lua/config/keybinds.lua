@@ -77,7 +77,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>lr", "<cmd>FzfLua lsp_references<CR>", opts) --  show all references to the symbol under the cursor    
         vim.keymap.set("n", "<leader>lt", "<cmd>FzfLua lsp_typedefs<CR>", opts) -- jump to the type definition of the symbol under the cursor    
         vim.keymap.set("n", "<leader>ld", "<cmd>FzfLua lsp_document_symbols<CR>", opts) -- list all symbols (functions, classes, etc)  
-        vim.keymap.set("n", "<leader>lw", "<cmd>FzfLua lsp_workdpace_symbols<CR>", opts) -- search for any symbol across the entire project 
+        vim.keymap.set("n", "<leader>lw", "<cmd>FzfLua lsp_workspace_symbols<CR>", opts) -- search for any symbol across the entire project 
         vim.keymap.set("n", "<leader>li", "<cmd>FzfLua lsp_implementations<CR>", opts) -- go to implementation
 
     end,

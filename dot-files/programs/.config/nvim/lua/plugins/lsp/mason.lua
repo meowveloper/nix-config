@@ -7,18 +7,25 @@ return {
             "lua_ls",
             "vimls",
             "vtsls",
-            "vue_ls",
             "zls",
             "clangd",
-            "rnix",
             "rust_analyzer",
             "efm",
-            "bash-language-server",
-        }
+        },
+        -- vue is handled by vtsls + the @vue/typescript-plugin (see utils/fix-vue-lsp.lua);
+        -- keep the standalone vue_ls (volar) server from also attaching to .vue files
+        automatic_enable = {
+            exclude = { "vue_ls" },
+        },
     },
-    config = function()
+    config = function(_, opts)
+        -- NB: a custom `config` replaces lazy's default, so setup() must be called here
+        -- or no servers get installed/enabled (vim.lsp.enable is never invoked).
+        require("mason-lspconfig").setup(opts)
         fix_vue_lsp()
         adjust_lua_lsp()
+        -- nixd comes from home.packages (not mason), so enable it explicitly
+        vim.lsp.enable("nixd")
     end,
     dependencies = {
         { "mason-org/mason.nvim", opts = {} },
