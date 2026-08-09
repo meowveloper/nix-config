@@ -7,12 +7,13 @@ modelRoles:
   commit: opencode-go/deepseek-v4-flash
   tiny: opencode-go/deepseek-v4-flash
   task: opencode-go/deepseek-v4-flash
-  default: opencode-go/mimo-v2.5
+  default: opencode-go/deepseek-v4-flash
   vision: opencode-go/mimo-v2.5
 advisor: 
   enabled: true
   subagents: true
   immuneTurns: 0
+  syncBacklog: "off"
 symbolPreset: unicode
 theme: 
   dark: titanium
@@ -43,3 +44,9 @@ generate_image:
   enabled: true
 checkpoint: 
   enabled: true
+omitThinking: true
+error: 
+  notify: "on"
+astGrep: 
+  enabled: true
+personality: pragmatic

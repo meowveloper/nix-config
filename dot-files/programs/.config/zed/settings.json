@@ -21,7 +21,8 @@
   "agent_servers": {
     "omp": {
       "default_config_options": {
-        "mode": "plan"
+        "model": "opencode-go/deepseek-v4-flash",
+        "mode": "default"
       },
       "args": [
         "acp"
@@ -40,7 +41,7 @@
     "dock": "left"
   },
   "agent": {
-    "dock": "left",
+    "dock": "bottom",
     "favorite_models": [],
     "model_parameters": []
   },

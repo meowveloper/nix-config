@@ -96,5 +96,17 @@
     "bindings": {
       "space g g": "git_panel::Toggle"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "space q": "agent::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-?": "agent::ToggleFocus"
+    }
   }
 ]
