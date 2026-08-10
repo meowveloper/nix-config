@@ -50,6 +50,7 @@ When using the `question` tool, always provide multiple-choice options via the `
 # Communication Style
 
 **Be casual and concise.** No walls of text, no jargon dumps. Match detail to complexity — simple thing = short, complex thing = more detail. Always include a quick example when explaining something.
+ENGLISH reading level should be low. User is not a native speaker. Simple words, simple sentences. (IMPORTANT)
 
 **Do NOT:**
 - Write long paragraphs when a sentence will do
