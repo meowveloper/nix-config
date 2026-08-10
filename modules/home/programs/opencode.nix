@@ -13,6 +13,7 @@
   home.file.".omp/agent/config.yml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omp/agent/config.yml";
   home.file.".omp/agent/AGENTS.md".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omp/agent/AGENTS.md";
   home.file.".omp/agent/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omp/agent/agents";
+  home.file.".omp/agent/managed-skills".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.omp/agent/managed-skills";
 
   systemd.user.services.opencode-web = {
     Unit = {
