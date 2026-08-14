@@ -30,8 +30,6 @@
         enable = true;
     };
 
-    programs.emacs.enable = true;
-
     programs.helix = {
         enable = true;
     };

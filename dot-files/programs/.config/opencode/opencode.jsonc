@@ -1,11 +1,5 @@
 {
   "plugin": ["oh-my-openagent"],
     "$schema": "https://opencode.ai/config.json",
-    "default_agent": "subagent-manager",
-    "mcp": {
-        "browseros": {
-            "type": "remote",
-            "url": "http://127.0.0.1:9000/mcp"
-        }
-    }
+    "default_agent": "subagent-manager"
 }

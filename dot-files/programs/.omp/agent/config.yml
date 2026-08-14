@@ -7,7 +7,7 @@ modelRoles:
   commit: opencode-go/deepseek-v4-flash
   tiny: opencode-go/deepseek-v4-flash
   task: opencode-go/deepseek-v4-flash
-  default: opencode-go/deepseek-v4-flash
+  default: opencode-go/deepseek-v4-pro
   vision: opencode-go/mimo-v2.5
 advisor: 
   enabled: true

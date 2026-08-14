@@ -6,8 +6,6 @@ export SUDO_EDITOR=nvim
 export GPG_TTY=$(tty)
 export LANG=my_MM.UTF-8
 
-export PATH="$HOME/.config/emacs/bin:$PATH"
-
 mkdir -p $HOME/.npm-global
 # NPM global configuration for NixOS
 export NPM_CONFIG_PREFIX="$HOME/.npm-global"
