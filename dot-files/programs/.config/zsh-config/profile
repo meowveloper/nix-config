@@ -13,3 +13,4 @@ export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$HOME/.bun/bin:$PATH"
+export GPG_TTY=$(tty)

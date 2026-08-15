@@ -47,5 +47,7 @@
         telegram-desktop
         zoom-us
         proton-vpn
+        openssl
+        git-remote-gcrypt
     ];
 }
