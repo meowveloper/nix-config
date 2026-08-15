@@ -46,5 +46,6 @@
         discord
         telegram-desktop
         zoom-us
+        proton-vpn
     ];
 }

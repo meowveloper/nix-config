@@ -8,7 +8,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd mango";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd mango --env XDG_SESSION_TYPE=wayland";
           user = "greeter";
         };
       };

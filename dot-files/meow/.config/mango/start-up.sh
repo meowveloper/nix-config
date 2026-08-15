@@ -12,7 +12,7 @@ dbus-update-activation-environment --systemd --all
 # wasn't in systemd --user env yet when graphical-session.target activated.
 # Now that the compositor is up, import the env and restart the portals.
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-systemctl --user restart xdg-desktop-portal-wlr.service xdg-desktop-portal.service
+systemctl --user restart xdg-desktop-portal-wlr.service xdg-desktop-portal.service || true
 
 mkdir -p ~/.cache
 mkdir -p ~/.config/ghostty/themes
