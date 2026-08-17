@@ -38,10 +38,10 @@
 
     # === Myanso ===
     myanso-pname = "myanso";
-    myanso-version = "0.1.1";
+    myanso-version = "0.4.4";
     myanso-src = pkgs.fetchurl {
-        url = "https://github.com/saturngod/myanso/releases/download/v0.1.1/Myanso-0.1.1.AppImage";
-        hash = "sha256-d6VqgQ6pyez6fxmMvfAnTkg9mVmWOVvv9vQ+QwmpmQo=";
+        url = "https://github.com/saturngod/myanso/releases/download/v0.4.4/Myanso-0.4.4.AppImage";
+        hash = "sha256-d2oIHKZeNkJ9hclESLrxpmB35kK0YyBePZzV/v8eEMM=";
     };
 
     myanso-appimage-contents = pkgs.appimageTools.extractType2 {
