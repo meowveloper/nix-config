@@ -37,4 +37,26 @@ in {
     xdg.configFile."mango/screen-shot.sh".source = "${meow-mango-screen-shot-script}/bin/meow-mango-screen-shot-script-sh";
     xdg.configFile."mango/screen-shot.sh".executable = true;
 
+    # Activate the user graphical session target so xdg-desktop-portal can start.
+    # xdg-desktop-portal.service requires graphical-session.target (Requisite=);
+    # MangoWM is launched as a plain greetd command and never activates it,
+    # causing the portal to fail with a dependency error and breaking screen
+    # sharing.
+    # NOTE: systemd's stock graphical-session.target has RefuseManualStart=yes,
+    # so a manual `systemctl --user start graphical-session.target` is refused
+    # (exit 4, "may be requested by dependency only"). Pulling it in via Wants
+    # (dependency activation) is allowed and is what makes the target active.
+    systemd.user.services.mango-graphical-session = {
+      Unit = {
+        Description = "Activate graphical-session.target for MangoWM";
+        After = [ "graphical-session-pre.target" ];
+        Wants = [ "graphical-session.target" ];
+      };
+      Service = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+        ExecStart = "${pkgs.coreutils}/bin/true";
+      };
+      Install.WantedBy = [ "default.target" ];
+    };
 }
