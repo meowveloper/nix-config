@@ -45,6 +45,11 @@ config.sort_fallback_fonts_by_coverage = true
 -- events — you may then need XWayland + XIM (see `xim_im_name` in the docs).
 config.use_ime = true
 
+-- Renderer ----------------------------------------------------------------
+-- Renderer: use the Software (llvmpipe) front-end to avoid i915 GPU hangs
+-- on the Intel Tiger Lake iGPU (OpenGL path was resetting `rcs0`).
+config.front_end = "Software"
+
 -- Appearance ---------------------------------------------------------------
 config.window_background_opacity = 0.7
 config.window_padding = { left = 20, right = 20, top = 10, bottom = 10 }
