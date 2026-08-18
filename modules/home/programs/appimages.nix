@@ -36,45 +36,9 @@
         cp ${esound-appimage-contents}/.DirIcon $out/share/icons/hicolor/512x512/apps/esound.png
     '';
 
-    # === Myanso ===
-    myanso-pname = "myanso";
-    myanso-version = "0.4.4";
-    myanso-src = pkgs.fetchurl {
-        url = "https://github.com/saturngod/myanso/releases/download/v0.4.4/Myanso-0.4.4.AppImage";
-        hash = "sha256-d2oIHKZeNkJ9hclESLrxpmB35kK0YyBePZzV/v8eEMM=";
-    };
-
-    myanso-appimage-contents = pkgs.appimageTools.extractType2 {
-        pname = myanso-pname;
-        version = myanso-version;
-        src = myanso-src;
-    };
-
-    myanso = pkgs.appimageTools.wrapType2 {
-        pname = myanso-pname;
-        version = myanso-version;
-        src = myanso-src;
-    };
-    myanso-desktop = pkgs.makeDesktopItem {
-        name = "myanso";
-        exec = "${myanso}/bin/myanso %U";
-        icon = "myanso";
-        comment = "Terminal emulator with Myanmar script support";
-        desktopName = "Myanso";
-        categories = [ "System" "TerminalEmulator" ];
-    };
-
-    myanso-integration = pkgs.runCommand "myanso-integration" {}''
-        mkdir -p $out/share/applications
-        mkdir -p $out/share/icons/hicolor/512x512/apps
-        cp -r ${myanso-desktop}/share/applications/* $out/share/applications/
-        cp ${myanso-appimage-contents}/.DirIcon $out/share/icons/hicolor/512x512/apps/myanso.png
-    '';
 in{
     home.packages = [
         esound
         esound-integration
-        myanso
-        myanso-integration
     ];
 }
