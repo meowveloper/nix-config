@@ -20,6 +20,7 @@ A fully declarative, Flake-based NixOS configuration designed for high-performan
     username1 = "user-1"; # Change this to your real primary user
     username2 = "user-2";       # Change this to your secondary user
     dotfiles_path = "/path/to/dotfiles/in/nix-config/directory";
+    shared_path = "/path/to/a/shared/dir/between/two/users";
 }
 ```
 

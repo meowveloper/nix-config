@@ -23,6 +23,7 @@
         ./modules/system/battry-input.nix
         ./modules/system/variables.nix
         ./modules/system/dotfiles-perms.nix
+        ./modules/system/shared-folder.nix
     ];
 
     system.stateVersion = "25.11";
