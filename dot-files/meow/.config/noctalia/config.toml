@@ -1,3 +1,5 @@
+config_version = 12
+
 [bar.default]
 background_opacity = 0.1099999975413084
 capsule_thickness = 0.63999998942017555

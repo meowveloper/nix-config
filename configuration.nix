@@ -24,6 +24,7 @@
         ./modules/system/variables.nix
         ./modules/system/dotfiles-perms.nix
         ./modules/system/shared-folder.nix
+        ./modules/system/keyring.nix
     ];
 
     system.stateVersion = "25.11";
