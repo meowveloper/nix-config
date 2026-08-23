@@ -1,6 +1,6 @@
 {
     imports = [
-        ./opencode.nix
+        ./llm-agents.nix
         ./starship.nix
         ./zsh.nix
         ./tmux.nix
