@@ -1,7 +1,7 @@
 { pkgs, config, userSettings, inputs, ... }: {
     home.packages = [
-        inputs.llm-agents.packages.${pkgs.system}.opencode
-        inputs.llm-agents.packages.${pkgs.system}.opencode2
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
     ];
 
 
@@ -25,7 +25,7 @@
         Service = {
             Type = "simple";
             WorkingDirectory = config.home.homeDirectory;
-            ExecStart = "${inputs.llm-agents.packages.${pkgs.system}.opencode}/bin/opencode web --port 4096 --hostname 0.0.0.0";
+            ExecStart = "${inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode}/bin/opencode web --port 4096 --hostname 0.0.0.0";
             Restart = "on-failure";
             RestartSec = "5";
             Environment = [ "PATH=${config.home.homeDirectory}/.local/bin:/run/current-system/sw/bin:/run/wrappers/bin" ];

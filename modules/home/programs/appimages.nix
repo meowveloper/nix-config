@@ -7,7 +7,7 @@
         hash = "sha256-KMFEc4iKVNfLNMzMGM2TmhcJbuoOvQ+5k2duly6FTXc=";
     };
 
-    esound-appimage-contents = pkgs.appimageTools.extractType2 {
+    esound-appimage-contents = pkgs.appimageTools.extract {
         pname = esound-pname;
         version = esound-version;
         src = esound-src;

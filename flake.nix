@@ -38,10 +38,7 @@
       url = "github:noctalia-dev/noctalia";
     };
 
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     bunnix = {
       url = "github:aster-void/bunnix";
@@ -78,7 +75,7 @@
 
           # Use bunnix to always get the latest bun release
           (_final: prev: {
-            bun = inputs.bunnix.packages.${prev.system}.latest;
+            bun = inputs.bunnix.packages.${prev.stdenv.hostPlatform.system}.latest;
           })
         ]; }
 
