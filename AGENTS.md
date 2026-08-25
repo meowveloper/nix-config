@@ -24,5 +24,3 @@
 - **Build Limits**: `max-jobs` and `cores` are capped at 4 in `modules/system/nix-settings.nix` to prevent overheating.
 - **Unpatched Binaries**: `nix-ld` is enabled for non-Nix binaries.
 
-## 🔍 References
-- See `.agent/GEMINI.md` for Nix/Home-Manager conceptual overview.
