@@ -39,6 +39,7 @@
         # video player
         haruna
         video-downloader
+        yt-dlp
 
         #
         obsidian

@@ -1,20 +1,11 @@
-# ❄️ Deterministic NixOS Configuration
+# ❄️ NixOS Configuration
+- MangoWM
+- NoctaliaShell
+- Ghostty
+- Neovim
 
-A fully declarative, Flake-based NixOS configuration designed for high-performance development and a streamlined TUI-driven workflow.
-
-## 🚀 Key Features
-* **Modern Nix:** Leverages **Nix Flakes** for hermetic, reproducible system builds.
-* **Performance-First:** Minimalist environment using **Hyprland** (Wayland) to maximize system resources for heavy development tasks.
-* **Declarative Tooling:** Comprehensive management of TUIs (**lazygit**, **yazi**, **rmpc**) and **Flatpaks** via specialized Nix modules.
-* **Developer Experience:** Optimized for low-latency workflows, bypassing heavy desktop managers for a direct TTY-to-Session login.
-
-## 🛠 Technical Architecture
-* **System:** NixOS (Unstable/Stable mix via Flakes)
-* **WM:** Hyprland
-* **Dotfiles:** Managed via **Home Manager**
-* **Modularity:** Separated `user-settings.nix` and hardware configurations for easy portability across machines.
-
-## user settings format (`user-settings.nix`)
+## user settings
+create `user-settings.nix` in repo root with the following format
 ```nix
 {
     username1 = "user-1"; # Change this to your real primary user
@@ -35,12 +26,3 @@ or
 ```bash
 sudo nixos-rebuild switch --flake "path:/absolute/path/to/nix-config#your-hostname"
 ```
-
-## 💻 Usage & Reproduction
-1. **Clone:** `git clone https://github.com/meowveloper/nix-config.git`
-2. **Configure:** Modify `user-settings.nix` for your specific user/git credentials and update the hardware symlink.
-3. **Apply:**
-
-    ```bash
-    sudo nixos-rebuild switch --flake .#your-hostname
-    ```
