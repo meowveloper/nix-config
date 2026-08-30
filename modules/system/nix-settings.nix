@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, machineSettings, ... }: {
     nixpkgs.config.allowUnfree = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -6,9 +6,9 @@
     # this is to prevent from overheating during builds
     nix.settings = {
         # Limit the number of concurrent builds
-        max-jobs = 4;
+        max-jobs = machineSettings.maxJobs;
         # Limit the number of cores each build can use
-        cores = 4;
+        cores = machineSettings.cores;
         # Give the build process lower priority so your UI doesn't lag
         auto-optimise-store = true;
     };

@@ -49,11 +49,12 @@
   outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, bunnix, ... }@inputs:
   let
     userSettings = import ./user-settings.nix;
+    machineSettings = import ./machine-settings.nix;
     system = "x86_64-linux";
   in
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs userSettings; };
+      specialArgs = { inherit inputs userSettings machineSettings; };
       modules = [
         { nixpkgs.hostPlatform = system; }
 

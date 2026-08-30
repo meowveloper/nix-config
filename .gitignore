@@ -3,5 +3,7 @@ result
 .direnv/
 .venv/
 user-settings.nix
+hardware-configuration.nix
+machine-settings.nix
 tmp
 .omo
