@@ -122,8 +122,7 @@ fill_mode = "stretch"
 transition_on_startup = true
 
     [wallpaper.automation]
-    enabled = true
-    order = "alphabetical"
+    enabled = false
 
 [widget.battery]
 capsule = false
