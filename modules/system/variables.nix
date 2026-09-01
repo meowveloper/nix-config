@@ -1,8 +1,8 @@
 { lib, machineSettings, ... }: {
     environment.variables = lib.mkMerge [
         {
-            EDITOR = "neovim";
-            VISUAL = "neovim";
+            EDITOR = "nvim";
+            VISUAL = "nvim";
             MOZ_ENABLE_WAYLAND = "1";
             NIXOS_OZONE_WL = "1";
         }
