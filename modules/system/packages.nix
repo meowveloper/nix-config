@@ -33,6 +33,7 @@
         btop
         git-lfs
         chromium
+        tor-browser
         ffmpeg
         cacert
 

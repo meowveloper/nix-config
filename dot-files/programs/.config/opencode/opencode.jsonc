@@ -6,5 +6,18 @@
             "command": ["npx", "-y", "chrome-devtools-mcp@latest", "--browser-url=http://127.0.0.1:9222"],
             "enabled": true
         },
+    },
+    "provider": {
+        "colab": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "Bonsai on Colab (Tailscale)",
+            "options": {
+                "baseURL": "https://colab-ollama.taild525bc.ts.net/v1",
+                "apiKey": "ollama"
+            },
+            "models": {
+                "bonsai-8b": { "name": "Bonsai 8B" }
+            }
+        }
     }
 }
