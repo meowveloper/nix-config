@@ -1,6 +1,7 @@
 { pkgs, config, userSettings, inputs, ... }: {
     home.packages = [
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
     ];
 
