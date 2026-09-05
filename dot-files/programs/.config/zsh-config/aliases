@@ -26,7 +26,13 @@ alias umount-gdrive='systemctl --user stop rclone-gdrive.service'
 alias umount-cloud='systemctl --user stop rclone-secret.service rclone-gdrive.service'
 
 # opencode service
-alias opc='systemctl --user start opencode-web'
-alias opcs='systemctl --user stop opencode-web'
-alias opcrs='systemctl --user restart opencode-web'
-alias opcat='opencode attach http://localhost:4096'
+alias opc1='systemctl --user start opencode-web'
+alias opc1s='systemctl --user stop opencode-web'
+alias opc1rs='systemctl --user restart opencode-web'
+alias opc1at='opencode attach http://localhost:4096'
+
+# opencode2 service
+alias opc='opencode2 service start'
+alias opcs='opencode2 service stop'
+alias opcrs='opencode2 service restart'
+alias opcpw='cat $HOME/.config/opencode/service.json'
