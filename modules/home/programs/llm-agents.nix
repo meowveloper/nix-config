@@ -3,6 +3,7 @@
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
+        pkgs.playwright-mcp
     ];
 
     xdg.configFile."opencode/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/agents";
