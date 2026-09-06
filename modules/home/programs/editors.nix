@@ -7,6 +7,7 @@
         vue-language-server
         zls
         cargo
+        gedit
     ];
 
     # neovim config
