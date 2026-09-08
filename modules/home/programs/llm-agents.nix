@@ -4,6 +4,7 @@
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
         pkgs.playwright-mcp
+        pkgs.uv
     ];
 
     xdg.configFile."opencode/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/agents";
@@ -11,6 +12,8 @@
     xdg.configFile."opencode/AGENTS.md".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/AGENTS.md";
     xdg.configFile."opencode/opencode.jsonc".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/opencode.jsonc";
     xdg.configFile."opencode/tui.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/tui.json";
+    xdg.configFile."opencode/plugins".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/plugins";
+    xdg.configFile."opencode/cli.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/cli.json";
 
     systemd.user.services.opencode-web = {
         Unit = {

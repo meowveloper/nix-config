@@ -10,5 +10,6 @@
         ./appimages.nix
         ./cloud.nix
         ./editors.nix
+        ./chromium-debug.nix
     ];
 }
