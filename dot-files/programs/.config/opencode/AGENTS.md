@@ -13,7 +13,7 @@ This is a firm, non-negotiable requirement. Never run a bash command directly if
 
 # Git Command Restrictions
 
-**MUST NOT** run any git write commands. Agents are ONLY permitted to run read-only git commands.
+**MUST NOT** run any git write commands unless user explicitly told to. Agents are ONLY permitted to run read-only git commands.
 
 **Allowed (read-only):**
 - `git status`
@@ -25,7 +25,7 @@ This is a firm, non-negotiable requirement. Never run a bash command directly if
 - `git stash list`
 - `git tag --list`
 
-**Forbidden (write):**
+**Forbidden or Needs user permission (write):**
 - `git commit`
 - `git add`
 - `git push`
@@ -37,7 +37,7 @@ This is a firm, non-negotiable requirement. Never run a bash command directly if
 - `git tag` (create/delete)
 - `git remote add/remove`
 
-This is a HARD, non-negotiable rule. Any write operation must be performed by the user directly.
+This is a HARD, non-negotiable rule. Any write operation must be permitted by the user directly.
 
 # Multiple Choice Preference for Questions
 

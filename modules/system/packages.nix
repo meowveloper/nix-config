@@ -51,5 +51,8 @@
         proton-vpn
         openssl
         git-remote-gcrypt
+
+        # side hobby
+        blender
     ];
 }
