@@ -9,17 +9,17 @@
                 "PLAYWRIGHT_MCP_USER_DATA_DIR": "{env:HOME}/.cache/playwright-mcp-profile"
             },
             "enabled": true
-        },
-        "browser-harness": {
-            "type": "local",
-            "command": ["uvx", "--python", "3.12", "--from", "browser-harness[mcp]", "browser-harness-mcp"],
-            "enabled": true
+        }
+        // "browser-harness": {
+            // "type": "local",
+            // "command": ["uvx", "--python", "3.12", "--from", "browser-harness[mcp]", "browser-harness-mcp"],
+            // "enabled": true
             // remove instructions
             // rm -rf ~/.cache/uv              # the uvx temporary box
             // rm -rf ~/.local/share/uv        # IMPORTANT: includes tools/ AND python/3.12 - this is the big one
             // rm -f ~/.local/bin/uvx ~/.local/bin/browser-harness*  # shims, if any
             // rm -rf ~/.config/browser-harness # logs, screenshots, auth
-        }
+        // }
     },
     "provider": {
     }
