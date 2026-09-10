@@ -2,7 +2,7 @@
     home.packages = [
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
-        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
         pkgs.playwright-mcp
         pkgs.uv
     ];
