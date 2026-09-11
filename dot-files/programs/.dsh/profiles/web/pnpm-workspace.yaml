@@ -1,0 +1,8 @@
+packages:
+  - .
+
+nodeLinker: hoisted
+autoInstallPeers: false
+
+allowBuilds:
+  dsh-files@https://codeload.github.com/meowveloper/dsh-files/tar.gz/113c9bc420034bbd7e7821fedf3aada29434f95b: true
