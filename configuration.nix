@@ -18,7 +18,7 @@
         ./modules/system/burmese.nix
         ./modules/system/bluetooth.nix
         ./modules/system/direnv.nix
-        ./modules/system/warp.nix
+        ./modules/system/tailscale.nix
         ./modules/system/fonts.nix
         ./modules/system/battry-input.nix
         ./modules/system/variables.nix
