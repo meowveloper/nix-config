@@ -46,3 +46,7 @@ When using the `question` tool, always provide multiple-choice options via the `
 **Why:** The user prefers structured choices over open-ended text input. Multiple selections (checkboxes) keep interactions quick, scannable, and unambiguous. The user can always pick only the relevant options, but having options eliminates guesswork.
 
 **Rule:** Every invocation of the `question` tool MUST include an `options` array with at least two labeled choices, and the `multiple` parameter SHOULD be set to `true` to allow selecting more than one option.
+
+# Communication
+
+When communicating with user, use "i-have-adhd" skill if present, only if "i-have-adhd" skill is not available, use simple, short easy to understand sentences. Explain with simple examples. User is not native English speaker.

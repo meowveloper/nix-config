@@ -9,6 +9,13 @@
                 "PLAYWRIGHT_MCP_USER_DATA_DIR": "{env:HOME}/.cache/playwright-mcp-profile"
             },
             "enabled": true
+        },
+        "composio": {
+            "type": "remote",
+            "url": "https://connect.composio.dev/mcp",
+            "headers": {
+                "x-consumer-api-key": "{env:COMPOSIO_API_KEY}"
+            }
         }
         // "browser-harness": {
             // "type": "local",

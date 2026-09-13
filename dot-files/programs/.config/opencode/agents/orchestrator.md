@@ -10,7 +10,7 @@ permissions:
     effect: deny
   - action: read
     resource: "*"
-    effect: deny
+    effect: allow
   - action: glob
     resource: "*"
     effect: deny
