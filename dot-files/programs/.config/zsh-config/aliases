@@ -32,8 +32,8 @@ alias opc1rs='systemctl --user restart opencode-web'
 alias opc1at='opencode attach http://localhost:4096'
 
 # opencode2 service
-alias opc='opencode2 service start'
-alias opcs='opencode2 service stop'
-alias opcrs='opencode2 service restart'
-alias opcpw='cat $HOME/.config/opencode/service.json'
+alias opc='opencode2 service start && sudo tailscale serve --bg http://127.0.0.1:$(opencode2 service get port)'
+alias opcs='opencode2 service stop && sudo tailscale serve --https=443 off'
+alias opcrs='opencode2 service restart && sudo tailscale serve --https=443 off && sudo tailscale serve --bg http://127.0.0.1:$(opencode2 service get port)'
+alias opcst='opencode2 service status && tailscale serve status'
 alias opc2='opencode2'

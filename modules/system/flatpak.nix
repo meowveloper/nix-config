@@ -15,7 +15,6 @@ in {
       "app.zen_browser.zen"
       "com.stremio.Stremio"
       "org.freedesktop.Platform.codecs-extra"
-      "org.onlyoffice.desktopeditors"
       "com.viber.Viber"
     ];
     remotes = [

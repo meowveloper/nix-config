@@ -39,10 +39,10 @@
 
         # video player
         haruna
-        video-downloader
         yt-dlp
+        obs-studio
 
-        #
+        # utilities
         obsidian
         acl
         discord
@@ -51,6 +51,7 @@
         proton-vpn
         openssl
         git-remote-gcrypt
+        libreoffice
 
         # side hobby
         blender
