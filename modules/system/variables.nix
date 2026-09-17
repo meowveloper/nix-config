@@ -1,4 +1,5 @@
 { lib, machineSettings, ... }: {
+
     environment.variables = lib.mkMerge [
         {
             EDITOR = "nvim";
@@ -13,4 +14,5 @@
             __GLX_VENDOR_LIBRARY_NAME = "nvidia";
         })
     ];
+
 }

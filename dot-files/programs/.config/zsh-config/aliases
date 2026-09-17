@@ -25,12 +25,6 @@ alias mount-gdrive='systemctl --user start rclone-gdrive.service'
 alias umount-gdrive='systemctl --user stop rclone-gdrive.service'
 alias umount-cloud='systemctl --user stop rclone-secret.service rclone-gdrive.service'
 
-# opencode service
-alias opc1='systemctl --user start opencode-web'
-alias opc1s='systemctl --user stop opencode-web'
-alias opc1rs='systemctl --user restart opencode-web'
-alias opc1at='opencode attach http://localhost:4096'
-
 # opencode2 service
 alias opc='opencode2 service start && sudo tailscale serve --bg http://127.0.0.1:$(opencode2 service get port)'
 alias opcs='opencode2 service stop && sudo tailscale serve --https=443 off'
