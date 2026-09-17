@@ -26,8 +26,8 @@ alias umount-gdrive='systemctl --user stop rclone-gdrive.service'
 alias umount-cloud='systemctl --user stop rclone-secret.service rclone-gdrive.service'
 
 # opencode2 service
-alias opc='opencode2 service start && sudo tailscale serve --bg http://127.0.0.1:$(opencode2 service get port)'
-alias opcs='opencode2 service stop && sudo tailscale serve --https=443 off'
-alias opcrs='opencode2 service restart && sudo tailscale serve --https=443 off && sudo tailscale serve --bg http://127.0.0.1:$(opencode2 service get port)'
-alias opcst='opencode2 service status && tailscale serve status'
-alias opc2='opencode2'
+alias opc='opencode service start && sudo tailscale serve --bg http://127.0.0.1:$(opencode service get port)'
+alias opcs='opencode service stop && sudo tailscale serve --https=443 off'
+alias opcrs='opencode service restart && sudo tailscale serve --https=443 off && sudo tailscale serve --bg http://127.0.0.1:$(opencode service get port)'
+alias opcst='opencode service status && tailscale serve status'
+alias opct='opencode'

@@ -14,6 +14,8 @@
         CUA_DRIVER_RS_ENABLE_WAYLAND = "1";
     };
 
+    home.sessionPath = [ "$HOME/.local/bin" ];
+
     # opencode dot files
     xdg.configFile."opencode/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/agents";
     xdg.configFile."opencode/skills".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/skills";
@@ -30,4 +32,6 @@
     home.file.".dsh/profiles/web/cordis.yml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/cordis.yml";
     home.file.".dsh/profiles/web/package.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/package.json";
     home.file.".dsh/profiles/web/pnpm-workspace.yaml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/pnpm-workspace.yaml";
+
+    home.file.".local/bin/opencode".source = "${inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2}/bin/opencode2";
 }

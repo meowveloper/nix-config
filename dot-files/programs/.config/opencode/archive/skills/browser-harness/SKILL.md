@@ -1,5 +1,5 @@
 ---
-name: browser
+name: browser-harness
 description: Drive the user's REAL, logged-in Chromium over CDP. Use when you need to browse the web, log into sites, keep existing logins/cookies/finished-captchas, fill forms, click elements, take screenshots, or upload files (including CV/job applications). Attaches to the already-running Chromium on port 9222 with NO --user-data-dir, so the user's real profile and sessions are preserved. Launches Chromium in the background on demand when it is not already running.
 ---
 
