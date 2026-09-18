@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "servers": {
+    "browser-harness": {
+      "enabled": true,
+      "transport": "stdio",
+      "scope": "global",
+      "toolCallTimeoutMs": 60000,
+      "failOnStartupError": false,
+      "disabledTools": [],
+      "command": "uvx",
+      "args": [
+        "--python",
+        "3.12",
+        "--from",
+        "browser-harness[mcp]",
+        "browser-harness-mcp"
+      ],
+      "env": {},
+      "cwd": ""
+    }
+  }
+}

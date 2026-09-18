@@ -2,14 +2,24 @@
   "name": "dsh-profile-web",
   "private": true,
   "dependencies": {
-    "dsh-files": "github:meowveloper/dsh-files"
+    "@furongjun1999/dsh-memory": "^0.4.8",
+    "@moon16u/dsh-pouch": "github:moon16u/dsh-pouch",
+    "dsh-better-sidebar": "^0.19.1",
+    "dsh-dream-skin": "^9.16.0",
+    "dshmarket": "^1.48.0"
   },
   "dsh": {
     "profile": {
       "bundles": [
         "@deepseek-ai/dsh-base",
-        "@deepseek-ai/dsh-web-app"
-      ]
+        "@deepseek-ai/dsh-web-app",
+        "dshmarket",
+        "dsh-better-sidebar",
+        "dsh-dream-skin",
+        "@furongjun1999/dsh-memory",
+        "@moon16u/dsh-pouch"
+      ],
+      "patchReload": "live"
     }
   }
 }

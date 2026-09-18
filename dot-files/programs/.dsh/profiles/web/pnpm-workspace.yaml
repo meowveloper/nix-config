@@ -4,5 +4,8 @@ packages:
 nodeLinker: hoisted
 autoInstallPeers: false
 
+minimumReleaseAgeExclude:
+  - dshmarket@1.48.0
+
 allowBuilds:
-  dsh-files@https://codeload.github.com/meowveloper/dsh-files/tar.gz/ff4ac2b46d4ff6e5323813a2b8754a27cd22a7f7: true
+  node-pty: true

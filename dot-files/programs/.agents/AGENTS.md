@@ -50,3 +50,6 @@ When using the `question` tool, always provide multiple-choice options via the `
 # Communication
 
 When communicating with user, use "i-have-adhd" skill if present, only if "i-have-adhd" skill is not available, use simple, short easy to understand sentences. Explain with simple examples. User is not native English speaker.
+
+# Working
+Use "orchestration" skill when available.
