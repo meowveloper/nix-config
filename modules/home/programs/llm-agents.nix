@@ -38,4 +38,23 @@
 
     home.file.".local/bin/opencode".source = "${inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2}/bin/opencode2";
 
+    # dsh web — manual-start user service (no WantedBy: start/stop via aliases).
+    # dsh has no `service` subcommand (only `web` + `plugin`), so systemd wraps it.
+    # Default port 3080 comes from dsh-web-app's cordis.patch.yml.
+    systemd.user.services.dsh-web = let
+        dshPkg = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh;
+    in {
+        Unit = {
+            Description = "dsh web UI (DeepSeek Harness, manual start)";
+            After = [ "network.target" ];
+        };
+
+        Service = {
+            Type = "simple";
+            ExecStart = "${dshPkg}/bin/dsh web --no-open --port 3080";
+            WorkingDirectory = "%h";
+            Restart = "no";
+        };
+    };
+
 }
