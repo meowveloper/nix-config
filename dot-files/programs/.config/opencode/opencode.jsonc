@@ -16,7 +16,7 @@
             "headers": {
                 "x-consumer-api-key": "{env:COMPOSIO_API_KEY}"
             }
-        }
+        },
         "browser-harness": {
             "type": "local",
             "command": ["uvx", "--python", "3.12", "--from", "browser-harness[mcp]", "browser-harness-mcp"],

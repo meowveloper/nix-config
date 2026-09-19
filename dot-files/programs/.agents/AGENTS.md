@@ -9,6 +9,8 @@ This is a NixOS system. Many projects define their development environment via a
 - Single command: `nix develop --command npm test`
 - Chained/sequential commands: `nix develop --command bash -c "cmd1 && cmd2"`
 
+**Fallback if plain `nix develop` fails:** if it errors with `attempt to write a readonly database` (sandboxed HOME cache), retry once with `XDG_CACHE_HOME=/tmp/nix-cache nix develop --command <cmd>`. Use the fallback only when plain `nix develop` actually failed — if it works, no prefix change needed.
+
 This is a firm, non-negotiable requirement. Never run a bash command directly if a `flake.nix` exists in the project.
 
 # Git Command Restrictions

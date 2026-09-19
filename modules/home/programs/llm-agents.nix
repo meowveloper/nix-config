@@ -2,6 +2,7 @@
     home.packages = [
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.agent-browser
         pkgs.playwright-mcp
         pkgs.uv
         pkgs.pnpm
@@ -28,7 +29,8 @@
     home.file.".dsh/dsh-mcp.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/dsh-mcp.json";
     home.file.".dsh/profiles/web/cordis.patch.yml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/cordis.patch.yml";
     home.file.".dsh/profiles/web/package.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/package.json";
-    # NOTE: cordis.yml and pnpm-workspace.yaml intentionally unmanaged — DSH generates them.
+    home.file.".dsh/profiles/web/pnpm-workspace.yaml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/pnpm-workspace.yaml";
+    # NOTE: cordis.yml intentionally unmanaged — DSH generates it.
     # NOTE: never symlink .credentials.yaml, storages/, sessions/, node_modules, pnpm-lock.yaml.
 
     # global ".agents"

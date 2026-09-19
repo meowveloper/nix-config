@@ -14,7 +14,7 @@
       # with the same remote-debugging-port (opens tab/focuses, no duplicate daemon).
       if ${pkgs.curl}/bin/curl -s --connect-timeout 2 "$CDP_URL" >/dev/null 2>&1; then
         notify "Chromium Debug" "Debug browser already running — focusing it."
-        exec "$CHROMIUM_BIN" --remote-debugging-port=9222 --disable-gpu --ozone-platform=x11 about:blank
+        exec "$CHROMIUM_BIN" --remote-debugging-port=9222
       fi
 
       # Case B: normal Chromium alive but no CDP -> same-profile second
@@ -41,7 +41,7 @@
 
       # Case C: nothing running -> launch detached (no --user-data-dir,
       # preserves real profile/logins) and wait for CDP.
-      nohup "$CHROMIUM_BIN" --remote-debugging-port=9222 --disable-gpu --ozone-platform=x11 about:blank >/dev/null 2>&1 &
+      nohup "$CHROMIUM_BIN" --remote-debugging-port=9222 >/dev/null 2>&1 &
       disown || true
 
       for i in $(seq 1 30); do
