@@ -6,6 +6,7 @@
         pkgs.playwright-mcp
         pkgs.uv
         pkgs.pnpm
+        pkgs.node-gyp
     ];
 
 
@@ -22,16 +23,6 @@
     xdg.configFile."opencode/plugins".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/plugins";
     xdg.configFile."opencode/cli.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/cli.json";
 
-    # dsh dot files — declarative: repo is source of truth,
-    # `nixos-rebuild switch` restores these, wiping UI drift.
-    # To add a plugin/MCP server: edit the dotfile, rebuild, DSH installs on launch.
-    home.file.".dsh/settings.yaml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/settings.yaml";
-    home.file.".dsh/dsh-mcp.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/dsh-mcp.json";
-    home.file.".dsh/profiles/web/cordis.patch.yml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/cordis.patch.yml";
-    home.file.".dsh/profiles/web/package.json".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/package.json";
-    home.file.".dsh/profiles/web/pnpm-workspace.yaml".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.dsh/profiles/web/pnpm-workspace.yaml";
-    # NOTE: cordis.yml intentionally unmanaged — DSH generates it.
-    # NOTE: never symlink .credentials.yaml, storages/, sessions/, node_modules, pnpm-lock.yaml.
 
     # global ".agents"
     home.file.".agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.agents";

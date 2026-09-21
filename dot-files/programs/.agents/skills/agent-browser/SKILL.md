@@ -68,6 +68,14 @@ agent-browser --cdp 9222 screenshot out.png
 
 Prefer `snapshot -i` + `@eN` refs; `find role/text/label` and raw CSS are fallbacks.
 
+## 4. File uploads (avoid the native picker)
+
+`upload <selector|@ref> <files...>` sets files directly on the DOM input via CDP — it never opens a file browser itself. The focus-stealing native dialog (OS file chooser) comes from CLICKING the page's picker trigger (e.g. an "Upload files" menuitem/button), so skip that click when you can:
+
+- Prefer NO-CLICK upload: expand any parent menu so the input exists, wait a beat for lazy-rendered inputs (confirm with `get count "input[type=file]"`), then `upload` the generic selector directly. Never click the `<input type=file>` itself (hidden by design; unclickable).
+- Verify via attachment evidence (thumbnail/chip HTML, composer count) — snapshots often hide file inputs and filenames.
+- If upload errors (`Element not found`) or the composer registers 0 files: fall back to clicking the picker trigger first, then upload. Priority order: a failed upload is worse than a stolen focus — click when you must.
+
 ## Docs
 
 - https://agent-browser.dev/

@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "skills": {
+    "modlens": {
+      "source": "liustack/modlens",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/liustack/modlens.git",
+      "skillPath": "skills/modlens/SKILL.md",
+      "skillFolderHash": "945ab96179f3ebae9ac78336599d04a5c2cc1eea",
+      "installedAt": "2026-09-20T19:47:32.002Z",
+      "updatedAt": "2026-09-20T19:47:32.002Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
+      "installedAt": "2026-09-20T19:47:41.903Z",
+      "updatedAt": "2026-09-20T19:47:41.903Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "droid",
+    "gemini-cli",
+    "github-copilot",
+    "kilo",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed"
+  ]
+}
