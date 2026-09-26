@@ -55,26 +55,6 @@
         "type": "github"
       }
     },
-    "composio-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1789798591,
-        "narHash": "sha256-fBwIB7n/PeSrdv7CVpbEcywCQMT1+Zm+PI+OPx7Z3nQ=",
-        "owner": "mehy3dd1nov",
-        "repo": "composio-nix",
-        "rev": "a7be0222ded7a558ce6cf9fd6af1f082d4db9b31",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mehy3dd1nov",
-        "repo": "composio-nix",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -251,11 +231,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1790156955,
-        "narHash": "sha256-fX01id/iJpSbHzVDYgrQHy1vr7OsqCZrNAwfYsestLQ=",
+        "lastModified": 1790398887,
+        "narHash": "sha256-vD/DZ9vxJWz4iorDqMYhYdx38ZbuhsFAWuhZoYBM7Uw=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "06830d044f23ec9bc55cec62771122d2941c634d",
+        "rev": "bbb0f9a24c3a5ce918f3d8103397ce08b20300e1",
         "type": "github"
       },
       "original": {
@@ -441,7 +421,6 @@
     "root": {
       "inputs": {
         "bunnix": "bunnix",
-        "composio-nix": "composio-nix",
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
         "mangowm": "mangowm",

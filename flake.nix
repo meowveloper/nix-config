@@ -14,11 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    composio-nix = {
-      url = "github:mehy3dd1nov/composio-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     meowmux = {
       url = "github:meowveloper/meowmux?ref=v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
