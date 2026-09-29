@@ -12,6 +12,7 @@
         ./modules/system/mangowm.nix
         ./modules/system/nix-settings.nix
         ./modules/system/packages.nix
+        ./modules/system/gaming.nix
         ./modules/system/shell.nix
         ./modules/system/flatpak.nix
         ./modules/system/audio.nix

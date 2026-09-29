@@ -58,6 +58,10 @@
             powerManagement.enable = true;
             prime = {
                 offload.enable = true;
+                # Provides the `nvidia-offload` wrapper, which sets the PRIME
+                # render-offload env vars (incl. Vulkan optimus) and then execs
+                # the command. Needed to run Proton/DXVK games on the MX350.
+                offload.enableOffloadCmd = true;
                 intelBusId = machineSettings.gpu.intelBusId;
                 nvidiaBusId = machineSettings.gpu.nvidiaBusId;
             };
