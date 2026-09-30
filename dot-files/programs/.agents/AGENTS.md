@@ -55,3 +55,26 @@ When communicating with user, use "i-have-adhd" skill if present, only if "i-hav
 
 # Working
 Use "orchestration" skill when available.
+
+# Tool routing: Executor is the tool gateway
+
+Most global MCP servers and API tools on this machine are centralised in Executor, so the
+same tool is not installed and configured once per agent. Treat Executor as the
+source of truth for tools.
+
+Before installing, configuring, or scaffolding an MCP server — and before
+telling the user a tool is unavailable — check Executor first.
+
+Discover and call, using whichever surface your agent has:
+
+- Executor MCP: its `execute` tool does both —
+    tools.search({ query: "<what you need>" })
+    await tools[<path>](<args>)
+- Any shell:
+    executor tools search "<what you need>"
+    executor call <path segments> '<json args>'
+
+A tool path is `<integration>.<owner>.<connection>.<tool>`. `search` matches
+tool names and intent, and covers integrations added later, so this file needs
+no edit when a new tool appears. If Executor has nothing, ask the user before
+installing anything.

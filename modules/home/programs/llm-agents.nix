@@ -1,9 +1,10 @@
-{ pkgs, config, lib, userSettings, inputs, ... }: {
+{ pkgs, config, userSettings, inputs, ... }: {
 
     home.packages = [
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.agent-browser
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.executor
         pkgs.playwright-mcp
         pkgs.uv
         pkgs.pnpm
