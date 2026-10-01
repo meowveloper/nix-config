@@ -56,25 +56,29 @@ When communicating with user, use "i-have-adhd" skill if present, only if "i-hav
 # Working
 Use "orchestration" skill when available.
 
-# Tool routing: Executor is the tool gateway
+# Tool routing: mcporter is the tool gateway
 
-Most global MCP servers and API tools on this machine are centralised in Executor, so the
-same tool is not installed and configured once per agent. Treat Executor as the
-source of truth for tools.
+Every MCP tool on this machine is configured in mcporter, so the same tool is
+not installed and configured once per agent. Treat mcporter as the source of
+truth for tools.
 
 Before installing, configuring, or scaffolding an MCP server — and before
-telling the user a tool is unavailable — check Executor first.
+telling the user a tool is unavailable — check mcporter first.
 
 Discover and call, using whichever surface your agent has:
 
-- Executor MCP: its `execute` tool does both —
+- MCP tool (if the agent exposes one): its `execute` tool does both —
     tools.search({ query: "<what you need>" })
     await tools[<path>](<args>)
 - Any shell:
-    executor tools search "<what you need>"
-    executor call <path segments> '<json args>'
+    mcporter list                 # servers + tool counts
+    mcporter list --schema        # full tool docs and input schemas
+    mcporter call <server>.<tool> key=value ...
+    mcporter resource <server> [uri]
 
-A tool path is `<integration>.<owner>.<connection>.<tool>`. `search` matches
-tool names and intent, and covers integrations added later, so this file needs
-no edit when a new tool appears. If Executor has nothing, ask the user before
-installing anything.
+A tool selector is `<server>.<tool>`. Config lives in
+`~/.config/mcporter/mcporter.json` (per-user) and
+`<project>/config/mcporter.json` (per-project, merged on top). Add or edit
+servers with `mcporter config`; it covers servers added later, so this file
+needs no edit when a new tool appears. If mcporter has nothing, ask the user
+before installing anything.

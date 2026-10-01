@@ -90,7 +90,7 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
 force = true
 
 [plugins]
-enabled = []
+enabled = [ "noctalia/screen_recorder" ]
 
 [shell]
 lang = "en"
@@ -99,11 +99,14 @@ settings_show_advanced = true
 telemetry_enabled = true
 
     [shell.panel]
-    control_center_placement = "centered"
-    session_placement = "centered"
+    control_center_placement = "floating"
+    control_center_position = "center"
+    session_placement = "floating"
+    session_position = "center"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
     shadow = false
     transparency_mode = "soft"
-    wallpaper_placement = "centered"
 
     [shell.screenshot]
     save_to_file = false

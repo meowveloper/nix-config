@@ -5,7 +5,6 @@
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.agent-browser
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.mcporter
-        pkgs.playwright-mcp
         pkgs.uv
         pkgs.pnpm
         pkgs.node-gyp
