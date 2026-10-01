@@ -1,0 +1,23 @@
+{
+    "mcpServers": {
+        "composio": {
+            "baseUrl": "https://connect.composio.dev/mcp"
+        },
+        "classifier": {
+            "baseUrl": "https://classifier.dev/mcp"
+        },
+        "classifier-docs": {
+            "baseUrl": "https://classifier.dev/mcp/docs"
+        },
+        "browser_harness": {
+            "command": "uvx",
+            "args": [
+                "--python",
+                "3.12",
+                "--from",
+                "browser-harness[mcp]",
+                "browser-harness-mcp"
+            ]
+        }
+    }
+}

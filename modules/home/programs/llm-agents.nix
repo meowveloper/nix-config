@@ -4,7 +4,7 @@
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.agent-browser
-        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.executor
+        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.mcporter
         pkgs.playwright-mcp
         pkgs.uv
         pkgs.pnpm
@@ -14,10 +14,13 @@
 
     # for hermes computer use (Delete if not necessary)
     home.sessionVariables = {
+        MCPORTER_CONFIG = "~/.config/mcporter/mcporter.json";
         CUA_DRIVER_RS_ENABLE_WAYLAND = "1";
     };
 
     home.sessionPath = [ "$HOME/.local/bin" ];
+
+    xdg.configFile."mcporter".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/mcporter";
 
     # opencode dot files
     xdg.configFile."opencode/agents".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/opencode/agents";
