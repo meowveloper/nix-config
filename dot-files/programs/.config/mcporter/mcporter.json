@@ -18,6 +18,9 @@
                 "browser-harness[mcp]",
                 "browser-harness-mcp"
             ]
+        },
+        "mage-space": {
+            "baseUrl": "https://mcp.mage.space/mcp"
         }
     }
 }
