@@ -49,6 +49,7 @@
         telegram-desktop
         zoom-us
         proton-vpn
+        cloudflare-warp
         openssl
         git-remote-gcrypt
         libreoffice
