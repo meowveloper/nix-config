@@ -1,13 +1,16 @@
 {
     "mcpServers": {
         "composio": {
-            "baseUrl": "https://connect.composio.dev/mcp"
+            "baseUrl": "https://connect.composio.dev/mcp",
+            "lifecycle": "keep-alive"
         },
         "classifier": {
-            "baseUrl": "https://classifier.dev/mcp"
+            "baseUrl": "https://classifier.dev/mcp",
+            "lifecycle": "keep-alive"
         },
         "classifier-docs": {
-            "baseUrl": "https://classifier.dev/mcp/docs"
+            "baseUrl": "https://classifier.dev/mcp/docs",
+            "lifecycle": "keep-alive"
         },
         "browser_harness": {
             "command": "uvx",
@@ -17,10 +20,8 @@
                 "--from",
                 "browser-harness[mcp]",
                 "browser-harness-mcp"
-            ]
-        },
-        "mage-space": {
-            "baseUrl": "https://mcp.mage.space/mcp"
+            ],
+            "lifecycle": "keep-alive"
         }
     }
 }
