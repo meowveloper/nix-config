@@ -24,3 +24,7 @@ input_path = '~/.config/matugen/templates/tmux.conf'
 output_path = '~/.config/tmux/colors.conf'
 post_hook = 'tmux source-file ~/.config/tmux/tmux.conf'
 
+[templates.mangowm]
+input_path = '~/.config/matugen/templates/mangowm-colors.conf'
+output_path = '~/.config/mango/colors.conf'
+
