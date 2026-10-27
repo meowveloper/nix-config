@@ -43,7 +43,6 @@
         obs-studio
 
         # utilities
-        obsidian
         acl
         discord
         telegram-desktop

@@ -16,6 +16,7 @@ in {
       "com.stremio.Stremio"
       "org.freedesktop.Platform.codecs-extra"
       "com.viber.Viber"
+      "md.obsidian.Obsidian"
     ];
     remotes = [
       { name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo"; }
