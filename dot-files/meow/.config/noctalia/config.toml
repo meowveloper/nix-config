@@ -20,21 +20,21 @@ margin_edge = 6
     padding = 11.0
 
     [[bar.default.capsule_group]]
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g2"
     members = [ "network", "bluetooth", "volume", "brightness" ]
     opacity = 0.5
     padding = 11.0
 
     [[bar.default.capsule_group]]
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g3"
     members = [ "tray", "notifications", "clipboard" ]
     opacity = 0.5
     padding = 6.0
 
     [[bar.default.capsule_group]]
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g4"
     members = [ "ram", "cpu", "battery", "power_profile" ]
     opacity = 0.5
