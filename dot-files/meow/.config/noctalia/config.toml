@@ -1,12 +1,12 @@
-config_version = 13
+config_version = 16
 
 [bar.default]
+position = "top"
 background_opacity = 0.1099999975413084
 capsule_thickness = 0.63999998942017555
 center = [ "group:g3", "group:g2", "group:g4" ]
 end = [ "screenshot", "control-center", "session" ]
 margin_ends = 114
-position = "bottom"
 shadow = false
 start = [ "workspaces", "clock" ]
 widget_spacing = 12
@@ -39,6 +39,17 @@ margin_edge = 6
     members = [ "ram", "cpu", "battery", "power_profile" ]
     opacity = 0.5
     padding = 6.0
+
+[dock]
+active_monitor_only = true
+background_opacity = 0.12999999709427357
+cross_axis_padding = 0
+enabled = true
+icon_size = 38
+inactive_opacity = 0.59999998658895493
+main_axis_padding = 4
+pinned = [ "app.zen_browser.zen" ]
+shadow = false
 
 [location]
 address = "Bangkok, Thailand"
