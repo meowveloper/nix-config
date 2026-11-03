@@ -48,7 +48,7 @@ enabled = true
 icon_size = 38
 inactive_opacity = 0.59999998658895493
 main_axis_padding = 4
-pinned = [ "app.zen_browser.zen" ]
+pinned = [ "app.zen_browser.zen", "com.mitchellh.ghostty" ]
 shadow = false
 
 [location]
