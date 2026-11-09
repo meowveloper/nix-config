@@ -12,6 +12,11 @@
             "baseUrl": "https://classifier.dev/mcp/docs",
             "lifecycle": "keep-alive"
         },
+        "bbb": {
+            "command": "browse",
+            "args": ["mcp"],
+            "lifecycle": "keep-alive"
+        },
         "browser_harness": {
             "command": "uvx",
             "args": [

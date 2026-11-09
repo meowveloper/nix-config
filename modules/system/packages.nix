@@ -41,6 +41,7 @@
         haruna
         yt-dlp
         obs-studio
+        kdePackages.kdenlive
 
         # utilities
         acl

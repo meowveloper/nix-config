@@ -1,15 +1,3 @@
 {
     "$schema": "https://opencode.ai/config.json",
-    "default_agent": "orchestrator",
-    "mcp": {
-        "mcporter": {
-            "type": "local",
-            "command": [
-                "mcporter",
-                "serve",
-                "--stdio"
-            ],
-            "enabled": true
-        }
-    }
 }

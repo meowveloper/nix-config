@@ -67,16 +67,13 @@ telling the user a tool is unavailable — check mcporter first.
 
 Discover and call, using whichever surface your agent has:
 
-- MCP tool (if the agent exposes one): its `execute` tool does both —
-    tools.search({ query: "<what you need>" })
-    await tools[<path>](<args>)
-- Any shell:
+- shell:
     mcporter list                 # servers + tool counts
     mcporter list --schema        # full tool docs and input schemas
     mcporter call <server>.<tool> key=value ...
     mcporter resource <server> [uri]
 
-A tool selector is `<server>.<tool>`. Config lives in
+Config lives in
 `~/.config/mcporter/mcporter.json` (per-user) and
 `<project>/config/mcporter.json` (per-project, merged on top). Add or edit
 servers with `mcporter config`; it covers servers added later, so this file
