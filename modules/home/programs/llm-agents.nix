@@ -37,7 +37,6 @@
     # dsh has no `service` subcommand (only `web` + `plugin`), so systemd wraps it.
     # Default port 3080 comes from dsh-web-app's cordis.patch.yml.
     systemd.user.services.dsh-web = let
-        dshPkg = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh;
     in {
         Unit = {
             Description = "dsh web UI (DeepSeek Harness, manual start)";
@@ -46,7 +45,7 @@
 
         Service = {
             Type = "simple";
-            ExecStart = "${dshPkg}/bin/dsh web --no-open --port 3080";
+            ExecStart = "${pkgs.zsh}/bin/zsh -ic 'exec dsh web --no-open --port 3080'";
             WorkingDirectory = "%h";
             Restart = "no";
         };
