@@ -3,7 +3,6 @@
     home.packages = [
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
-        inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.agent-browser
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.mcporter
         pkgs.uv
         pkgs.pnpm
@@ -49,6 +48,26 @@
             WorkingDirectory = "%h";
             Restart = "no";
         };
+    };
+
+    # mcporter MCP HTTP bridge — always on so dsh/opencode can use
+    # http://127.0.0.1:8931/mcp instead of spawning sandboxed stdio servers.
+    # zsh -ic matches dsh-web: inherits MCPORTER_CONFIG + PATH from the shell env.
+    systemd.user.services.mcporter-serve = {
+        Unit = {
+            Description = "mcporter MCP HTTP bridge (port 8931)";
+            After = [ "network.target" ];
+        };
+
+        Service = {
+            Type = "simple";
+            ExecStart = "${pkgs.zsh}/bin/zsh -ic 'exec mcporter serve --http 8931'";
+            WorkingDirectory = "%h";
+            Restart = "on-failure";
+            RestartSec = 2;
+        };
+
+        Install.WantedBy = [ "default.target" ];
     };
 
 }

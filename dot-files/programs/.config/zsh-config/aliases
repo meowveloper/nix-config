@@ -39,3 +39,11 @@ alias dshwrs='systemctl --user restart dsh-web.service'
 alias dshwst='systemctl --user status dsh-web.service'
 alias dshwlog='journalctl --user -u dsh-web.service -f'
 alias dshwt='dsh web --no-open --port 3080'
+
+# mcporter MCP HTTP bridge (127.0.0.1:8931, systemd user service)
+alias mcps='systemctl --user start mcporter-serve.service'
+alias mcpsp='systemctl --user stop mcporter-serve.service'
+alias mcpsr='systemctl --user restart mcporter-serve.service'
+alias mcpsst='systemctl --user status mcporter-serve.service'
+alias mcpslog='journalctl --user -u mcporter-serve.service -f'
+alias mcpst='ss -lnt | grep 8931'
