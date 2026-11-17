@@ -29,7 +29,6 @@
         bun
 
         #others
-        nautilus
         btop
         git-lfs
         chromium

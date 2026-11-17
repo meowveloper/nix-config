@@ -29,16 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     bunnix = {
@@ -47,7 +37,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, mangowm, nix-flatpak, bunnix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nix-flatpak, bunnix, ... }@inputs:
   let
     userSettings = import ./user-settings.nix;
     machineSettings = import ./machine-settings.nix;
@@ -59,31 +49,11 @@
       modules = [
         { nixpkgs.hostPlatform = system; }
 
-        # Pin xdg-desktop-portal-wlr to 0.8.2 — v0.8.3 has a known
-        # freeze bug where screensharing stalls after the first frame.
-        # https://github.com/NixOS/nixpkgs/issues/546183
-        { nixpkgs.overlays = [
-          (final: prev: {
-            xdg-desktop-portal-wlr = prev.xdg-desktop-portal-wlr.overrideAttrs (old: {
-              version = "0.8.2";
-              src = prev.fetchFromGitHub {
-                owner = "emersion";
-                repo = "xdg-desktop-portal-wlr";
-                rev = "v0.8.2";
-                hash = "sha256-HITf/hgiASWvn/z49mzS8IS1vuyXwdk1JiAOOHRSQMo=";
-              };
-            });
-          })
-
-          # Use bunnix to always get the latest bun release
-          (_final: prev: {
-            bun = inputs.bunnix.packages.${prev.stdenv.hostPlatform.system}.latest;
-          })
-        ]; }
+        # Use bunnix to always get the latest bun release
+        { nixpkgs.overlays = [ (_final: prev: { bun = inputs.bunnix.packages.${prev.stdenv.hostPlatform.system}.latest; }) ]; }
 
         ./configuration.nix
 
-        mangowm.nixosModules.mango
         nix-flatpak.nixosModules.nix-flatpak
         home-manager.nixosModules.home-manager
         {
@@ -91,6 +61,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs userSettings; };
           home-manager.backupFileExtension = "backup";
+
           home-manager.users.${userSettings.username1} = {
             imports = [ ./home.nix ];
             home.username = userSettings.username1;

@@ -1,6 +1,6 @@
 # ❄️ NixOS Configuration
-- MangoWM
-- NoctaliaShell
+- COSMIC (Wayland)
+- cosmic-greeter (greetd)
 - Ghostty
 - Neovim
 

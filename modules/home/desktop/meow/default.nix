@@ -1,7 +1,6 @@
 {
     imports = [
-        ./mangowm.nix
+        ./ghostty.nix
         ./gtk.nix
-        ./noctalia-shell.nix
     ];
 }
