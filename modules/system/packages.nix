@@ -32,12 +32,10 @@
         btop
         git-lfs
         chromium
-        brave
         ffmpeg
         cacert
 
         # video player
-        haruna
         yt-dlp
         obs-studio
         kdePackages.kdenlive
@@ -45,10 +43,8 @@
         # utilities
         acl
         discord
-        telegram-desktop
         zoom-us
         proton-vpn
-        cloudflare-warp
         openssl
         git-remote-gcrypt
         libreoffice

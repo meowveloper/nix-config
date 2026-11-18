@@ -12,8 +12,9 @@
       follow_inside_symlinks "yes"
       auto_update "yes"
     '';
-    # Optional: startup services
-    network.listenAddress = "127.0.0.1";
+    # Per-user unix socket instead of a shared TCP port, so two users can
+    # never fight over 127.0.0.1:6600. Each user gets their own socket file.
+    network.listenAddress = "${config.home.homeDirectory}/.local/share/mpd/socket";
   };
 
   home.packages = [ pkgs.rmpc ];
