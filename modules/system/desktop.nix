@@ -4,6 +4,12 @@
         # Wayland); COSMIC itself is configured in the GUI, not in Nix.
         services.desktopManager.cosmic.enable = true;
         services.displayManager.cosmic-greeter.enable = true;
+
+        # Clipboard-history applet (community package, not in nixpkgs or on
+        # Flathub). Needs COSMIC_DATA_CONTROL_ENABLED=1; see variables.nix.
+        environment.systemPackages = [
+            (pkgs.callPackage ../../pkgs/cosmic-ext-applet-clipboard-manager.nix { })
+        ];
     }
 
     # GPU block must stay: NVIDIA/PRIME (Intel iGPU + MX350) is independent of

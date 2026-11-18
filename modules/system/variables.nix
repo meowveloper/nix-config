@@ -13,4 +13,9 @@
         NIXOS_OZONE_WL = "1";
     };
 
+    # Required for clipboard managers (e.g. the cosmic-ext clipboard applet):
+    # enables the wlr-data-control protocol so a background app can observe
+    # every clipboard change. Tradeoff: any window can also read the clipboard.
+    environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
+
 }

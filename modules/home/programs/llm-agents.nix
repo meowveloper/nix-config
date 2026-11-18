@@ -14,6 +14,8 @@
     home.sessionVariables = {
         MCPORTER_CONFIG = "~/.config/mcporter/mcporter.json";
         CUA_DRIVER_RS_ENABLE_WAYLAND = "1";
+        EGO_LINUX_HEADLESS="1";
+        DSH_PORT="3080";
     };
 
     home.sessionPath = [ "$HOME/.local/bin" ];
@@ -35,6 +37,8 @@
     # dsh web — manual-start user service (no WantedBy: start/stop via aliases).
     # dsh has no `service` subcommand (only `web` + `plugin`), so systemd wraps it.
     # Default port 3080 comes from dsh-web-app's cordis.patch.yml.
+    # The advertised URL and the /api trusted authority are read from Tailscale
+    # at start (MagicDNS name), so no hostname is hardcoded here.
     systemd.user.services.dsh-web = let
     in {
         Unit = {
@@ -44,7 +48,7 @@
 
         Service = {
             Type = "simple";
-            ExecStart = "${pkgs.zsh}/bin/zsh -ic 'exec dsh web --no-open --port 3080'";
+            ExecStart = "${pkgs.zsh}/bin/zsh -ic 'exec dsh web --no-open --port $DSH_PORT'";
             WorkingDirectory = "%h";
             Restart = "no";
         };
