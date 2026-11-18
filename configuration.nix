@@ -14,6 +14,7 @@
         ./modules/system/packages.nix
         ./modules/system/shell.nix
         ./modules/system/flatpak.nix
+        ./modules/system/helium.nix
         ./modules/system/audio.nix
         ./modules/system/burmese.nix
         ./modules/system/bluetooth.nix
