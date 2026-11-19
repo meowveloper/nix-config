@@ -24,7 +24,6 @@
         nodejs_latest
         python3
         eza
-        docker
         rustup
         bun
 
