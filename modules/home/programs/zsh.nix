@@ -1,34 +1,12 @@
 { config, userSettings, ... }: {
+    # Manual mode: dot-files/programs/.zshrc owns ~/.zshrc.
+    # Do not re-enable programs.zsh unless you remove home.file.".zshrc" above.
     programs.zsh = {
-        enable = true;
-        enableCompletion = true;
-        autosuggestion.enable = true;
-        syntaxHighlighting.enable = true;
-
-        # We can use Nix to manage your shell history settings
-        history = {
-            size = 10000;
-            save = 10000;
-            path = "$HOME/.zsh_history";
-            ignoreDups = true;
-        };
-
-        # Initialize extra configuration
-        initContent = ''
-            umask 002
-
-            # Load your existing aliases and profile
-            [[ -f ~/.config/zsh-config/aliases ]] && source ~/.config/zsh-config/aliases
-            [[ -f ~/.config/zsh-config/profile ]] && source ~/.config/zsh-config/profile
-            [[ -f ~/.config/zsh-config/user ]] && source ~/.config/zsh-config/user
-
-            # FZF and Zoxide integration (if you want them managed here or keep relying on your profile)
-            eval "$(fzf --zsh)"
-            eval "$(zoxide init --cmd cd zsh)"
-        '';
+        enable = false;
     };
 
     # Link your config files so the 'source' commands above work
     xdg.configFile."zsh-config/aliases".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/zsh-config/aliases";
     xdg.configFile."zsh-config/profile".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.config/zsh-config/profile";
+    home.file.".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfiles_path}/programs/.zshrc";
 }

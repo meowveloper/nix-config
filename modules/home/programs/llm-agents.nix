@@ -1,22 +1,19 @@
 { pkgs, config, userSettings, inputs, ... }: {
 
     home.packages = [
+        # numtides input
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.mcporter
-        inputs.hermes-agent.packages.${pkgs.stdenv.hostPlatform.system}.desktop
-        inputs.hermes-agent.packages.${pkgs.stdenv.hostPlatform.system}.default
+
         pkgs.uv
         pkgs.pnpm
         pkgs.node-gyp
     ];
 
 
-    # for hermes computer use (Delete if not necessary)
     home.sessionVariables = {
         MCPORTER_CONFIG = "~/.config/mcporter/mcporter.json";
-        CUA_DRIVER_RS_ENABLE_WAYLAND = "1";
-        EGO_LINUX_HEADLESS="1";
         DSH_PORT="3080";
     };
 
@@ -54,26 +51,6 @@
             WorkingDirectory = "%h";
             Restart = "no";
         };
-    };
-
-    # mcporter MCP HTTP bridge — always on so dsh/opencode can use
-    # http://127.0.0.1:8931/mcp instead of spawning sandboxed stdio servers.
-    # zsh -ic matches dsh-web: inherits MCPORTER_CONFIG + PATH from the shell env.
-    systemd.user.services.mcporter-serve = {
-        Unit = {
-            Description = "mcporter MCP HTTP bridge (port 8931)";
-            After = [ "network.target" ];
-        };
-
-        Service = {
-            Type = "simple";
-            ExecStart = "${pkgs.zsh}/bin/zsh -ic 'exec mcporter serve --http 8931'";
-            WorkingDirectory = "%h";
-            Restart = "on-failure";
-            RestartSec = 2;
-        };
-
-        Install.WantedBy = [ "default.target" ];
     };
 
 }

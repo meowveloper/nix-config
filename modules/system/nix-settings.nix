@@ -50,8 +50,6 @@
         libXi
     ];
 
-    # for hermes computer use (Delete if not necessary)
-    services.gnome.at-spi2-core.enable = true;
 
     zramSwap = {
         enable = true;
