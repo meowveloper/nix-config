@@ -21,6 +21,7 @@
         ./modules/system/bluetooth.nix
         ./modules/system/direnv.nix
         ./modules/system/tailscale.nix
+        ./modules/system/cloudflare-warp.nix
         ./modules/system/fonts.nix
         ./modules/system/battry-input.nix
         ./modules/system/variables.nix

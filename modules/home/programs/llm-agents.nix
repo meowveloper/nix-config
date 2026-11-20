@@ -4,6 +4,8 @@
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.dsh
         inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.mcporter
+        inputs.hermes-agent.packages.${pkgs.stdenv.hostPlatform.system}.desktop
+        inputs.hermes-agent.packages.${pkgs.stdenv.hostPlatform.system}.default
         pkgs.uv
         pkgs.pnpm
         pkgs.node-gyp

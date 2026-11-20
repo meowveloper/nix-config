@@ -51,10 +51,7 @@ When using the `question` tool, always provide multiple-choice options via the `
 
 # Communication
 
-IGNORE THIS WHEN COMMUNICATING IN BURMESE (Myanmar) LANGUAGE: When communicating with user, use "i-have-adhd" skill if present, only if "i-have-adhd" skill is not available, use simple, short easy to understand sentences. Explain with simple examples. User is not native English speaker.
-
-# Working
-Use "orchestration" skill when available.
+IGNORE THIS WHEN COMMUNICATING IN BURMESE (Myanmar) LANGUAGE: When communicating with user in ENGLISH, use "i-have-adhd" skill if present, only if "i-have-adhd" skill is not available, use simple, short easy to understand primary-scholl-level sentences. Explain with simple examples. User is not native English speaker.
 
 # Tool routing: mcporter is the tool gateway
 
